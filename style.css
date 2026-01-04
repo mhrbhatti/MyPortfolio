@@ -714,3 +714,552 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #00cc33;
 }
+
+/* ============================================
+   MOBILE OPTIMIZATION - COMPLETE OVERHAUL
+   ============================================ */
+
+/* Tablets and smaller laptops */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 95%;
+        padding: 15px;
+    }
+    
+    .intro h1 {
+        font-size: 3rem;
+    }
+    
+    .nav-terminal {
+        top: 15px;
+        right: 15px;
+    }
+}
+
+/* Tablets portrait */
+@media (max-width: 768px) {
+    /* Typography adjustments */
+    .intro h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .intro .tagline {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .intro p {
+        font-size: 1rem !important;
+    }
+    
+    /* Pills layout */
+    .pills {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        padding: 0 20px;
+    }
+    
+    .pill {
+        width: 100%;
+        max-width: 350px;
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+    
+    /* Navigation terminal */
+    .nav-terminal {
+        top: 10px;
+        right: 10px;
+        padding: 10px;
+        max-width: 200px;
+    }
+    
+    .nav-terminal button {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+    
+    /* Section spacing */
+    .section {
+        padding: 60px 15px;
+    }
+    
+    /* Terminal adjustments */
+    .terminal {
+        padding: 15px;
+        margin: 15px 0;
+    }
+    
+    .terminal-content h2 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .terminal-content h3 {
+        font-size: 1.2rem !important;
+    }
+    
+    .terminal-content p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    /* Experience section */
+    .exp-item {
+        padding: 15px;
+    }
+    
+    .exp-title {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .exp-title span:first-child {
+        font-size: 1.1rem;
+        line-height: 1.4;
+    }
+    
+    .exp-date {
+        font-size: 0.9rem;
+        margin-top: 5px;
+    }
+    
+    .exp-item ul li {
+        font-size: 0.9rem;
+        padding-left: 15px;
+    }
+    
+    /* Skills grid */
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .skill-item {
+        padding: 15px;
+    }
+    
+    .skill-name {
+        font-size: 1rem;
+    }
+    
+    /* Projects grid */
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .project-card {
+        padding: 20px;
+    }
+    
+    .project-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .project-card p {
+        font-size: 0.95rem;
+    }
+    
+    /* Contact section */
+    .contact-item {
+        font-size: 1rem;
+        margin: 12px 0;
+    }
+    
+    /* White screen effects */
+    .white-screen-title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .white-screen-text {
+        font-size: 1rem;
+        margin: 8px 0;
+    }
+    
+    .restart-btn {
+        font-size: 1rem;
+        padding: 15px 30px;
+    }
+    
+    /* Memory wipe text */
+    #memory-wipe {
+        font-size: 1rem;
+        bottom: 10%;
+        letter-spacing: 2px;
+    }
+    
+    /* Reduce particle effects on mobile */
+    .cursor-glow {
+        width: 15px;
+        height: 15px;
+    }
+    
+    .trail {
+        font-size: 12px;
+    }
+}
+
+/* Mobile phones landscape */
+@media (max-width: 640px) {
+    .intro h1 {
+        font-size: 2rem;
+    }
+    
+    .intro .tagline {
+        font-size: 1rem;
+    }
+    
+    .pills {
+        padding: 0 15px;
+    }
+    
+    .pill {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+    
+    .nav-terminal {
+        top: 5px;
+        right: 5px;
+        padding: 8px;
+        font-size: 0.85rem;
+    }
+    
+    .terminal-content h2 {
+        font-size: 1.3rem;
+    }
+    
+    .section {
+        padding: 50px 10px;
+    }
+}
+
+/* Small mobile phones */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    
+    .intro {
+        padding: 0 15px;
+    }
+    
+    .intro h1 {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+    
+    .intro .tagline {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .pills {
+        gap: 0.8rem;
+        padding: 0 10px;
+    }
+    
+    .pill {
+        width: 100%;
+        max-width: 280px;
+        padding: 10px 20px;
+        font-size: 0.85rem;
+    }
+    
+    .nav-terminal {
+        width: calc(100% - 20px);
+        max-width: 180px;
+        left: auto;
+        right: 10px;
+        top: 10px;
+    }
+    
+    .nav-terminal button {
+        padding: 6px;
+        font-size: 0.8rem;
+    }
+    
+    .terminal {
+        padding: 12px;
+        margin: 12px 0;
+    }
+    
+    .terminal-btn {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .terminal-content h2 {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+    }
+    
+    .terminal-content h3 {
+        font-size: 1.1rem !important;
+    }
+    
+    .terminal-content p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+    
+    /* Experience section mobile */
+    .exp-item {
+        padding: 12px;
+        margin-bottom: 15px;
+    }
+    
+    .exp-title span:first-child {
+        font-size: 1rem;
+    }
+    
+    .exp-date {
+        font-size: 0.8rem;
+    }
+    
+    .exp-item ul li {
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+    }
+    
+    /* Skills mobile */
+    .skill-item {
+        padding: 12px;
+    }
+    
+    .skill-name {
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+    }
+    
+    .skill-bar {
+        height: 18px;
+    }
+    
+    /* Projects mobile */
+    .project-card {
+        padding: 15px;
+    }
+    
+    .project-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+    }
+    
+    .project-card p {
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+    }
+    
+    .project-card .tech {
+        font-size: 0.8rem;
+    }
+    
+    .load-btn {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+    
+    /* Contact mobile */
+    .contact-item {
+        font-size: 0.9rem;
+        margin: 10px 0;
+    }
+    
+    .contact-item a {
+        word-break: break-all;
+    }
+    
+    /* White screen mobile */
+    .white-screen-content {
+        padding: 15px;
+    }
+    
+    .white-screen-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .white-screen-text {
+        font-size: 0.9rem;
+        margin: 6px 0;
+    }
+    
+    .restart-btn {
+        font-size: 0.9rem;
+        padding: 12px 25px;
+        margin-top: 20px;
+    }
+    
+    /* Memory wipe mobile */
+    #memory-wipe {
+        font-size: 0.85rem;
+        bottom: 8%;
+        letter-spacing: 1px;
+        padding: 0 10px;
+        text-align: center;
+    }
+    
+    /* Reduce animations on mobile for performance */
+    .cursor-glow {
+        display: none; /* Hide cursor glow on very small screens */
+    }
+    
+    .trail {
+        display: none; /* Hide mouse trail on very small screens */
+    }
+    
+    /* Canvas optimization */
+    #matrix-bg {
+        opacity: 0.5; /* Reduce opacity for better readability */
+    }
+}
+
+/* Extra small devices (older phones) */
+@media (max-width: 360px) {
+    .intro h1 {
+        font-size: 1.5rem;
+    }
+    
+    .intro .tagline {
+        font-size: 0.85rem;
+    }
+    
+    .pill {
+        font-size: 0.8rem;
+        padding: 8px 15px;
+    }
+    
+    .terminal-content h2 {
+        font-size: 1.1rem;
+    }
+    
+    .terminal-content p {
+        font-size: 0.8rem;
+    }
+    
+    .nav-terminal button {
+        font-size: 0.75rem;
+        padding: 5px;
+    }
+    
+    .white-screen-title {
+        font-size: 1.2rem;
+    }
+    
+    .white-screen-text {
+        font-size: 0.8rem;
+    }
+    
+    .restart-btn {
+        font-size: 0.8rem;
+        padding: 10px 20px;
+    }
+}
+
+/* Landscape orientation specific fixes */
+@media (max-height: 500px) and (orientation: landscape) {
+    .intro {
+        height: auto;
+        min-height: 100vh;
+        padding: 40px 20px;
+    }
+    
+    .intro h1 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .intro .tagline {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .pills {
+        margin-top: 1rem;
+        gap: 0.5rem;
+    }
+    
+    .pill {
+        padding: 8px 20px;
+    }
+    
+    .section {
+        padding: 40px 15px;
+    }
+}
+
+/* Touch optimization */
+@media (hover: none) and (pointer: coarse) {
+    /* Increase touch targets */
+    .pill {
+        min-height: 44px; /* iOS recommended touch target */
+    }
+    
+    .nav-terminal button {
+        min-height: 40px;
+    }
+    
+    .load-btn {
+        min-height: 40px;
+    }
+    
+    /* Remove hover effects on touch devices */
+    .pill:hover {
+        animation: none;
+    }
+    
+    /* Make links easier to tap */
+    .contact-item a {
+        padding: 5px 0;
+        display: inline-block;
+    }
+}
+
+/* Performance optimization for mobile */
+@media (max-width: 768px) {
+    /* Simplify animations on mobile */
+    .glitch {
+        animation: none;
+    }
+    
+    .glitch-intense {
+        animation-duration: 0.3s;
+    }
+    
+    .particle {
+        display: none; /* Disable particles on mobile for performance */
+    }
+    
+    /* Simplify matrix background on mobile */
+    #matrix-bg {
+        opacity: 0.4;
+    }
+}
+
+/* Dark mode support (if device prefers dark mode) */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #000;
+    }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .glitch,
+    .glitch-intense,
+    .vibrate {
+        animation: none !important;
+    }
+}
