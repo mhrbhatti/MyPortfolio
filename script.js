@@ -249,3 +249,105 @@ function glitchReassemble() {
         });
     }, 600);
 }
+
+// Mobile optimization
+function isMobile() {
+    return window.innerWidth <= 768;
+}
+
+// Optimize matrix rain for mobile
+if (isMobile()) {
+    // Reduce matrix density on mobile
+    const mobileColumns = Math.floor(canvas.width / (fontSize * 2));
+    drops.length = mobileColumns;
+    for (let i = 0; i < mobileColumns; i++) {
+        drops[i] = Math.random() * -100;
+    }
+    
+    // Slower refresh rate on mobile for better performance
+    clearInterval(matrixInterval);
+    matrixInterval = setInterval(draw, 100); // Slower than 70ms
+}
+
+// Disable mouse effects on small mobile devices
+if (window.innerWidth <= 480) {
+    document.removeEventListener('mousemove', handleMouseMove);
+    document.removeEventListener('mousemove', handleMouseTrail);
+    if (cursorGlow) {
+        cursorGlow.remove();
+    }
+}
+
+// Touch event handling for mobile
+let touchStartX = 0;
+let touchStartY = 0;
+
+document.addEventListener('touchstart', function(e) {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+}, { passive: true });
+
+document.addEventListener('touchend', function(e) {
+    const touchEndX = e.changedTouches[0].clientX;
+    const touchEndY = e.changedTouches[0].clientY;
+    
+    // Swipe detection for mobile navigation
+    const diffX = touchStartX - touchEndX;
+    const diffY = touchStartY - touchEndY;
+    
+    // Swipe left/right to toggle navigation
+    if (Math.abs(diffX) > 100 && Math.abs(diffY) < 50) {
+        const nav = document.getElementById('nav');
+        if (nav.classList.contains('show')) {
+            // Swiping left closes nav
+            if (diffX > 0) {
+                // Could add close functionality here if needed
+            }
+        }
+    }
+}, { passive: true });
+
+// Prevent zoom on double tap (iOS)
+let lastTouchEnd = 0;
+document.addEventListener('touchend', function(e) {
+    const now = Date.now();
+    if (now - lastTouchEnd <= 300) {
+        e.preventDefault();
+    }
+    lastTouchEnd = now;
+}, false);
+
+// Orientation change handler
+window.addEventListener('orientationchange', function() {
+    setTimeout(function() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        location.reload(); // Reload to reset animations
+    }, 100);
+});
+
+// Mobile menu toggle improvement
+if (isMobile()) {
+    const navButtons = document.querySelectorAll('.nav-terminal button');
+    navButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Auto-hide nav after selection on mobile
+            setTimeout(() => {
+                if (window.innerWidth <= 768) {
+                    const nav = document.getElementById('nav');
+                    // nav.classList.remove('show'); // Uncomment if you want auto-hide
+                }
+            }, 300);
+        });
+    });
+}
+
+// Viewport height fix for mobile browsers (fixes 100vh issue)
+function setVH() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+setVH();
+window.addEventListener('resize', setVH);
+window.addEventListener('orientationchange', setVH);
