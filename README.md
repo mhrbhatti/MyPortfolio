@@ -200,15 +200,15 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📸 Screenshots
 
 ### Landing Page
-![Landing Page](screenshots/landing.png)
+![Landing Page](screenshots/LandingPage.png)
 *Red pill / Blue pill choice with Matrix rain*
 
 ### About Section
-![About Section](screenshots/about.png)
+![About Section](screenshots/AboutPage.png)
 *Terminal-style profile information*
 
 ### Blue Pill Effect
-![Blue Pill](screenshots/bluepill.png)
+![Blue Pill](screenshots/BluePill.png)
 *System crash sequence*
 
 ---
