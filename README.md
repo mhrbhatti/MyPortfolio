@@ -6,7 +6,7 @@ A futuristic, interactive portfolio website inspired by *The Matrix* movie. Feat
 
 ## 🎯 Live Demo
 
-[**View Live Demo**](#)https://mhrbhatti.netlify.app/
+[**[View Live Demo](https://mhrbhatti.netlify.app/)**](#)
 
 ## ✨ Features
 
