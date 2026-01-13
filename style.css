@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+:root {
+    --vh: 1vh;
+}
+
 body {
     font-family: 'Courier New', monospace;
     background: #000;
@@ -44,11 +48,13 @@ body {
 
 .intro {
     height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 20px;
 }
 
 .intro h1 {
@@ -127,6 +133,7 @@ body {
 
 .section {
     min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
     padding: 80px 20px;
     display: none;
 }
@@ -174,11 +181,13 @@ body {
     position: fixed;
     top: 20px;
     right: 20px;
-    background: rgba(0, 20, 0, 0.95);
+    background: rgba(0, 20, 0, 0.98);
     border: 2px solid #00FF41;
     padding: 15px;
     display: none;
-    z-index: 1000;
+    z-index: 10000;
+    max-width: 220px;
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
 }
 
 .nav-terminal.show {
@@ -274,7 +283,7 @@ body {
 .project-card h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
-    color: #00FF41;
+    color: white;
 }
 
 .project-card p {
@@ -356,6 +365,7 @@ body {
     text-decoration: none;
     border-bottom: 1px solid #00FF41;
     transition: all 0.3s;
+    word-break: break-word;
 }
 
 .contact-item a:hover {
@@ -604,13 +614,13 @@ body {
     transition: opacity 2s ease;
     pointer-events: none;
     z-index: 9999;
-    text-shadow: 0 0 10px black;
+    text-shadow: 0 0 10px #00FF41;
 }
 
 .fade-reality * {
     opacity: 0 !important;
-    filter: blur(1.5px) !important;
-    transition: opacity 50s ease, filter 2s ease !important;
+    filter: blur(10px) !important;
+    transition: opacity 2s ease, filter 2s ease !important;
 }
 
 .glitch-return {
@@ -623,78 +633,6 @@ body {
     50% { clip-path: inset(40% 0 30% 0); }
     75% { clip-path: inset(10% 0 50% 0); }
     100% { clip-path: inset(0 0 0 0); }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .intro h1 {
-        font-size: 2.5rem;
-    }
-    
-    .pills {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .pill {
-        width: 100%;
-        max-width: 300px;
-    }
-    
-    .exp-title {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .exp-date {
-        margin-top: 5px;
-    }
-    
-    .white-screen-title {
-        font-size: 2rem;
-    }
-    
-    .white-screen-text {
-        font-size: 1rem;
-    }
-    
-    .restart-btn {
-        font-size: 1rem;
-        padding: 15px 30px;
-    }
-    
-    .nav-terminal {
-        top: 10px;
-        right: 10px;
-        padding: 10px;
-    }
-    
-    .terminal-content h2 {
-        font-size: 1.5rem;
-    }
-    
-    #memory-wipe {
-        font-size: 1rem;
-        bottom: 10%;
-    }
-}
-
-@media (max-width: 480px) {
-    .intro h1 {
-        font-size: 2rem;
-    }
-    
-    .intro .tagline {
-        font-size: 1.2rem;
-    }
-    
-    .project-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
 }
 
 /* Scrollbar styling */
@@ -716,36 +654,45 @@ body {
 }
 
 /* ============================================
-   MOBILE OPTIMIZATION - COMPLETE OVERHAUL
+   MOBILE RESPONSIVE DESIGN - COMPREHENSIVE
    ============================================ */
 
-/* Tablets and smaller laptops */
+/* Tablets and small laptops */
 @media (max-width: 1024px) {
     .container {
         max-width: 95%;
         padding: 15px;
     }
     
-    .intro h1 {
-        font-size: 3rem;
-    }
-    
     .nav-terminal {
         top: 15px;
         right: 15px;
+        max-width: 200px;
     }
 }
 
-/* Tablets portrait */
+/* Tablets portrait and large phones */
 @media (max-width: 768px) {
-    /* Typography adjustments */
+    body {
+        font-size: 14px;
+    }
+    
+    .container {
+        padding: 10px;
+    }
+    
+    /* Intro section */
+    .intro {
+        padding: 60px 20px 20px;
+    }
+    
     .intro h1 {
         font-size: 2.5rem;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.8rem;
     }
     
     .intro .tagline {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         margin-bottom: 2rem;
     }
     
@@ -753,7 +700,7 @@ body {
         font-size: 1rem !important;
     }
     
-    /* Pills layout */
+    /* Pills */
     .pills {
         flex-direction: column;
         gap: 1rem;
@@ -763,30 +710,32 @@ body {
     
     .pill {
         width: 100%;
-        max-width: 350px;
+        max-width: 320px;
         padding: 12px 30px;
         font-size: 1rem;
     }
     
-    /* Navigation terminal */
+    /* Navigation - CRITICAL FIX */
     .nav-terminal {
         top: 10px;
         right: 10px;
         padding: 10px;
-        max-width: 200px;
+        max-width: 180px;
+        font-size: 0.85rem;
     }
     
     .nav-terminal button {
         padding: 8px;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+        margin: 3px 0;
     }
     
     /* Section spacing */
     .section {
-        padding: 60px 15px;
+        padding: 70px 15px 40px;
     }
     
-    /* Terminal adjustments */
+    /* Terminal */
     .terminal {
         padding: 15px;
         margin: 15px 0;
@@ -802,11 +751,11 @@ body {
     }
     
     .terminal-content p {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         line-height: 1.6;
     }
     
-    /* Experience section */
+    /* Experience */
     .exp-item {
         padding: 15px;
     }
@@ -818,21 +767,20 @@ body {
     }
     
     .exp-title span:first-child {
-        font-size: 1.1rem;
+        font-size: 1.05rem;
         line-height: 1.4;
+        word-break: break-word;
     }
     
     .exp-date {
-        font-size: 0.9rem;
-        margin-top: 5px;
+        font-size: 0.85rem;
     }
     
     .exp-item ul li {
         font-size: 0.9rem;
-        padding-left: 15px;
     }
     
-    /* Skills grid */
+    /* Skills */
     .skills-grid {
         grid-template-columns: 1fr;
         gap: 15px;
@@ -842,11 +790,7 @@ body {
         padding: 15px;
     }
     
-    .skill-name {
-        font-size: 1rem;
-    }
-    
-    /* Projects grid */
+    /* Projects */
     .project-grid {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -860,25 +804,19 @@ body {
         font-size: 1.3rem;
     }
     
-    .project-card p {
-        font-size: 0.95rem;
-    }
-    
-    /* Contact section */
+    /* Contact */
     .contact-item {
         font-size: 1rem;
         margin: 12px 0;
     }
     
-    /* White screen effects */
+    /* White screen */
     .white-screen-title {
         font-size: 2rem;
-        margin-bottom: 1.5rem;
     }
     
     .white-screen-text {
         font-size: 1rem;
-        margin: 8px 0;
     }
     
     .restart-btn {
@@ -886,14 +824,15 @@ body {
         padding: 15px 30px;
     }
     
-    /* Memory wipe text */
+    /* Memory wipe */
     #memory-wipe {
-        font-size: 1rem;
+        font-size: 0.95rem;
         bottom: 10%;
         letter-spacing: 2px;
+        max-width: 90%;
     }
     
-    /* Reduce particle effects on mobile */
+    /* Reduce effects on mobile */
     .cursor-glow {
         width: 15px;
         height: 15px;
@@ -902,51 +841,20 @@ body {
     .trail {
         font-size: 12px;
     }
-}
-
-/* Mobile phones landscape */
-@media (max-width: 640px) {
-    .intro h1 {
-        font-size: 2rem;
-    }
     
-    .intro .tagline {
-        font-size: 1rem;
-    }
-    
-    .pills {
-        padding: 0 15px;
-    }
-    
-    .pill {
-        padding: 10px 25px;
-        font-size: 0.9rem;
-    }
-    
-    .nav-terminal {
-        top: 5px;
-        right: 5px;
-        padding: 8px;
-        font-size: 0.85rem;
-    }
-    
-    .terminal-content h2 {
-        font-size: 1.3rem;
-    }
-    
-    .section {
-        padding: 50px 10px;
+    #matrix-bg {
+        opacity: 0.5;
     }
 }
 
-/* Small mobile phones */
+/* Mobile phones */
 @media (max-width: 480px) {
     body {
-        font-size: 14px;
+        font-size: 13px;
     }
     
     .intro {
-        padding: 0 15px;
+        padding: 50px 15px 20px;
     }
     
     .intro h1 {
@@ -955,33 +863,42 @@ body {
     }
     
     .intro .tagline {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
         margin-bottom: 1.5rem;
     }
     
+    .intro p {
+        font-size: 0.9rem !important;
+    }
+    
     .pills {
+        padding: 0 15px;
         gap: 0.8rem;
-        padding: 0 10px;
     }
     
     .pill {
-        width: 100%;
         max-width: 280px;
-        padding: 10px 20px;
-        font-size: 0.85rem;
+        padding: 10px 25px;
+        font-size: 0.9rem;
     }
     
+    /* Navigation - Extra tight */
     .nav-terminal {
-        width: calc(100% - 20px);
-        max-width: 180px;
-        left: auto;
-        right: 10px;
-        top: 10px;
+        top: 8px;
+        right: 8px;
+        padding: 8px;
+        max-width: 160px;
+        font-size: 0.75rem;
     }
     
     .nav-terminal button {
         padding: 6px;
-        font-size: 0.8rem;
+        font-size: 0.75rem;
+        margin: 2px 0;
+    }
+    
+    .section {
+        padding: 60px 10px 30px;
     }
     
     .terminal {
@@ -1000,7 +917,7 @@ body {
     }
     
     .terminal-content h3 {
-        font-size: 1.1rem !important;
+        font-size: 1.05rem !important;
     }
     
     .terminal-content p {
@@ -1008,14 +925,12 @@ body {
         line-height: 1.5;
     }
     
-    /* Experience section mobile */
     .exp-item {
         padding: 12px;
-        margin-bottom: 15px;
     }
     
     .exp-title span:first-child {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
     
     .exp-date {
@@ -1027,33 +942,28 @@ body {
         margin-bottom: 8px;
     }
     
-    /* Skills mobile */
     .skill-item {
         padding: 12px;
     }
     
     .skill-name {
         font-size: 0.95rem;
-        margin-bottom: 8px;
     }
     
     .skill-bar {
-        height: 18px;
+        height: 16px;
     }
     
-    /* Projects mobile */
     .project-card {
         padding: 15px;
     }
     
     .project-card h3 {
-        font-size: 1.2rem;
-        margin-bottom: 12px;
+        font-size: 1.1rem;
     }
     
     .project-card p {
         font-size: 0.85rem;
-        margin-bottom: 10px;
     }
     
     .project-card .tech {
@@ -1065,17 +975,10 @@ body {
         font-size: 0.85rem;
     }
     
-    /* Contact mobile */
     .contact-item {
         font-size: 0.9rem;
-        margin: 10px 0;
     }
     
-    .contact-item a {
-        word-break: break-all;
-    }
-    
-    /* White screen mobile */
     .white-screen-content {
         padding: 15px;
     }
@@ -1087,40 +990,38 @@ body {
     
     .white-screen-text {
         font-size: 0.9rem;
-        margin: 6px 0;
     }
     
     .restart-btn {
         font-size: 0.9rem;
         padding: 12px 25px;
-        margin-top: 20px;
     }
     
-    /* Memory wipe mobile */
     #memory-wipe {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
         bottom: 8%;
         letter-spacing: 1px;
-        padding: 0 10px;
-        text-align: center;
     }
     
-    /* Reduce animations on mobile for performance */
+    /* Disable heavy effects on mobile */
     .cursor-glow {
-        display: none; /* Hide cursor glow on very small screens */
+        display: none;
     }
     
     .trail {
-        display: none; /* Hide mouse trail on very small screens */
+        display: none;
     }
     
-    /* Canvas optimization */
+    .particle {
+        display: none;
+    }
+    
     #matrix-bg {
-        opacity: 0.5; /* Reduce opacity for better readability */
+        opacity: 0.4;
     }
 }
 
-/* Extra small devices (older phones) */
+/* Very small phones */
 @media (max-width: 360px) {
     .intro h1 {
         font-size: 1.5rem;
@@ -1131,8 +1032,18 @@ body {
     }
     
     .pill {
-        font-size: 0.8rem;
-        padding: 8px 15px;
+        font-size: 0.85rem;
+        padding: 8px 20px;
+    }
+    
+    .nav-terminal {
+        max-width: 140px;
+        font-size: 0.7rem;
+    }
+    
+    .nav-terminal button {
+        font-size: 0.7rem;
+        padding: 5px;
     }
     
     .terminal-content h2 {
@@ -1142,32 +1053,14 @@ body {
     .terminal-content p {
         font-size: 0.8rem;
     }
-    
-    .nav-terminal button {
-        font-size: 0.75rem;
-        padding: 5px;
-    }
-    
-    .white-screen-title {
-        font-size: 1.2rem;
-    }
-    
-    .white-screen-text {
-        font-size: 0.8rem;
-    }
-    
-    .restart-btn {
-        font-size: 0.8rem;
-        padding: 10px 20px;
-    }
 }
 
-/* Landscape orientation specific fixes */
+/* Landscape mode fixes */
 @media (max-height: 500px) and (orientation: landscape) {
     .intro {
         height: auto;
         min-height: 100vh;
-        padding: 40px 20px;
+        padding: 30px 20px;
     }
     
     .intro h1 {
@@ -1188,17 +1081,12 @@ body {
     .pill {
         padding: 8px 20px;
     }
-    
-    .section {
-        padding: 40px 15px;
-    }
 }
 
 /* Touch optimization */
 @media (hover: none) and (pointer: coarse) {
-    /* Increase touch targets */
     .pill {
-        min-height: 44px; /* iOS recommended touch target */
+        min-height: 44px;
     }
     
     .nav-terminal button {
@@ -1209,21 +1097,18 @@ body {
         min-height: 40px;
     }
     
-    /* Remove hover effects on touch devices */
     .pill:hover {
         animation: none;
     }
     
-    /* Make links easier to tap */
     .contact-item a {
         padding: 5px 0;
         display: inline-block;
     }
 }
 
-/* Performance optimization for mobile */
+/* Performance optimization */
 @media (max-width: 768px) {
-    /* Simplify animations on mobile */
     .glitch {
         animation: none;
     }
@@ -1231,25 +1116,9 @@ body {
     .glitch-intense {
         animation-duration: 0.3s;
     }
-    
-    .particle {
-        display: none; /* Disable particles on mobile for performance */
-    }
-    
-    /* Simplify matrix background on mobile */
-    #matrix-bg {
-        opacity: 0.4;
-    }
 }
 
-/* Dark mode support (if device prefers dark mode) */
-@media (prefers-color-scheme: dark) {
-    body {
-        background: #000;
-    }
-}
-
-/* Reduce motion for accessibility */
+/* Reduced motion accessibility */
 @media (prefers-reduced-motion: reduce) {
     * {
         animation-duration: 0.01ms !important;
