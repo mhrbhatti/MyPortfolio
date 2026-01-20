@@ -2,41 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matrix Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="M. Huzaifa Bhatti - Computer Science Student & Developer Portfolio">
+    <meta name="keywords" content="Huzaifa Bhatti, Computer Science, Developer, Portfolio, Web Development">
+    <meta name="author" content="M. Huzaifa Bhatti">
+    <title>Huzaifa Bhatti | Matrix Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<div id="memory-wipe">SYSTEM MEMORY PURGE INITIATED</div>
-
 <body>
-    <canvas id="matrix-bg"></canvas>
+    <div id="memory-wipe">SYSTEM MEMORY PURGE INITIATED</div>
     
-    <div class="nav-terminal" id="nav">
+    <!-- Mobile Menu Toggle Button -->
+    <button id="nav-toggle" onclick="toggleNav()" aria-label="Toggle Navigation">>> MENU_</button>
+    
+    <canvas id="matrix-bg" aria-hidden="true"></canvas>
+    
+    <nav class="nav-terminal" id="nav" role="navigation">
         <div style="margin-bottom: 10px; color: #00FF41;">> NAVIGATION_</div>
-        <button onclick="showSection('about')">./about.exe</button>
-        <button onclick="showSection('skills')">./skills.exe</button>
-        <button onclick="showSection('education')">./education.exe</button>
-        <button onclick="showSection('experience')">./experience.exe</button>
-        <button onclick="showSection('projects')">./projects.exe</button>
-        <button onclick="showSection('contact')">./contact.exe</button>
-        <button onclick="location.reload()">./reboot.exe</button>
-    </div>
+        <button onclick="showSection('about')" aria-label="About Section">./about.exe</button>
+        <button onclick="showSection('skills')" aria-label="Skills Section">./skills.exe</button>
+        <button onclick="showSection('education')" aria-label="Education Section">./education.exe</button>
+        <button onclick="showSection('experience')" aria-label="Experience Section">./experience.exe</button>
+        <button onclick="showSection('projects')" aria-label="Projects Section">./projects.exe</button>
+        <button onclick="showSection('contact')" aria-label="Contact Section">./contact.exe</button>
+        <button onclick="location.reload()" aria-label="Reboot System">./reboot.exe</button>
+    </nav>
 
     <div class="container">
+        <!-- INTRO SECTION -->
         <div class="intro" id="intro">
             <h1 class="glitch">WAKE UP, Huzaifa...</h1>
             <p class="tagline typing">The Matrix has you...</p>
-            <p style="font-size: 1.2rem; margin-top: 1rem;color: white;">// Computer Science Student & Developer</p>
+            <p style="font-size: 1.2rem; margin-top: 1rem; color: white;">// Computer Science Student & Developer</p>
             <div class="pills">
-                <button class="pill red" onclick="enterMatrix()">RED PILL</button>
-                <button class="pill" onclick="downloadCV()">DOWNLOAD_CV.exe</button>
-                <button class="pill blue" onclick="activateBluePill()">BLUE PILL</button>
-
+                <button class="pill red" onclick="enterMatrix()" aria-label="Enter Portfolio">RED PILL</button>
+                <button class="pill" onclick="downloadCV()" aria-label="Download CV">DOWNLOAD_CV.exe</button>
+                <button class="pill blue" onclick="activateBluePill()" aria-label="Blue Pill Effect">BLUE PILL</button>
             </div>
-
         </div>
 
-        <div class="section" id="about">
+        <!-- ABOUT SECTION -->
+        <section class="section" id="about">
             <div class="terminal">
                 <div class="terminal-header">
                     <div class="terminal-btn"></div>
@@ -46,18 +52,19 @@
                 <div class="terminal-content">
                     <h2>> ACCESSING PROFILE...</h2>
                     <p>> NAME: M. Huzaifa Bhatti</p>
-                    <p>> STATUS: BSCS Student @ UCP | C/C++ Dev | Java Mobile App Dev | UI UX | IT Support | System Optimization</p>
+                    <p>> STATUS: BSCS Student @ UCP | C/C++ Dev | Java Mobile App Dev | UI/UX | IT Support | System Optimization</p>
                     <p>> LOCATION: Lahore, Pakistan</p>
                     <p>> MISSION: Building the future, one line of code at a time</p>
                     <br>
-                    <p style="text-align: justify; color: white;">Driven BSCS student with a strong foundation in programming, IT support, and leadership. Skilled in C++ development, system optimization, and technical troubleshooting. Passionate about problem-solving and innovation, with hands-on experience in IT support, event coordination, and project management. Eager to apply my technical and leadership skills in a dynamic environment while continuously learning and growing</p>
+                    <p style="text-align: justify; color: white;">Driven BSCS student with a strong foundation in programming, IT support, and leadership. Skilled in C++ development, system optimization, and technical troubleshooting. Passionate about problem-solving and innovation, with hands-on experience in IT support, event coordination, and project management. Eager to apply my technical and leadership skills in a dynamic environment while continuously learning and growing.</p>
                     <br>
                     <p>> "I know Kung Fu." - Actually, I know C/C++, Java, and JavaScript.</p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="section" id="skills">
+        <!-- SKILLS SECTION -->
+        <section class="section" id="skills">
             <div class="terminal">
                 <div class="terminal-header">
                     <div class="terminal-btn"></div>
@@ -65,50 +72,66 @@
                     <div class="terminal-btn"></div>
                 </div>
                 <div class="terminal-content">
-                    <h2>> UPLOADING ABILITIES...</h2>
+                    <h2>>> UPLOADING ABILITIES...</h2>
                     <div class="skills-grid">
+
                         <div class="skill-item">
-                            <div class="skill-name">HTML/CSS/JS</div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">JAVA(MobAppDEV)</div>
+                            <div class="skill-name">C/C++ Programming</div>
                             <div class="skill-bar">
                                 <div class="skill-progress" style="width: 85%;"></div>
                             </div>
                         </div>
+                    
                         <div class="skill-item">
-                            <div class="skill-name">SQL</div>
+                            <div class="skill-name">Object-Oriented Programming (OOP)</div>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 60%;"></div>
+                                <div class="skill-progress" style="width: 80%;"></div>
                             </div>
                         </div>
+                    
                         <div class="skill-item">
-                            <div class="skill-name">C/C++</div>
+                            <div class="skill-name">Data Structures & Algorithms</div>
                             <div class="skill-bar">
                                 <div class="skill-progress" style="width: 75%;"></div>
                             </div>
                         </div>
+                    
                         <div class="skill-item">
-                            <div class="skill-name">ProjectManagement</div>
+                            <div class="skill-name">Java (Mobile App Development)</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                    
+                        <div class="skill-item">
+                            <div class="skill-name">SQL & Database Fundamentals</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 65%;"></div>
+                            </div>
+                        </div>
+                    
+                        <div class="skill-item">
+                            <div class="skill-name">HTML, CSS, JavaScript</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                    
+                        <div class="skill-item">
+                            <div class="skill-name">Problem Solving & Logic Building</div>
                             <div class="skill-bar">
                                 <div class="skill-progress" style="width: 85%;"></div>
                             </div>
                         </div>
-                        <div class="skill-item">
-                            <div class="skill-name">TechSupport</div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 88%;"></div>
-                            </div>
-                        </div>
+                    
                     </div>
+
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="section" id="education">
+        <!-- EDUCATION SECTION -->
+        <section class="section" id="education">
             <div class="terminal">
                 <div class="terminal-header">
                     <div class="terminal-btn"></div>
@@ -116,51 +139,60 @@
                     <div class="terminal-btn"></div>
                 </div>
                 <div class="terminal-content">
-                    <h2>> LOADING EDUCATIONAL RECORDS...</h2>
+                    <h2>>> LOADING EDUCATIONAL RECORDS...</h2>
                     
                     <div style="margin-top: 30px;">
                         <div class="terminal" style="margin-bottom: 25px; background: rgba(0, 30, 0, 0.6);">
-                            <h3 style="color: white; font-size: 1.5rem; margin-bottom: 15px;"> Bachelor of Computer Science</h3>
+                            <h3 style="color: white; font-size: 1.5rem; margin-bottom: 15px;">> Bachelor of Computer Science</h3>
                             <p style="font-size: 1.1rem; margin-bottom: 10px;">University Of Central Punjab</p>
                             <p style="opacity: 0.8; margin-bottom: 10px;">Current Semester: 5th | Expected Graduation: 2027</p>
-                            <p style="opacity: 0.8; margin-bottom: 1px;">CGPA: 2.6/4.0</p>
+                            <p style="opacity: 0.8; margin-bottom: 10px;">CGPA: 2.6/4.0</p>
                             <br>
-                            <p>
-                                <p style="color: white; line-height: 0%;">Relevant Coursework:</p><br>
+                            <p style="color: white; font-weight: bold; margin-bottom: 10px;">Relevant Coursework:</p>
+                            <p style="line-height: 1.8;">
                                 - Web Development<br>
                                 - Object-Oriented Programming<br>
                                 - Data Structures & Algorithms<br>
                                 - Database Management Systems<br>
                                 - Operating Systems<br>
                                 - Software Engineering<br>
-                                - Mobile App Development 
+                                - Mobile App Development
                             </p>
                         </div>
 
                         <div class="terminal" style="margin-bottom: 25px; background: rgba(0, 30, 0, 0.6);">
-                            <h3 style="color: white; font-size: 1.5rem; margin-bottom: 15px;"> Intermediate (ICS-PHY)</h3>
+                            <h3 style="color: white; font-size: 1.5rem; margin-bottom: 15px;">> Intermediate (ICS-PHY)</h3>
                             <p style="font-size: 1.1rem; margin-bottom: 10px;">Govt. College University (GCUL), Lahore</p>
                             <p style="opacity: 0.8; margin-bottom: 10px;">Year: 2023 | Field: Computer Science</p>
                             <p style="opacity: 0.8; margin-bottom: 10px;">Grade/Percentage: 81.67%</p>
                         </div>
 
                         <div class="terminal" style="background: rgba(0, 30, 0, 0.6);">
-                            <h3 style="color: white; font-size: 1.5rem; margin-bottom: 15px;"> Certifications & Achievements</h3>
-                            <p style="line-height: 1.8;">
-                                > Computer Fundamentals & System Optimization----------------------------------<span style="float:right;color: white;">(Institute Training Program)</span><br>
-                                > C / C++ Programming-----------------------------------------------------------------<span style="float:right;color: white;">(Academic Coursework)</span><br>
-                                > UI/UX Design Basics------------------------------------------------------------<span style="float:right;color: white;">(Online Learning Platform)</span><br>
+                            <h3 style="color: white; font-size: 1.5rem; margin-bottom: 15px;">> Certifications & Achievements</h3>
+                            <p style="line-height: 2;">
+                                > Computer Fundamentals & System Optimization<br>
+                                <span style="opacity: 0.7; font-size: 0.9rem; margin-left: 20px; color: white;">Institute Training Program (2024)</span><br><br>
                                 
-                                > IT Support & Troubleshooting-------------------------------------------------<span style="float:right;color: white;">(Technical Training Program)</span><br>
+                                > C / C++ Programming<br>
+                                <span style="opacity: 0.7; font-size: 0.9rem; margin-left: 20px; color: white;">Academic Coursework (2023)</span><br><br>
                                 
-                                > Teaching Computer Science (Matric & Intermediate)---------------------------<span style="float:right;color: white;">(Private Tutoring Experience)</span><br>
+                                > UI/UX Design Basics<br>
+                                <span style="opacity: 0.7; font-size: 0.9rem; margin-left: 20px; color: white;">Online Learning Platform (2024)</span><br><br>
                                 
-                                > Android App Development (Java & XML)-------------------------------------------------<span style="float:right;color: white;">(University Project)</span><br>
+                                > IT Support & Troubleshooting<br>
+                                <span style="opacity: 0.7; font-size: 0.9rem; margin-left: 20px; color: white;">Technical Training Program (2024)</span><br><br>
                                 
-                                > Successfully Taught Multiple Students with Improved Results------------------------<span style="float:right;color: white;">(Academic Achievement)</span><br>
+                                > Teaching Computer Science (Matric & Intermediate)<br>
+                                <span style="opacity: 0.7; font-size: 0.9rem; margin-left: 20px; color: white;">Private Tutoring Experience (2023–2025)</span><br><br>
                                 
-                                > Technical Problem Solving & Customer Support Excellence-----------------------<span style="float:right;color: white;">Work Experience Recognition</span>
-
+                                > Android App Development (Java & XML)<br>
+                                <span style="opacity: 0.7; font-size: 0.9rem; margin-left: 20px; color: white;">University Project (2024)</span><br><br>
+                                
+                                > Successfully Taught Multiple Students with Improved Results<br>
+                                <span style="opacity: 0.7; font-size: 0.9rem; margin-left: 20px; color: white;">Academic Achievement (2024)</span><br><br>
+                                
+                                > Technical Problem Solving & Customer Support Excellence<br>
+                                <span style="opacity: 0.7; font-size: 0.9rem; margin-left: 20px; color: white;">Work Experience Recognition (2024)</span>
                             </p>
                             <br>
                             <p style="opacity: 0.8; font-style: italic; color: white;">
@@ -170,34 +202,34 @@
                     </div>
                 </div>
             </div>
-        </div>
-            <!-- PROFESSIONAL EXPERIENCE SECTION -->
-        <div class="section" id="experience">
+        </section>
+
+        <!-- EXPERIENCE SECTION -->
+        <section class="section" id="experience">
             <div class="terminal">
                 <div class="terminal-header">
                     <span class="terminal-btn"></span>
                     <span class="terminal-btn"></span>
                     <span class="terminal-btn"></span>
                 </div>
-            
                 <div class="terminal-content">
-                    <h2>> LOADING PROFESSIONAL EXPERIENCE...</h2>
-                
+                    <h2>>> LOADING PROFESSIONAL EXPERIENCE...</h2>
+                    
                     <div class="exp-item">
                         <div class="exp-title">
-                            <span style="color: white;"> Computer Science Teacher – Vertex Academy of Sciences, JT--------------</span>
+                            <span style="color: white;">> Computer Science Teacher – Vertex Academy of Sciences, JT</span>
                             <span class="exp-date">(2024–Present)</span>
                         </div>
                         <ul>
                             <li>Taught Mathematics, Physics, and Computer Science</li>
-                            <li>Improved students’ academic performance</li>
+                            <li>Improved students' academic performance</li>
                             <li>Designed lesson plans and assessments</li>
                         </ul>
                     </div>
-                
+                    
                     <div class="exp-item">
                         <div class="exp-title">
-                            <span style="color: white;"> IT Support & Technical Assistant – JERS Consultancy (pvt) LTD----------------</span>
+                            <span style="color: white;">> IT Support & Technical Assistant – JERS Consultancy (pvt) LTD</span>
                             <span class="exp-date">(2024)</span>
                         </div>
                         <ul>
@@ -209,7 +241,7 @@
 
                     <div class="exp-item">
                         <div class="exp-title">
-                            <span style="color: white;"> Android App Developer – Academic Projects------------------------------------</span>
+                            <span style="color: white;">> Android App Developer – Academic Projects</span>
                             <span class="exp-date">(2024)</span>
                         </div>
                         <ul>
@@ -218,12 +250,12 @@
                             <li>Worked with SQLite and APIs</li>
                         </ul>
                     </div>
-                
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="section" id="projects">
+       <!-- PROJECTS SECTION -->
+        <section class="section" id="projects">
             <div class="terminal">
                 <div class="terminal-header">
                     <div class="terminal-btn"></div>
@@ -231,52 +263,100 @@
                     <div class="terminal-btn"></div>
                 </div>
                 <div class="terminal-content">
-                    <h2>> LOADING PROGRAMS...</h2>
+                    <h2>>> LOADING PROGRAMS...</h2>
                     <div class="project-grid">
+                    
                         <div class="project-card">
-                            <h3 style="color: white;">[PROJECT_01]</h3>
-                            <p>A revolutionary web application that changes how users interact with data. Built with modern technologies and best practices.</p>
-                            <p class="tech">TECH: React, Node.js, MongoDB</p>
-                            <button class="load-btn" onclick="alert('Loading program...')">LOAD PROGRAM</button>
+                            <h3 style="color: white;">PERSONAL PORTFOLIO</h3>
+                            <p>
+                                A personal portfolio website designed and developed to showcase my
+                                technical skills, projects, and professional profile. Built with a
+                                terminal-inspired UI to reflect a strong computer science identity.
+                            </p>
+                            <p class="tech">TECH: HTML, CSS, JavaScript</p>
+                            <button class="load-btn" onclick="alert('Opening Portfolio...')">
+                                LOAD PROGRAM
+                            </button>
                         </div>
+                    
                         <div class="project-card">
-                            <h3 style="color: white;">[PROJECT_02]</h3>
-                            <p>An intelligent system that leverages machine learning to solve real-world problems with unprecedented accuracy.</p>
-                            <p class="tech">TECH: Python, TensorFlow, Flask</p>
-                            <button class="load-btn" onclick="alert('Loading program...')">LOAD PROGRAM</button>
+                            <h3 style="color: white;">SPOTIFY CLONE</h3>
+                            <p>
+                                A console-based Spotify Clone developed in C++ using Data Structures
+                                and Object-Oriented Programming concepts. It simulates core music
+                                streaming features such as playlist management and song navigation.
+                            </p>
+                            <p class="tech">TECH: C++, OOP, DSA, File Handling</p>
+                            <button class="load-btn" onclick="alert('Launching Spotify Clone...')">
+                                LOAD PROGRAM
+                            </button>
                         </div>
+                    
                         <div class="project-card">
-                            <h3 style="color: white;">[PROJECT_03]</h3>
-                            <p>A mobile application that connects people and ideas in innovative ways, featuring a sleek and intuitive interface.</p>
-                            <p class="tech">TECH: React Native, Firebase</p>
-                            <button class="load-btn" onclick="alert('Loading program...')">LOAD PROGRAM</button>
+                            <h3 style="color: white;">HOSPITAL MANAGEMENT SYSTEM</h3>
+                            <p>
+                                A Hospital Management System built in C++ to manage patient records,
+                                doctor information, and appointments efficiently using a menu-driven
+                                console interface.
+                            </p>
+                            <p class="tech">TECH: C++, OOP, File Handling</p>
+                            <button class="load-btn" onclick="alert('Initializing Hospital System...')">
+                                LOAD PROGRAM
+                            </button>
                         </div>
+                    
+                        <div class="project-card">
+                            <h3 style="color: white;">QUIZ APPLICATION</h3>
+                            <p>
+                                A C++ based Quiz Application that allows users to attempt multiple-choice
+                                questions, calculates scores instantly, and displays results with a
+                                structured program flow.
+                            </p>
+                            <p class="tech">TECH: C++, Functions, Arrays, Logic Building, File Handeling</p>
+                            <button class="load-btn" onclick="alert('Starting Quiz Application...')">
+                                LOAD PROGRAM
+                            </button>
+                        </div>
+                    
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="section" id="contact">
+
+        <!-- CONTACT SECTION -->
+        <section class="section" id="contact">
             <div class="terminal">
                 <div class="terminal-header">
                     <div class="terminal-btn"></div>
                     <div class="terminal-btn"></div>
                     <div class="terminal-btn"></div>
                 </div>
-                <div class="terminal-content">
-                    <h2>> ESTABLISH CONNECTION...</h2>
-                    <p>> Follow the white rabbit to reach me:</p>
-                    <div class="contact-info">
-                        <div class="contact-item">> EMAIL: <a href="mailto:bhattihuzaifa3@gmail.com">bhattihuzaifa3@gmail.com</a></div>
-                        <div class="contact-item">> GITHUB: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></div>
-                        <div class="contact-item">> LINKEDIN: <a href="https://linkedin.com/in/mhrbhatti" target="_blank">linkedin.com/in/mhrbhatti</a></div>
-                        <div class="contact-item">> INSTAGRAM: <a href="https://www.instagram.com/mhrbhatti/" target="_blank">@mhrbhatti</a></div>
+                <div class="terminal-content" style="display: flex; align-items: flex-start; gap: 30px; flex-wrap: wrap;">
+                
+                    <!-- LEFT COLUMN: Contact Info -->
+                    <div class="contact-left" style="flex: 1; min-width: 300px;">
+                        <h2>>> ESTABLISH CONNECTION...</h2>
+                        <p>> Follow the white rabbit to reach me:</p>
+                        <div class="contact-info">
+                            <div class="contact-item">> EMAIL: <a href="mailto:bhattihuzaifa3@gmail.com">bhattihuzaifa3@gmail.com</a></div>
+                            <div class="contact-item">> GITHUB: <a href="https://github.com/mhrbhatti" target="_blank" rel="noopener noreferrer">github.com/mhrbhatti</a></div>
+                            <div class="contact-item">> LINKEDIN: <a href="https://linkedin.com/in/mhrbhatti" target="_blank" rel="noopener noreferrer">linkedin.com/in/mhrbhatti</a></div>
+                            <div class="contact-item">> INSTAGRAM: <a href="https://www.instagram.com/mhrbhatti/" target="_blank" rel="noopener noreferrer">@mhrbhatti</a></div>
+                        </div>
+                        <br>
+                        <p style="font-style: italic; opacity: 0.8; color: white;">"Unfortunately, no one can be told what the Matrix is. You have to see it for yourself."</p>
                     </div>
-                    <br>
-                    <p style="font-style: italic; opacity: 0.8; color: white;">"Unfortunately, no one can be told what the Matrix is. You have to see it for yourself."</p>
-                </div>
+                
+                <!-- RIGHT COLUMN: Portrait
+                    <div class="contact-right">
+                        <img src="ME.png" alt="Matrix Style Portrait" class="matrix-portrait">
+                    </div>
+
+                </div> -->
             </div>
-        </div>
+        </section>
+
     </div>
 
     <script src="script.js"></script>
