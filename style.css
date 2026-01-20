@@ -608,13 +608,13 @@ body {
     transform: translateX(-50%);
     font-family: 'Courier New', monospace;
     font-size: 1.5rem;
-    color: #00FF41;
+    color: #000000;
     opacity: 0;
     letter-spacing: 4px;
     transition: opacity 2s ease;
     pointer-events: none;
     z-index: 9999;
-    text-shadow: 0 0 10px #00FF41;
+    text-shadow: 0 0 10px #000000;
 }
 
 .fade-reality * {
@@ -653,6 +653,35 @@ body {
     background: #00cc33;
 }
 
+/* Mobile NAV toggle button */
+#nav-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10001;
+    padding: 15px 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    color: #00FF41;
+    background: rgba(0, 0, 0, 0.95);
+    border: 2px solid #00FF41;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.6);
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+#nav-toggle:hover {
+    background: #00FF41;
+    color: #000;
+    transform: scale(1.05);
+}
+
+#nav-toggle:active {
+    transform: scale(0.95);
+}
+
 /* ============================================
    MOBILE RESPONSIVE DESIGN - COMPREHENSIVE
    ============================================ */
@@ -679,6 +708,25 @@ body {
     
     .container {
         padding: 10px;
+    }
+    
+    /* Show mobile menu toggle */
+    #nav-toggle {
+        display: block;
+    }
+    
+    /* Center navigation on mobile */
+    .nav-terminal {
+        top: 50%;
+        left: 50%;
+        right: auto;
+        transform: translate(-50%, -50%);
+        max-width: 280px;
+        width: 90%;
+    }
+    
+    .nav-terminal.show {
+        display: block;
     }
     
     /* Intro section */
@@ -715,15 +763,7 @@ body {
         font-size: 1rem;
     }
     
-    /* Navigation - CRITICAL FIX */
-    .nav-terminal {
-        top: 10px;
-        right: 10px;
-        padding: 10px;
-        max-width: 180px;
-        font-size: 0.85rem;
-    }
-    
+    /* Navigation buttons */
     .nav-terminal button {
         padding: 8px;
         font-size: 0.85rem;
@@ -853,6 +893,13 @@ body {
         font-size: 13px;
     }
     
+    #nav-toggle {
+        padding: 12px 16px;
+        font-size: 0.9rem;
+        bottom: 15px;
+        right: 15px;
+    }
+    
     .intro {
         padding: 50px 15px 20px;
     }
@@ -882,13 +929,9 @@ body {
         font-size: 0.9rem;
     }
     
-    /* Navigation - Extra tight */
     .nav-terminal {
-        top: 8px;
-        right: 8px;
-        padding: 8px;
-        max-width: 160px;
-        font-size: 0.75rem;
+        max-width: 260px;
+        padding: 12px;
     }
     
     .nav-terminal button {
@@ -1037,8 +1080,7 @@ body {
     }
     
     .nav-terminal {
-        max-width: 140px;
-        font-size: 0.7rem;
+        max-width: 240px;
     }
     
     .nav-terminal button {
@@ -1104,31 +1146,27 @@ body {
     .contact-item a {
         padding: 5px 0;
         display: inline-block;
-    }
 }
-
+}
 /* Performance optimization */
 @media (max-width: 768px) {
-    .glitch {
-        animation: none;
-    }
-    
-    .glitch-intense {
-        animation-duration: 0.3s;
-    }
+.glitch {
+animation: none;
 }
-
+.glitch-intense {
+    animation-duration: 0.3s;
+}
+}
 /* Reduced motion accessibility */
 @media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-    
-    .glitch,
-    .glitch-intense,
-    .vibrate {
-        animation: none !important;
-    }
+* {
+animation-duration: 0.01ms !important;
+animation-iteration-count: 1 !important;
+transition-duration: 0.01ms !important;
+}
+.glitch,
+.glitch-intense,
+.vibrate {
+    animation: none !important;
+}
 }
