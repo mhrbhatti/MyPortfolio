@@ -9,7 +9,7 @@ const chars = 'アァカサタナハマヤャラワガザダバパイィキシ�
 const charArray = chars.split('');
 
 const fontSize = 14;
-const columns = canvas.width / fontSize;
+let columns = canvas.width / fontSize;
 
 const drops = [];
 for (let i = 0; i < columns; i++) {
@@ -36,14 +36,54 @@ function draw() {
     }
 }
 
-matrixInterval = setInterval(draw, 70);
+// Mobile detection
+function isMobile() {
+    return window.innerWidth <= 768;
+}
 
+// Initialize matrix with mobile optimization
+function initializeMatrix() {
+    if (isMobile()) {
+        // Reduce density on mobile for better performance
+        columns = Math.floor(canvas.width / (fontSize * 2));
+        drops.length = columns;
+        for (let i = 0; i < columns; i++) {
+            drops[i] = Math.random() * -100;
+        }
+        matrixInterval = setInterval(draw, 100); // Slower refresh on mobile
+    } else {
+        matrixInterval = setInterval(draw, 70);
+    }
+}
+
+initializeMatrix();
+
+// Handle window resize
 window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+    
+    // Reinitialize matrix on resize
+    clearInterval(matrixInterval);
+    columns = canvas.width / fontSize;
+    drops.length = columns;
+    for (let i = 0; i < columns; i++) {
+        drops[i] = Math.random() * -100;
+    }
+    initializeMatrix();
 });
 
-// Navigation
+// Mobile viewport height fix
+function setVH() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+setVH();
+window.addEventListener('resize', setVH);
+window.addEventListener('orientationchange', setVH);
+
+// Navigation functions
 function enterMatrix() {
     document.getElementById('intro').style.display = 'none';
     document.getElementById('about').classList.add('active');
@@ -51,51 +91,91 @@ function enterMatrix() {
 }
 
 function showSection(section) {
+    // Remove active class from all sections
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    
+    // Add active class to selected section
     document.getElementById(section).classList.add('active');
+    
+    // Auto-close nav on mobile after selection
+    if (isMobile()) {
+        document.getElementById('nav').classList.remove('show');
+        window.scrollTo(0, 0);
+    }
+}
+
+function toggleNav() {
+    document.getElementById('nav').classList.toggle('show');
 }
 
 function downloadCV() {
+    // Opens CV in new tab
     window.open("Resume_HuzaifaBhatti_CS.pdf", "_blank");
 }
 
-// Create cursor glow
-const cursorGlow = document.createElement('div');
-cursorGlow.className = 'cursor-glow';
-document.body.appendChild(cursorGlow);
+// Mouse effects (desktop only)
+let cursorGlow = null;
 
-// Update cursor glow position
-document.addEventListener('mousemove', function(e) {
-    cursorGlow.style.left = (e.clientX - 10) + 'px';
-    cursorGlow.style.top = (e.clientY - 10) + 'px';
-});
+if (!isMobile()) {
+    // Create cursor glow
+    cursorGlow = document.createElement('div');
+    cursorGlow.className = 'cursor-glow';
+    document.body.appendChild(cursorGlow);
 
-// Mouse trail with Matrix characters
-let trailTimeout;
-document.addEventListener('mousemove', function(e) {
-    clearTimeout(trailTimeout);
-    trailTimeout = setTimeout(() => {
-        const trail = document.createElement('div');
-        trail.className = 'trail';
-        trail.textContent = charArray[Math.floor(Math.random() * charArray.length)];
-        trail.style.left = e.clientX + 'px';
-        trail.style.top = e.clientY + 'px';
-        document.body.appendChild(trail);
+    // Update cursor glow position
+    document.addEventListener('mousemove', function(e) {
+        if (cursorGlow) {
+            cursorGlow.style.left = (e.clientX - 10) + 'px';
+            cursorGlow.style.top = (e.clientY - 10) + 'px';
+        }
+    });
+
+    // Mouse trail with Matrix characters
+    let trailTimeout;
+    document.addEventListener('mousemove', function(e) {
+        clearTimeout(trailTimeout);
+        trailTimeout = setTimeout(() => {
+            const trail = document.createElement('div');
+            trail.className = 'trail';
+            trail.textContent = charArray[Math.floor(Math.random() * charArray.length)];
+            trail.style.left = e.clientX + 'px';
+            trail.style.top = e.clientY + 'px';
+            document.body.appendChild(trail);
+            
+            setTimeout(() => trail.remove(), 1000);
+        }, 10);
+    });
+
+    // Click effects (desktop)
+    document.addEventListener('click', function(e) {
+        // Create ripple
+        // const ripple = document.createElement('div');
+        // ripple.className = 'ripple';
+        // ripple.style.left = (e.clientX - 150) + 'px';
+        // ripple.style.top = (e.clientY - 150) + 'px';
+        // document.body.appendChild(ripple);
         
-        setTimeout(() => trail.remove(), 1000);
-    }, 5);
-});
-
-// Click ripple effect
-document.addEventListener('click', function(e) {
-    // Create particle burst
-    for (let i = 0; i < 12; i++) {
-        createParticle(e.clientX, e.clientY, i);
-    }
-});
+        setTimeout(() => ripple.remove(), 1000);
+        
+        // Create particle burst
+        for (let i = 0; i < 12; i++) {
+            createParticle(e.clientX, e.clientY, i);
+        }
+    });
+} else {
+    // Mobile: Simple ripple only
+    document.addEventListener('click', function(e) {
+        for (let i = 0; i < 12; i++) {
+            createParticle(e.clientX, e.clientY, i);
+        }
+    });
+}
 
 // Particle burst function
 function createParticle(x, y, index) {
+    // Skip particles on mobile for performance
+    if (isMobile()) return;
+    
     const particle = document.createElement('div');
     particle.className = 'particle';
     particle.style.left = x + 'px';
@@ -135,6 +215,16 @@ document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
     alert('UNAUTHORIZED ACCESS ATTEMPT DETECTED');
 });
+
+// Prevent double-tap zoom on iOS
+let lastTouchEnd = 0;
+document.addEventListener('touchend', function(e) {
+    const now = Date.now();
+    if (now - lastTouchEnd <= 300) {
+        e.preventDefault();
+    }
+    lastTouchEnd = now;
+}, false);
 
 // Blue Pill function - Matrix glitch and white screen
 function activateBluePill() {
@@ -213,6 +303,7 @@ function restartReality() {
     }, 4200);
 }
 
+// Handle page load with reboot effect
 window.addEventListener("load", () => {
     if (sessionStorage.getItem("matrixReboot")) {
         sessionStorage.removeItem("matrixReboot");
@@ -250,104 +341,58 @@ function glitchReassemble() {
     }, 600);
 }
 
-// Mobile optimization
-function isMobile() {
-    return window.innerWidth <= 768;
-}
-
-// Optimize matrix rain for mobile
-if (isMobile()) {
-    // Reduce matrix density on mobile
-    const mobileColumns = Math.floor(canvas.width / (fontSize * 2));
-    drops.length = mobileColumns;
-    for (let i = 0; i < mobileColumns; i++) {
-        drops[i] = Math.random() * -100;
-    }
-    
-    // Slower refresh rate on mobile for better performance
-    clearInterval(matrixInterval);
-    matrixInterval = setInterval(draw, 100); // Slower than 70ms
-}
-
-// Disable mouse effects on small mobile devices
-if (window.innerWidth <= 480) {
-    document.removeEventListener('mousemove', handleMouseMove);
-    document.removeEventListener('mousemove', handleMouseTrail);
-    if (cursorGlow) {
-        cursorGlow.remove();
-    }
-}
-
-// Touch event handling for mobile
-let touchStartX = 0;
-let touchStartY = 0;
-
-document.addEventListener('touchstart', function(e) {
-    touchStartX = e.touches[0].clientX;
-    touchStartY = e.touches[0].clientY;
-}, { passive: true });
-
-document.addEventListener('touchend', function(e) {
-    const touchEndX = e.changedTouches[0].clientX;
-    const touchEndY = e.changedTouches[0].clientY;
-    
-    // Swipe detection for mobile navigation
-    const diffX = touchStartX - touchEndX;
-    const diffY = touchStartY - touchEndY;
-    
-    // Swipe left/right to toggle navigation
-    if (Math.abs(diffX) > 100 && Math.abs(diffY) < 50) {
-        const nav = document.getElementById('nav');
-        if (nav.classList.contains('show')) {
-            // Swiping left closes nav
-            if (diffX > 0) {
-                // Could add close functionality here if needed
-            }
-        }
-    }
-}, { passive: true });
-
-// Prevent zoom on double tap (iOS)
-let lastTouchEnd = 0;
-document.addEventListener('touchend', function(e) {
-    const now = Date.now();
-    if (now - lastTouchEnd <= 300) {
-        e.preventDefault();
-    }
-    lastTouchEnd = now;
-}, false);
-
 // Orientation change handler
 window.addEventListener('orientationchange', function() {
     setTimeout(function() {
+        setVH();
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-        location.reload(); // Reload to reset animations
+        
+        // Reinitialize matrix
+        clearInterval(matrixInterval);
+        columns = canvas.width / fontSize;
+        drops.length = columns;
+        for (let i = 0; i < columns; i++) {
+            drops[i] = Math.random() * -100;
+        }
+        initializeMatrix();
     }, 100);
 });
 
-// Mobile menu toggle improvement
+// Close nav when clicking outside on mobile
+document.addEventListener('click', function(e) {
+    if (isMobile()) {
+        const nav = document.getElementById('nav');
+        const navToggle = document.getElementById('nav-toggle');
+        
+        if (nav.classList.contains('show') && 
+            !nav.contains(e.target) && 
+            !navToggle.contains(e.target)) {
+            nav.classList.remove('show');
+        }
+    }
+});
+
+// Cleanup on page unload
+window.addEventListener('beforeunload', function() {
+    clearInterval(matrixInterval);
+});
+
+// Performance logging (optional - remove in production)
 if (isMobile()) {
-    const navButtons = document.querySelectorAll('.nav-terminal button');
-    navButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            // Auto-hide nav after selection on mobile
-            setTimeout(() => {
-                if (window.innerWidth <= 768) {
-                    const nav = document.getElementById('nav');
-                    // nav.classList.remove('show'); // Uncomment if you want auto-hide
-                }
-            }, 300);
-        });
+    console.log('Mobile mode: Performance optimizations active');
+}
+
+// Smooth scroll for better UX
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
     });
-}
-
-// Viewport height fix for mobile browsers (fixes 100vh issue)
-function setVH() {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-}
-
-setVH();
-window.addEventListener('resize', setVH);
-window.addEventListener('orientationchange', setVH);
+});
