@@ -214,7 +214,6 @@ function handleSend(){
   status.style.display = 'block';
 }
 
-<script>
 emailjs.init("n15XG_0iDgrTYL3Xi");
 
 document
@@ -237,4 +236,3 @@ document
       alert("Failed to send message.");
     });
 });
-</script>
