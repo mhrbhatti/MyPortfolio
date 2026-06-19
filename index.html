@@ -408,7 +408,7 @@
       <div class="s-eyebrow">Contact</div>
       <h2 class="s-title">Let's build something <em>worth shipping</em></h2>
     </div>
-
+ 
     <div class="contact-grid">
       <div class="reveal-l">
         <div class="contact-info-title">Open to internships — <em>Android, Web, or Full-Stack.</em></div>
@@ -436,27 +436,27 @@
           </a>
         </div>
       </div>
-
-      <div class="contact-form reveal">
+ 
+      <form class="contact-form reveal" id="contact-form">
         <div class="form-group">
           <label for="fname">Name</label>
-          <input class="form-input" id="fname" type="text" placeholder="Your name">
+          <input class="form-input" id="fname" name="from_name" type="text" placeholder="Your name" required>
         </div>
         <div class="form-group">
           <label for="femail">Email</label>
-          <input class="form-input" id="femail" type="email" placeholder="your@email.com">
+          <input class="form-input" id="femail" name="from_email" type="email" placeholder="your@email.com" required>
         </div>
         <div class="form-group">
           <label for="fsubject">Subject</label>
-          <input class="form-input" id="fsubject" type="text" placeholder="Internship opportunity...">
+          <input class="form-input" id="fsubject" name="subject" type="text" placeholder="Internship opportunity..." required>
         </div>
         <div class="form-group">
           <label for="fmsg">Message</label>
-          <textarea class="form-input" id="fmsg" placeholder="Tell me a bit about what you're building..."></textarea>
+          <textarea class="form-input" id="fmsg" name="message" placeholder="Tell me a bit about what you're building..." required></textarea>
         </div>
-        <button class="form-submit">Send message<i data-lucide="send"></i></button>
-        <div id="form-status">Message ready — opening your email client...</div>
-      </div>
+        <button class="form-submit" type="submit">Send message<i data-lucide="send"></i></button>
+        <div id="form-status"></div>
+      </form>
     </div>
   </div>
 </section>
