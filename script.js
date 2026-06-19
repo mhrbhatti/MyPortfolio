@@ -224,7 +224,7 @@ document
 
     emailjs.sendForm(
       "service_u48w7da",
-      "template_3zxr3r7",
+      "template_l3p27pm",
       this
     )
     .then(() => {
