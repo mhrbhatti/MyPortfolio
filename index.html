@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Fraunces:ital,wght@1,500;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
 
@@ -453,7 +454,7 @@
           <label for="fmsg">Message</label>
           <textarea class="form-input" id="fmsg" placeholder="Tell me a bit about what you're building..."></textarea>
         </div>
-        <button class="form-submit" onclick="handleSend()">Send message<i data-lucide="send"></i></button>
+        <button class="form-submit">Send message<i data-lucide="send"></i></button>
         <div id="form-status">Message ready — opening your email client...</div>
       </div>
     </div>
