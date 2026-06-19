@@ -1,1089 +1,479 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>M. Huzaifa Bhatti | Web Developer, Android Developer & Computer Science Student</title>
-<meta name="description" content="Computer Science student at UCP Lahore. Android developer, web developer, and MERN stack learner.">
+<title>M. Huzaifa Bhatti — CS Student & Developer</title>
+<meta name="description" content="M. Huzaifa Bhatti — Computer Science student at UCP Lahore. Android, Web, and MERN stack developer. Open to internships.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --bg:        #08100b;
-  --bg2:       #0d1a11;
-  --card:      #101f15;
-  --card2:     #162419;
-  --rule:      rgba(201,168,76,0.18);
-  --rule2:     rgba(201,168,76,0.08);
-  --gold:      #c9a84c;
-  --gold-dim:  rgba(201,168,76,0.10);
-  --gold-mid:  rgba(201,168,76,0.25);
-  --cream:     #f0e8d0;
-  --cream2:    #b8b09a;
-  --cream3:    #6e6a5e;
-  --display:   'Playfair Display', Georgia, serif;
-  --body:      'DM Sans', system-ui, sans-serif;
-  --mono:      'DM Mono', 'Courier New', monospace;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  background: var(--bg);
-  color: var(--cream);
-  font-family: var(--body);
-  font-size: 16px;
-  line-height: 1.75;
-  overflow-x: hidden;
-}
-
-/* ─── NAV ─────────────────────────────── */
-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  background: rgba(8,16,11,0.92);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--rule);
-  height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 3rem;
-}
-
-.nav-logo {
-  font-family: var(--mono);
-  font-size: 13px;
-  color: var(--gold);
-  text-decoration: none;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.nav-links { display: flex; gap: 2.5rem; list-style: none; }
-.nav-links a {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--cream3);
-  text-decoration: none;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  transition: color 0.2s;
-}
-.nav-links a:hover { color: var(--gold); }
-
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 4px;
-}
-.hamburger span {
-  display: block; width: 20px; height: 1px;
-  background: var(--cream2); transition: all 0.3s;
-}
-
-.mobile-menu {
-  display: none;
-  position: fixed;
-  top: 56px; left: 0; right: 0;
-  background: var(--bg2);
-  border-bottom: 1px solid var(--rule);
-  padding: 2rem 3rem;
-  z-index: 99;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-.mobile-menu.open { display: flex; }
-.mobile-menu a {
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--cream2);
-  text-decoration: none;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-/* ─── LAYOUT ──────────────────────────── */
-.container { max-width: 960px; margin: 0 auto; padding: 0 3rem; }
-section { padding: 7rem 0; }
-
-/* ─── HERO ────────────────────────────── */
-#hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding-top: 56px;
-  overflow: hidden;
-  position: relative;
-  border-bottom: 1px solid var(--rule);
-}
-
-.hero-bg-name {
-  position: absolute;
-  top: 50%;
-  left: -0.04em;
-  transform: translateY(-54%);
-  font-family: var(--display);
-  font-size: clamp(120px, 20vw, 240px);
-  font-weight: 900;
-  font-style: italic;
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(201,168,76,0.12);
-  line-height: 0.9;
-  white-space: nowrap;
-  pointer-events: none;
-  user-select: none;
-  letter-spacing: -0.02em;
-}
-
-.hero-inner {
-  position: relative;
-  z-index: 2;
-  padding: 4rem 3rem 5rem;
-  max-width: 960px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.hero-label {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--gold);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  margin-bottom: 2rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-.hero-label::before {
-  content: '';
-  display: block;
-  width: 40px;
-  height: 1px;
-  background: var(--gold);
-}
-
-.hero-name {
-  font-family: var(--display);
-  font-size: clamp(2.8rem, 7vw, 5rem);
-  font-weight: 700;
-  line-height: 1.0;
-  color: var(--cream);
-  margin-bottom: 1.5rem;
-  letter-spacing: -0.01em;
-}
-.hero-name em {
-  font-style: italic;
-  color: var(--gold);
-}
-
-.hero-tagline {
-  font-family: var(--mono);
-  font-size: 14px;
-  color: var(--cream2);
-  margin-bottom: 2rem;
-  min-height: 1.6em;
-}
-.cursor {
-  display: inline-block;
-  width: 1px;
-  height: 1.1em;
-  background: var(--gold);
-  vertical-align: text-bottom;
-  margin-left: 1px;
-  animation: blink 1s step-end infinite;
-}
-@keyframes blink { 50% { opacity: 0; } }
-
-.hero-desc {
-  font-size: 1rem;
-  color: var(--cream2);
-  max-width: 520px;
-  line-height: 1.85;
-  margin-bottom: 3rem;
-  font-weight: 300;
-}
-
-.hero-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2rem;
-  border-top: 1px solid var(--rule);
-  padding-top: 2rem;
-}
-
-.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.7rem 1.6rem;
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  text-decoration: none;
-  border-radius: 2px;
-  cursor: pointer;
-  transition: all 0.2s;
-  border: none;
-}
-.btn-primary {
-  background: var(--gold);
-  color: var(--bg);
-  font-weight: 500;
-}
-.btn-primary:hover { background: #dbbf64; transform: translateY(-1px); }
-.btn-outline {
-  background: transparent;
-  color: var(--gold);
-  border: 1px solid var(--rule);
-}
-.btn-outline:hover { border-color: var(--gold-mid); background: var(--gold-dim); }
-
-.hero-socials {
-  display: flex;
-  gap: 1.75rem;
-  flex-wrap: wrap;
-}
-.social-link {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--cream3);
-  text-decoration: none;
-  letter-spacing: 0.08em;
-  transition: color 0.2s;
-}
-.social-link:hover { color: var(--gold); }
-
-/* ─── SECTION HEADER ──────────────────── */
-.sec-head {
-  display: flex;
-  align-items: baseline;
-  gap: 1.5rem;
-  margin-bottom: 3.5rem;
-  border-bottom: 1px solid var(--rule);
-  padding-bottom: 1.25rem;
-}
-.sec-label {
-  font-family: var(--mono);
-  font-size: 10px;
-  color: var(--gold);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  flex-shrink: 0;
-}
-h2 {
-  font-family: var(--display);
-  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
-  font-weight: 700;
-  color: var(--cream);
-  letter-spacing: -0.01em;
-}
-
-/* ─── SKILLS ──────────────────────────── */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  border: 1px solid var(--rule2);
-}
-
-.skill-card {
-  padding: 2rem;
-  border-right: 1px solid var(--rule2);
-  border-bottom: 1px solid var(--rule2);
-  transition: background 0.2s;
-}
-.skill-card:hover { background: var(--card); }
-.skill-card:nth-child(3n) { border-right: none; }
-.skill-card:nth-child(4), .skill-card:nth-child(5), .skill-card:nth-child(6) { border-bottom: none; }
-
-.skill-head {
-  font-family: var(--mono);
-  font-size: 10px;
-  color: var(--gold);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-
-.skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.tag {
-  font-family: var(--mono);
-  font-size: 11px;
-  padding: 3px 9px;
-  border-radius: 1px;
-  background: var(--gold-dim);
-  color: var(--cream2);
-  border: 1px solid var(--rule);
-}
-.tag-learning {
-  font-family: var(--mono);
-  font-size: 9px;
-  color: var(--gold);
-  background: rgba(201,168,76,0.08);
-  border: 1px solid rgba(201,168,76,0.2);
-  padding: 1px 6px;
-  border-radius: 1px;
-  margin-left: 3px;
-  vertical-align: middle;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-/* ─── EXPERIENCE ──────────────────────── */
-.exp-list { display: flex; flex-direction: column; }
-
-.exp-item {
-  display: grid;
-  grid-template-columns: 180px 1fr;
-  gap: 3rem;
-  padding: 2.5rem 0;
-  border-bottom: 1px solid var(--rule2);
-  transition: background 0.2s;
-}
-.exp-item:first-child { border-top: 1px solid var(--rule2); }
-.exp-item:hover { background: var(--card); }
-
-.exp-meta { padding-top: 0.15rem; }
-.exp-period {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--gold);
-  letter-spacing: 0.08em;
-  margin-bottom: 0.35rem;
-}
-.exp-company {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--cream3);
-  line-height: 1.5;
-}
-
-.exp-title {
-  font-family: var(--display);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--cream);
-  margin-bottom: 0.85rem;
-  letter-spacing: -0.01em;
-}
-
-.exp-bullets {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-.exp-bullets li {
-  font-size: 0.9rem;
-  color: var(--cream2);
-  padding-left: 1.1rem;
-  position: relative;
-  font-weight: 300;
-  line-height: 1.7;
-}
-.exp-bullets li::before {
-  content: '–';
-  position: absolute;
-  left: 0;
-  color: var(--gold);
-}
-
-/* ─── PROJECTS ────────────────────────── */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0;
-  border: 1px solid var(--rule2);
-}
-
-.project-card {
-  padding: 2rem 2rem 1.75rem;
-  border-right: 1px solid var(--rule2);
-  border-bottom: 1px solid var(--rule2);
-  text-decoration: none;
-  color: inherit;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  transition: background 0.2s;
-}
-.project-card:hover { background: var(--card); }
-.project-card:nth-child(2n) { border-right: none; }
-.project-card:nth-last-child(-n+2) { border-bottom: none; }
-/* Odd number fix */
-.project-card:last-child:nth-child(odd) { border-right: none; }
-
-.proj-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-.proj-icon { font-size: 1.4rem; }
-.proj-arrow {
-  font-family: var(--mono);
-  font-size: 14px;
-  color: var(--cream3);
-  transition: color 0.2s;
-}
-.project-card:hover .proj-arrow { color: var(--gold); }
-.proj-badge {
-  font-family: var(--mono);
-  font-size: 9px;
-  color: var(--gold);
-  background: var(--gold-dim);
-  border: 1px solid rgba(201,168,76,0.2);
-  padding: 2px 7px;
-  border-radius: 1px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.proj-name {
-  font-family: var(--display);
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--cream);
-  letter-spacing: -0.01em;
-}
-
-.proj-desc {
-  font-size: 0.875rem;
-  color: var(--cream2);
-  line-height: 1.65;
-  font-weight: 300;
-  flex: 1;
-}
-
-.proj-stack { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
-.stack-tag {
-  font-family: var(--mono);
-  font-size: 10px;
-  padding: 2px 7px;
-  border-radius: 1px;
-  background: transparent;
-  color: var(--cream3);
-  border: 1px solid var(--rule2);
-}
-
-/* ─── EDUCATION ───────────────────────── */
-.edu-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  border: 1px solid var(--rule2);
-  margin-bottom: 3rem;
-}
-
-.edu-card {
-  padding: 2rem 2.5rem;
-  border-right: 1px solid var(--rule2);
-  transition: background 0.2s;
-}
-.edu-card:last-child { border-right: none; }
-.edu-card:hover { background: var(--card); }
-
-.edu-inst {
-  font-family: var(--display);
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--cream);
-  margin-bottom: 0.5rem;
-  letter-spacing: -0.01em;
-}
-.edu-degree {
-  font-size: 0.875rem;
-  color: var(--cream2);
-  font-weight: 300;
-  line-height: 1.6;
-  margin-bottom: 0.75rem;
-}
-.edu-period {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--gold);
-  letter-spacing: 0.06em;
-}
-
-.cert-list {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid var(--rule2);
-}
-.cert-item {
-  display: flex;
-  align-items: baseline;
-  gap: 1.25rem;
-  padding: 1.1rem 2rem;
-  border-bottom: 1px solid var(--rule2);
-  transition: background 0.2s;
-}
-.cert-item:last-child { border-bottom: none; }
-.cert-item:hover { background: var(--card); }
-.cert-dash {
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--gold);
-  flex-shrink: 0;
-}
-.cert-name {
-  font-size: 0.9rem;
-  color: var(--cream2);
-  font-weight: 300;
-  line-height: 1.5;
-}
-.cert-name strong {
-  color: var(--cream);
-  font-weight: 500;
-  font-style: normal;
-}
-
-/* ─── CONTACT ─────────────────────────── */
-#contact { border-top: 1px solid var(--rule); }
-
-.contact-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
-  align-items: start;
-}
-
-.contact-left {}
-.contact-kicker {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--gold);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  margin-bottom: 1.25rem;
-}
-.contact-heading {
-  font-family: var(--display);
-  font-size: clamp(2rem, 4vw, 2.8rem);
-  font-weight: 700;
-  color: var(--cream);
-  line-height: 1.1;
-  margin-bottom: 1.25rem;
-  letter-spacing: -0.02em;
-}
-.contact-desc {
-  font-size: 0.95rem;
-  color: var(--cream2);
-  font-weight: 300;
-  line-height: 1.8;
-  margin-bottom: 2rem;
-}
-
-.contact-right {
-  padding-top: 0.5rem;
-}
-.contact-links {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  border: 1px solid var(--rule2);
-}
-.contact-link {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.1rem 1.5rem;
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--cream2);
-  text-decoration: none;
-  letter-spacing: 0.06em;
-  border-bottom: 1px solid var(--rule2);
-  transition: background 0.2s, color 0.2s;
-}
-.contact-link:last-child { border-bottom: none; }
-.contact-link:hover { background: var(--card); color: var(--gold); }
-.contact-link-arrow { color: var(--cream3); font-size: 14px; transition: color 0.2s; }
-.contact-link:hover .contact-link-arrow { color: var(--gold); }
-
-footer {
-  text-align: center;
-  padding: 2rem 3rem;
-  font-family: var(--mono);
-  font-size: 10px;
-  color: var(--cream3);
-  border-top: 1px solid var(--rule2);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-/* ─── AVAILABLE BADGE ─────────────────── */
-.avail-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--mono);
-  font-size: 10px;
-  color: #5ec47a;
-  background: rgba(94,196,122,0.08);
-  border: 1px solid rgba(94,196,122,0.2);
-  border-radius: 1px;
-  padding: 4px 12px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: 2rem;
-}
-.avail-dot {
-  width: 5px; height: 5px;
-  border-radius: 50%;
-  background: #5ec47a;
-  animation: pulse 2s ease-in-out infinite;
-}
-@keyframes pulse {
-  0%,100% { opacity:1; transform:scale(1); }
-  50% { opacity:0.4; transform:scale(0.7); }
-}
-
-/* ─── RESPONSIVE ──────────────────────── */
-@media (max-width: 760px) {
-  nav { padding: 0 1.5rem; }
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
-  .container { padding: 0 1.5rem; }
-  section { padding: 4.5rem 0; }
-  .hero-inner { padding: 3rem 1.5rem 4rem; }
-
-  .skills-grid { grid-template-columns: 1fr; }
-  .skill-card:nth-child(3n) { border-right: 1px solid var(--rule2); }
-  .skill-card:nth-child(n) { border-bottom: 1px solid var(--rule2); }
-  .skill-card:last-child { border-bottom: none; }
-
-  .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
-
-  .projects-grid { grid-template-columns: 1fr; }
-  .project-card:nth-child(n) { border-right: none; }
-  .project-card:last-child { border-bottom: none; }
-
-  .edu-grid { grid-template-columns: 1fr; }
-  .edu-card { border-right: none; border-bottom: 1px solid var(--rule2); }
-  .edu-card:last-child { border-bottom: none; }
-
-  .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Fraunces:ital,wght@1,500;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
 </head>
 <body>
 
-<nav>
-  <a href="#hero" class="nav-logo">mhrbhatti</a>
-  <ul class="nav-links">
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <button class="hamburger" id="menuBtn" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#skills" onclick="closeMobile()">Skills</a>
-  <a href="#experience" onclick="closeMobile()">Experience</a>
-  <a href="#projects" onclick="closeMobile()">Projects</a>
-  <a href="#education" onclick="closeMobile()">Education</a>
-  <a href="#contact" onclick="closeMobile()">Contact</a>
+<!-- PROGRESS RAIL -->
+<div class="rail" aria-hidden="true">
+  <div class="rail-track"></div>
+  <div class="rail-fill" id="railFill"></div>
+  <div class="rail-dot" data-section="home" style="top:8%"></div>
+  <div class="rail-dot" data-section="about" style="top:21%"></div>
+  <div class="rail-dot" data-section="skills" style="top:36%"></div>
+  <div class="rail-dot" data-section="experience" style="top:51%"></div>
+  <div class="rail-dot" data-section="projects" style="top:67%"></div>
+  <div class="rail-dot" data-section="education" style="top:82%"></div>
+  <div class="rail-dot" data-section="contact" style="top:95%"></div>
 </div>
 
-<!-- ─── HERO ─────────────────────────── -->
-<section id="hero">
-  <div class="hero-bg-name">Bhatti</div>
-  <div class="hero-inner">
-    <div class="avail-badge">
-      <span class="avail-dot"></span>
-      Open to internships
-    </div>
-    <div class="hero-label">Based in Lahore, Pakistan</div>
-    <h1 class="hero-name">M. Huzaifa<br><em>Bhatti</em></h1>
-    <div class="hero-tagline">
-      <span id="typed-text"></span><span class="cursor"></span>
-    </div>
-    <p class="hero-desc">
-      BSCS student at UCP, 6th semester. I build Android apps, web interfaces, and systems-level programs — things that work outside the classroom. Currently learning the MERN stack and looking for an internship where I can contribute from day one.
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="#home" class="nav-logo"><span class="dot"></span>Huzaifa Bhatti</a>
+  <div class="nav-center">
+    <a href="#home" class="nav-link" data-link="home">Home</a>
+    <a href="#about" class="nav-link" data-link="about">About</a>
+    <a href="#skills" class="nav-link" data-link="skills">Skills</a>
+    <a href="#experience" class="nav-link" data-link="experience">Experience</a>
+    <a href="#projects" class="nav-link" data-link="projects">Projects</a>
+    <a href="#contact" class="nav-link" data-link="contact">Contact</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <span class="knob"><i data-lucide="moon"></i></span>
+    </button>
+    <a href="#contact" class="nav-cta">Let's talk</a>
+    <button class="mob-toggle" id="mobToggle" aria-label="Menu"><i data-lucide="menu"></i></button>
+  </div>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="#home" data-link="home">Home</a>
+  <a href="#about" data-link="about">About</a>
+  <a href="#skills" data-link="skills">Skills</a>
+  <a href="#experience" data-link="experience">Experience</a>
+  <a href="#projects" data-link="projects">Projects</a>
+  <a href="#education" data-link="education">Education</a>
+  <a href="#contact" data-link="contact">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg-grad"></div>
+  <div class="wrap">
+    <div class="hero-eyebrow"><span class="pulse-dot"></span>Available for internships</div>
+    <h1 class="hero-h">
+      <div class="line"><span>Computer science student</span></div>
+      <div class="line"><span>who actually <span class="accent-word">ships</span> things.</span></div>
+    </h1>
+    <p class="hero-sub">
+      I'm <strong>M. Huzaifa Bhatti</strong>, a 6th-semester BSCS student at UCP, Lahore. I build Android apps, web interfaces, and full-stack systems — and I'm currently deep in the MERN stack.
     </p>
-    <div class="hero-row">
-      <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary">View Projects</a>
-        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary">View my work<i data-lucide="arrow-up-right" class="icon"></i></a>
+      <a href="#contact" class="btn btn-secondary">Get in touch<i data-lucide="mail" class="icon"></i></a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="hstat-num">8</div><div class="hstat-label">Projects built</div></div>
+      <div><div class="hstat-num">3</div><div class="hstat-label">Work experiences</div></div>
+      <div><div class="hstat-num">6th</div><div class="hstat-label">Semester, BSCS</div></div>
+      <div><div class="hstat-num">∞</div><div class="hstat-label">Things to learn</div></div>
+    </div>
+  </div>
+  <div class="scroll-cue">Scroll<div class="line-anim"></div></div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <div class="s-eyebrow">About</div>
+      <h2 class="s-title">Building things that <em>actually run</em></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p><span class="drop-cap">I</span>'m a Computer Science student at the University of Central Punjab, currently in my 6th semester. Outside the classroom, I build Android apps, design and write full agency websites, and write systems-level programs in C++ — not because I have to, but because I like making things that work.</p>
+        <p>I've shipped a <strong>production agency website</strong> from scratch — design, copy, and full on-page SEO — along with several <strong>functional Android apps</strong> using Java and Firebase. Right now I'm expanding into the <strong>MERN stack</strong> through university coursework, building real projects like Budgetly and TestCraft along the way.</p>
+        <p>I'm looking for an internship where I can contribute from day one — somewhere that values people who figure things out rather than wait to be told.</p>
       </div>
-      <div class="hero-socials">
-        <a href="https://linkedin.com/in/mhrbhatti" target="_blank" class="social-link">LinkedIn</a>
-        <a href="https://github.com/mhrbhatti" target="_blank" class="social-link">GitHub</a>
-        <a href="https://mhrbhatti.netlify.app" target="_blank" class="social-link">Portfolio</a>
-        <a href="mailto:bhattihuzaifa3@gmail.com" class="social-link">Email</a>
+      <div class="about-card-list reveal">
+        <div class="about-row">
+          <div class="ic"><i data-lucide="map-pin"></i></div>
+          <div class="about-row-text"><div class="about-row-label">Location</div><div class="about-row-val">Lahore, Pakistan</div></div>
+        </div>
+        <div class="about-row">
+          <div class="ic"><i data-lucide="graduation-cap"></i></div>
+          <div class="about-row-text"><div class="about-row-label">Education</div><div class="about-row-val">BSCS, UCP — 6th Semester</div></div>
+        </div>
+        <div class="about-row">
+          <div class="ic"><i data-lucide="code-2"></i></div>
+          <div class="about-row-text"><div class="about-row-label">Focus areas</div><div class="about-row-val">Android · Web · MERN Stack</div></div>
+        </div>
+        <div class="about-row">
+          <div class="ic"><i data-lucide="zap"></i></div>
+          <div class="about-row-text"><div class="about-row-label">Status</div><div class="about-row-val accent">Open to internships</div></div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── SKILLS ───────────────────────── -->
+<!-- SKILLS -->
 <section id="skills">
-  <div class="container">
-    <div class="sec-head">
-      <span class="sec-label">Skills</span>
-      <h2>What I work with</h2>
+  <div class="wrap">
+    <div class="s-head reveal">
+      <div class="s-eyebrow">Skills</div>
+      <h2 class="s-title">A toolkit built by <em>doing</em>, not just studying</h2>
+      <p class="s-desc">Every skill below has shipped in a real project — there's nothing here I've only read about.</p>
     </div>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <div class="skill-head">Languages</div>
-        <div class="skill-tags">
-          <span class="tag">C</span><span class="tag">C++</span>
-          <span class="tag">Java</span><span class="tag">JavaScript</span>
-          <span class="tag">SQL</span><span class="tag">HTML5</span>
-          <span class="tag">CSS3</span><span class="tag">XML</span>
-        </div>
+
+    <div class="skill-tabs reveal">
+      <button class="skill-tab active" data-tab="android">Android</button>
+      <button class="skill-tab" data-tab="web">Web & MERN</button>
+      <button class="skill-tab" data-tab="languages">Languages</button>
+      <button class="skill-tab" data-tab="cs">CS Concepts</button>
+      <button class="skill-tab" data-tab="tools">Tools</button>
+    </div>
+
+    <div class="skill-panels reveal">
+      <div class="skill-panel active" id="panel-android">
+        <div class="skill-chip"><div class="ic"><i data-lucide="smartphone"></i></div><div class="skill-chip-name">Android Studio</div></div>
+        <div class="skill-chip"><div class="ic"><i data-lucide="coffee"></i></div><div class="skill-chip-name">Java</div></div>
+        <div class="skill-chip"><div class="ic"><i data-lucide="database"></i></div><div class="skill-chip-name">SQLite</div></div>
+        <div class="skill-chip"><div class="ic"><i data-lucide="flame"></i></div><div class="skill-chip-name">Firebase Realtime DB</div></div>
+        <div class="skill-chip"><div class="ic"><i data-lucide="cloud"></i></div><div class="skill-chip-name">Firebase Storage</div></div>
+        <div class="skill-chip"><div class="ic"><i data-lucide="layout-grid"></i></div><div class="skill-chip-name">Material Design</div></div>
       </div>
-      <div class="skill-card">
-        <div class="skill-head">Android Dev</div>
-        <div class="skill-tags">
-          <span class="tag">Android Studio</span>
-          <span class="tag">Java</span>
-          <span class="tag">SQLite</span>
-          <span class="tag">Firebase DB</span>
-          <span class="tag">Firebase Storage</span>
-          <span class="tag">Material Design</span>
-        </div>
+      <div class="skill-panel" id="panel-web">
+        <div class="skill-chip"><div class="ic"><i data-lucide="file-code"></i></div><div class="skill-chip-name">HTML5</div></div>
+        <div class="skill-chip"><div class="ic"><i data-lucide="palette"></i></div><div class="skill-chip-name">CSS3</div></div>
+        <div class="skill-chip"><div class="ic"><i data-lucide="braces"></i></div><div class="skill-chip-name">JavaScript</div></div>
+        <div class="skill-chip"><div class="ic"><i data-lucide="search"></i></div><div class="skill-chip-name">On-Page SEO</div></div>
+        <div class="skill-chip learning"><div class="ic"><i data-lucide="leaf"></i></div><div class="skill-chip-name">MongoDB</div><span class="skill-chip-learning-tag">LEARNING</span></div>
+        <div class="skill-chip learning"><div class="ic"><i data-lucide="server"></i></div><div class="skill-chip-name">Express.js</div><span class="skill-chip-learning-tag">LEARNING</span></div>
+        <div class="skill-chip learning"><div class="ic"><i data-lucide="atom"></i></div><div class="skill-chip-name">React</div><span class="skill-chip-learning-tag">LEARNING</span></div>
+        <div class="skill-chip learning"><div class="ic"><i data-lucide="hexagon"></i></div><div class="skill-chip-name">Node.js</div><span class="skill-chip-learning-tag">LEARNING</span></div>
       </div>
-      <div class="skill-card">
-        <div class="skill-head">Web Dev</div>
-        <div class="skill-tags">
-          <span class="tag">HTML5</span>
-          <span class="tag">CSS3</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">Responsive Design</span>
-          <span class="tag">On-Page SEO</span>
-          <span class="tag">MERN Stack <span class="tag-learning">learning</span></span>
-        </div>
+      <div class="skill-panel" id="panel-languages">
+        <div class="skill-chip"><div class="ic"><i data-lucide="terminal"></i></div><div class="skill-chip-name">C</div></div>
+        <div class="skill-chip"><div class="ic"><i data-lucide="terminal-square"></i></div><div class="skill-chip-name">C++</div></div>
+        <div class="skill-chip"><div class="ic"><i data-lucide="coffee"></i></div><div class="skill-chip-name">Java</div></div>
+        <div class="skill-chip"><div class="ic"><i data-lucide="braces"></i></div><div class="skill-chip-name">JavaScript</div></div>
+        <div class="skill-chip"><div class="ic"><i data-lucide="database"></i></div><div class="skill-chip-name">SQL</div></div>
+        <div class="skill-chip"><div class="ic"><i data-lucide="code"></i></div><div class="skill-chip-name">XML</div></div>
       </div>
-      <div class="skill-card">
-        <div class="skill-head">CS Concepts</div>
-        <div class="skill-tags">
-          <span class="tag">OOP</span>
-          <span class="tag">Data Structures</span>
-          <span class="tag">Algorithms</span>
-          <span class="tag">File Handling</span>
-          <span class="tag">DB Management</span>
-          <span class="tag">UI/UX Design</span>
-        </div>
+      <div class="skill-panel" id="panel-cs">
+        <div class="skill-chip"><div class="ic"><i data-lucide="box"></i></div><div class="skill-chip-name">OOP</div></div>
+        <div class="skill-chip"><div class="ic"><i data-lucide="git-branch"></i></div><div class="skill-chip-name">Data Structures</div></div>
+        <div class="skill-chip"><div class="ic"><i data-lucide="binary"></i></div><div class="skill-chip-name">Algorithms</div></div>
+        <div class="skill-chip"><div class="ic"><i data-lucide="folder-open"></i></div><div class="skill-chip-name">File Handling</div></div>
+        <div class="skill-chip"><div class="ic"><i data-lucide="database-zap"></i></div><div class="skill-chip-name">DB Management</div></div>
+        <div class="skill-chip"><div class="ic"><i data-lucide="layout-panel-left"></i></div><div class="skill-chip-name">UI/UX Design</div></div>
       </div>
-      <div class="skill-card">
-        <div class="skill-head">Tools</div>
-        <div class="skill-tags">
-          <span class="tag">Git</span>
-          <span class="tag">GitHub</span>
-          <span class="tag">Figma</span>
-          <span class="tag">VS Code</span>
-          <span class="tag">Android Studio</span>
-          <span class="tag">MS Office</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-head">Content &amp; SEO</div>
-        <div class="skill-tags">
-          <span class="tag">Blog Writing</span>
-          <span class="tag">Copywriting</span>
-          <span class="tag">Keyword Research</span>
-          <span class="tag">Meta Tags</span>
-          <span class="tag">Heading Hierarchy</span>
-          <span class="tag">Proofreading</span>
-        </div>
+      <div class="skill-panel" id="panel-tools">
+        <div class="skill-chip"><div class="ic"><i data-lucide="git-commit-horizontal"></i></div><div class="skill-chip-name">Git</div></div>
+        <div class="skill-chip"><div class="ic"><i data-lucide="github"></i></div><div class="skill-chip-name">GitHub</div></div>
+        <div class="skill-chip"><div class="ic"><i data-lucide="figma"></i></div><div class="skill-chip-name">Figma</div></div>
+        <div class="skill-chip"><div class="ic"><i data-lucide="code-2"></i></div><div class="skill-chip-name">VS Code</div></div>
+        <div class="skill-chip"><div class="ic"><i data-lucide="key-round"></i></div><div class="skill-chip-name">Keyword Research</div></div>
+        <div class="skill-chip"><div class="ic"><i data-lucide="pen-tool"></i></div><div class="skill-chip-name">Copywriting</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── EXPERIENCE ───────────────────── -->
+<!-- EXPERIENCE -->
 <section id="experience">
-  <div class="container">
-    <div class="sec-head">
-      <span class="sec-label">Experience</span>
-      <h2>Where I've worked</h2>
+  <div class="wrap">
+    <div class="s-head reveal">
+      <div class="s-eyebrow">Experience</div>
+      <h2 class="s-title">Where I've put the work <em>to use</em></h2>
     </div>
-    <div class="exp-list">
 
-      <div class="exp-item">
-        <div class="exp-meta">
-          <div class="exp-period">2025 – Present</div>
-          <div class="exp-company">bytesstack.net</div>
-        </div>
-        <div>
-          <div class="exp-title">Web Developer & SEO Specialist — BytesStack Software Solutions</div>
-          <ul class="exp-bullets">
-            <li>Designed and built the complete agency website from scratch — layout, UI/UX, and front-end implementation.</li>
-            <li>Wrote all website copy: homepage, service pages, and about section, with a conversion-focused brand tone.</li>
-            <li>Executed full on-page SEO: keyword research, meta titles and descriptions, heading hierarchy, image alt tags, and internal linking.</li>
-            <li>Optimised site structure for search engine discoverability, targeting high-intent keywords relevant to the agency's services.</li>
+    <div class="exp-timeline">
+      <div class="exp-item reveal-l">
+        <div class="exp-period">2025 — Present</div>
+        <div class="exp-card">
+          <div class="exp-card-head">
+            <div>
+              <div class="exp-role">Web Developer & SEO Specialist</div>
+              <div class="exp-company"><i data-lucide="link-2"></i>BytesStack Software Solutions · bytesstack.net</div>
+            </div>
+          </div>
+          <ul class="exp-desc">
+            <li>Designed and developed the complete agency website from scratch — layout, UI/UX, and front-end implementation.</li>
+            <li>Wrote all website copy: homepage, service pages, and about section with a conversion-focused brand tone.</li>
+            <li>Executed full on-page SEO: keyword research, meta titles, heading hierarchy, image alt tags, and internal linking.</li>
+            <li>Optimized site structure for discoverability, targeting high-intent keywords relevant to agency services.</li>
           </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">HTML</span><span class="exp-tag">CSS</span><span class="exp-tag">JavaScript</span>
+            <span class="exp-tag">SEO</span><span class="exp-tag">Figma</span><span class="exp-tag">Copywriting</span>
+          </div>
         </div>
       </div>
 
-      <div class="exp-item">
-        <div class="exp-meta">
-          <div class="exp-period">Jun – Aug 2024</div>
-          <div class="exp-company">Haachi Technologies</div>
-        </div>
-        <div>
-          <div class="exp-title">Content Writing Intern — Haachi Technologies</div>
-          <ul class="exp-bullets">
-            <li>Researched and wrote SEO-optimised blog posts and articles following editorial guidelines and brand tone.</li>
-            <li>Conducted keyword research to find high-intent search terms and incorporated them naturally into content.</li>
-            <li>Optimised articles for on-page SEO: heading structure, keyword density, and meta description writing.</li>
+      <div class="exp-item reveal-l">
+        <div class="exp-period">Jun — Aug 2024</div>
+        <div class="exp-card">
+          <div class="exp-card-head">
+            <div>
+              <div class="exp-role">Content Writing Intern</div>
+              <div class="exp-company"><i data-lucide="link-2"></i>Haachi Technologies</div>
+            </div>
+          </div>
+          <ul class="exp-desc">
+            <li>Researched and wrote SEO-optimized blog posts and articles following editorial guidelines and brand tone.</li>
+            <li>Conducted keyword research to identify high-intent search terms and incorporated them naturally into content.</li>
+            <li>Optimized articles for on-page SEO: heading structure, keyword density, and meta description writing.</li>
             <li>Collaborated with the team to meet deadlines and deliver publication-ready pieces.</li>
           </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">Blog Writing</span><span class="exp-tag">Keyword Research</span>
+            <span class="exp-tag">On-Page SEO</span><span class="exp-tag">Editorial</span>
+          </div>
         </div>
       </div>
 
-      <div class="exp-item">
-        <div class="exp-meta">
-          <div class="exp-period">2024</div>
-          <div class="exp-company">Jers Consultancy</div>
-        </div>
-        <div>
-          <div class="exp-title">IT Technician — Jers Consultancy (Pvt) Ltd</div>
-          <ul class="exp-bullets">
+      <div class="exp-item reveal-l">
+        <div class="exp-period">2024</div>
+        <div class="exp-card">
+          <div class="exp-card-head">
+            <div>
+              <div class="exp-role">IT Technician</div>
+              <div class="exp-company"><i data-lucide="link-2"></i>Jers Consultancy (Pvt) Ltd</div>
+            </div>
+          </div>
+          <ul class="exp-desc">
             <li>Installed, configured, and troubleshot hardware and software systems including desktops, printers, and LAN networks.</li>
             <li>Performed system updates, data backups, diagnostics, and OS reinstallations to maintain operational uptime.</li>
-            <li>Resolved technical issues efficiently, minimising downtime for office staff and management.</li>
+            <li>Resolved technical issues efficiently, minimizing downtime for office staff and management.</li>
           </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">Hardware</span><span class="exp-tag">Networking</span>
+            <span class="exp-tag">OS Install</span><span class="exp-tag">Diagnostics</span>
+          </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ─── PROJECTS ─────────────────────── -->
+<!-- PROJECTS -->
 <section id="projects">
-  <div class="container">
-    <div class="sec-head">
-      <span class="sec-label">Projects</span>
-      <h2>Things I've built</h2>
+  <div class="wrap">
+    <div class="s-head reveal">
+      <div class="s-eyebrow">Projects</div>
+      <h2 class="s-title">Eight builds, <em>start to finish</em></h2>
+      <p class="s-desc">From Android apps to a production agency website to my first MERN stack builds.</p>
     </div>
-    <div class="projects-grid">
 
-      <a href="https://bytesstack.net" target="_blank" class="project-card">
-        <div class="proj-top"><span class="proj-icon"></span><span class="proj-arrow">↗</span></div>
-        <div class="proj-name">BytesStack Agency Website</div>
-        <div class="proj-desc">Designed and built the complete agency website from scratch — layout, UI/UX, all copy — and implemented a full on-page SEO strategy targeting high-intent keywords.</div>
-        <div class="proj-stack">
-          <span class="stack-tag">HTML</span><span class="stack-tag">CSS</span>
-          <span class="stack-tag">JavaScript</span><span class="stack-tag">SEO</span>
+    <div class="proj-grid">
+      <div class="proj-card reveal">
+        <div class="proj-top">
+          <div class="proj-icon-wrap"><i data-lucide="instagram"></i></div>
+          <div class="proj-badges"><span class="proj-badge">Public</span></div>
         </div>
-      </a>
-
-      <a href="https://github.com/mhrbhatti" target="_blank" class="project-card">
-        <div class="proj-top"><span class="proj-icon"></span><span class="proj-arrow">↗</span></div>
-        <div class="proj-name">InstaClone — Social Media App</div>
+        <div class="proj-name">InstaClone</div>
         <div class="proj-desc">Feature-complete Instagram clone with user authentication, photo upload, real-time feed, and follow/unfollow system. Firebase backend with Material Design UI.</div>
-        <div class="proj-stack">
-          <span class="stack-tag">Java</span><span class="stack-tag">Android Studio</span>
-          <span class="stack-tag">Firebase DB</span><span class="stack-tag">Firebase Storage</span>
-        </div>
-      </a>
-
-       <a href="https://dazzling-cajeta-a463a5.netlify.app/" target="_blank" class="project-card">
-        <div class="proj-top"><span class="proj-icon"></span><span class="proj-arrow">↗</span></div>
-        <div class="proj-name">ConsoleBased Portfolio</div>
-        <div class="proj-desc">Designed and built the complete Portfolio website from scratch — layout, UI/UX, all copy — and implemented a full on-page SEO strategy targeting high-intent keywords.</div>
-        <div class="proj-stack">
-          <span class="stack-tag">HTML</span><span class="stack-tag">CSS</span>
-          <span class="stack-tag">JavaScript</span><span class="stack-tag">SEO</span>
-        </div>
-      </a>
-
-      <div class="project-card">
-        <div class="proj-top"><span class="proj-icon"></span></div>
-        <div class="proj-name">PakWheels Clone — Vehicle Marketplace</div>
-        <div class="proj-desc">Android vehicle listing app with browse, search/filter, and user authentication. SQLite for local data persistence with a clean Material Design interface.</div>
-        <div class="proj-stack">
-          <span class="stack-tag">Java</span><span class="stack-tag">Android Studio</span>
-          <span class="stack-tag">SQLite</span><span class="stack-tag">Material Design</span>
+        <div class="proj-foot">
+          <div class="proj-stack"><span>Java</span><span>Android</span><span>Firebase</span></div>
+          <a href="https://github.com/mhrbhatti" target="_blank" class="proj-link">Code<i data-lucide="arrow-up-right"></i></a>
         </div>
       </div>
 
-      <div class="project-card">
-        <div class="proj-top"><span class="proj-icon"></span><span class="proj-badge">MERN</span></div>
-        <div class="proj-name">Budgetly — Budget Tracker</div>
-        <div class="proj-desc">Personal finance tracker built as part of MERN stack coursework. Tracks income, expenses, and budget categories with a clean dashboard interface.</div>
-        <div class="proj-stack">
-          <span class="stack-tag">MongoDB</span><span class="stack-tag">Express</span>
-          <span class="stack-tag">React</span><span class="stack-tag">Node.js</span>
+      <div class="proj-card reveal">
+        <div class="proj-top">
+          <div class="proj-icon-wrap"><i data-lucide="car"></i></div>
+          <div class="proj-badges"><span class="proj-badge">Public</span></div>
+        </div>
+        <div class="proj-name">PakWheels Clone</div>
+        <div class="proj-desc">Android vehicle listing marketplace with browse, search/filter, and user authentication. SQLite for local persistence with a clean Material Design UI.</div>
+        <div class="proj-foot">
+          <div class="proj-stack"><span>Java</span><span>Android</span><span>SQLite</span></div>
         </div>
       </div>
 
-      <div class="project-card">
-        <div class="proj-top"><span class="proj-icon"></span><span class="proj-badge">MERN</span></div>
-        <div class="proj-name">TestCraft — Quiz Platform</div>
-        <div class="proj-desc">A MERN stack quiz and test creation platform. Educators can craft question banks, schedule tests, and track results — built as part of university coursework.</div>
-        <div class="proj-stack">
-          <span class="stack-tag">MongoDB</span><span class="stack-tag">Express</span>
-          <span class="stack-tag">React</span><span class="stack-tag">Node.js</span>
+      <div class="proj-card reveal">
+        <div class="proj-top">
+          <div class="proj-icon-wrap"><i data-lucide="wallet"></i></div>
+          <div class="proj-badges"><span class="proj-badge mern">MERN</span></div>
+        </div>
+        <div class="proj-name">Budgetly</div>
+        <div class="proj-desc">Personal finance and budget tracker built with the MERN stack. Tracks income, expenses, and categories with a clean dashboard. Built in UCP coursework.</div>
+        <div class="proj-foot">
+          <div class="proj-stack"><span>MongoDB</span><span>Express</span><span>React</span><span>Node.js</span></div>
         </div>
       </div>
 
-      <div class="project-card">
-        <div class="proj-top"><span class="proj-icon"></span></div>
+      <div class="proj-card reveal">
+        <div class="proj-top">
+          <div class="proj-icon-wrap"><i data-lucide="clipboard-check"></i></div>
+          <div class="proj-badges"><span class="proj-badge mern">MERN</span></div>
+        </div>
+        <div class="proj-name">TestCraft</div>
+        <div class="proj-desc">Quiz and test creation platform. Educators craft question banks, schedule tests, and track student results. Built with MERN as part of UCP coursework.</div>
+        <div class="proj-foot">
+          <div class="proj-stack"><span>MongoDB</span><span>Express</span><span>React</span><span>Node.js</span></div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-top">
+          <div class="proj-icon-wrap"><i data-lucide="hospital"></i></div>
+          <div class="proj-badges"><span class="proj-badge">Public</span></div>
+        </div>
         <div class="proj-name">Hospital Management System</div>
-        <div class="proj-desc">Console-based system covering patient registration, appointment scheduling, invoice generation, and CSV-driven dynamic rate lists, built with OOP principles.</div>
-        <div class="proj-stack">
-          <span class="stack-tag">C++</span><span class="stack-tag">OOP</span>
-          <span class="stack-tag">File Handling</span>
+        <div class="proj-desc">Console-based system with patient registration, appointment scheduling, invoice generation, and CSV-driven rate lists. Built with OOP principles in C++.</div>
+        <div class="proj-foot">
+          <div class="proj-stack"><span>C++</span><span>OOP</span><span>File Handling</span></div>
         </div>
       </div>
 
-      <div class="project-card">
-        <div class="proj-top"><span class="proj-icon"></span></div>
-        <div class="proj-name">Car Rental Management System</div>
-        <div class="proj-desc">Menu-driven rental system using arrays and stacks for inventory management, booking, and returns — with persistent file-based records across sessions.</div>
-        <div class="proj-stack">
-          <span class="stack-tag">C++</span><span class="stack-tag">Data Structures</span>
-          <span class="stack-tag">Algorithms</span>
+      <div class="proj-card reveal">
+        <div class="proj-top">
+          <div class="proj-icon-wrap"><i data-lucide="key-round"></i></div>
+          <div class="proj-badges"><span class="proj-badge">Public</span></div>
+        </div>
+        <div class="proj-name">Car Rental System</div>
+        <div class="proj-desc">Menu-driven rental management using arrays and stacks for inventory, booking, and returns with persistent file-based records across sessions.</div>
+        <div class="proj-foot">
+          <div class="proj-stack"><span>C++</span><span>DSA</span><span>File I/O</span></div>
         </div>
       </div>
 
-      <a href="https://mhrbhatti.netlify.app" target="_blank" class="project-card">
-        <div class="proj-top"><span class="proj-icon"></span><span class="proj-arrow">↗</span></div>
-        <div class="proj-name">Personal Portfolio Website</div>
-        <div class="proj-desc">Editorial-style personal portfolio with custom typography, interactive navigation, and a fully responsive layout using vanilla front-end technologies.</div>
-        <div class="proj-stack">
-          <span class="stack-tag">HTML</span><span class="stack-tag">CSS</span>
-          <span class="stack-tag">JavaScript</span><span class="stack-tag">SEO</span>
+      <div class="proj-card reveal">
+        <div class="proj-top">
+          <div class="proj-icon-wrap"><i data-lucide="globe"></i></div>
+          <div class="proj-badges"><span class="proj-badge live">Live</span></div>
         </div>
-      </a>
+        <div class="proj-name">BytesStack Website</div>
+        <div class="proj-desc">Full agency website designed and built from scratch — UI/UX, all copy, homepage, service pages — with complete on-page SEO targeting high-intent keywords.</div>
+        <div class="proj-foot">
+          <div class="proj-stack"><span>HTML</span><span>CSS</span><span>JS</span><span>SEO</span></div>
+          <a href="https://bytesstack.net" target="_blank" class="proj-link">Visit<i data-lucide="arrow-up-right"></i></a>
+        </div>
+      </div>
 
+      <div class="proj-card reveal">
+        <div class="proj-top">
+          <div class="proj-icon-wrap"><i data-lucide="user-circle"></i></div>
+          <div class="proj-badges"><span class="proj-badge live">Live</span></div>
+        </div>
+        <div class="proj-name">Personal Portfolio</div>
+        <div class="proj-desc">Terminal-inspired personal portfolio with custom animations, interactive navigation, and a fully responsive layout — vanilla HTML, CSS, and JS.</div>
+        <div class="proj-foot">
+          <div class="proj-stack"><span>HTML</span><span>CSS</span><span>JS</span><span>SEO</span></div>
+          <a href="https://mhrbhatti.netlify.app" target="_blank" class="proj-link">Visit<i data-lucide="arrow-up-right"></i></a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ─── EDUCATION ────────────────────── -->
+<!-- EDUCATION -->
 <section id="education">
-  <div class="container">
-    <div class="sec-head">
-      <span class="sec-label">Education</span>
-      <h2>Academic background</h2>
+  <div class="wrap">
+    <div class="s-head reveal">
+      <div class="s-eyebrow">Education</div>
+      <h2 class="s-title">The <em>foundation</em> behind the work</h2>
     </div>
+
     <div class="edu-grid">
-      <div class="edu-card">
+      <div class="edu-card reveal">
+        <div class="edu-icon"><i data-lucide="graduation-cap"></i></div>
         <div class="edu-inst">University of Central Punjab (UCP)</div>
-        <div class="edu-degree">Bachelor of Science in Computer Science<br>6th Semester — Currently enrolled</div>
-        <div class="edu-period">2023 – Present · Lahore</div>
+        <div class="edu-degree">Bachelor of Science in Computer Science (BSCS) — 6th Semester. Currently enrolled, with MERN stack coursework in progress.</div>
+        <div class="edu-period">2023 — Present · Lahore</div>
       </div>
-      <div class="edu-card">
+      <div class="edu-card reveal">
+        <div class="edu-icon"><i data-lucide="book-open"></i></div>
         <div class="edu-inst">Government College University (GCU)</div>
-        <div class="edu-degree">Intermediate — ICS<br>Physics, Mathematics, Computer Science</div>
-        <div class="edu-period">2021 – 2023 · Lahore</div>
+        <div class="edu-degree">Intermediate — ICS (Physics, Mathematics, Computer Science).</div>
+        <div class="edu-period">2021 — 2023 · Lahore</div>
       </div>
     </div>
 
-    <div class="sec-head" style="margin-top:3rem; margin-bottom:0; padding-bottom:1.25rem;">
-      <span class="sec-label">Certifications</span>
-    </div>
-    <div class="cert-list">
-      <div class="cert-item">
-        <span class="cert-dash">—</span>
-        <span class="cert-name"><strong>Web Designing</strong> — FSDS, Government College University (GCU)</span>
-      </div>
-      <div class="cert-item">
-        <span class="cert-dash">—</span>
-        <span class="cert-name"><strong>Amazon Virtual Assistant (VA)</strong> — FSDS, Government College University (GCU)</span>
-      </div>
-      <div class="cert-item">
-        <span class="cert-dash">—</span>
-        <span class="cert-name"><strong>MicroPython Workshop</strong> — IET On Campus, UET Lahore</span>
-      </div>
+    <div class="cert-list reveal">
+      <div class="cert-row"><div class="ic"><i data-lucide="award"></i></div><div class="cert-text">Web Designing <span>— FSDS, Government College University (GCU), Lahore</span></div></div>
+      <div class="cert-row"><div class="ic"><i data-lucide="award"></i></div><div class="cert-text">Amazon Virtual Assistant (VA) <span>— FSDS, Government College University (GCU), Lahore</span></div></div>
+      <div class="cert-row"><div class="ic"><i data-lucide="award"></i></div><div class="cert-text">MicroPython Workshop <span>— IET On Campus, UET Lahore</span></div></div>
     </div>
   </div>
 </section>
 
-<!-- ─── CONTACT ──────────────────────── -->
+<!-- CONTACT -->
 <section id="contact">
-  <div class="container">
-    <div class="contact-inner">
-      <div class="contact-left">
-        <div class="contact-kicker">What's next</div>
-        <div class="contact-heading">Let's build something.</div>
-        <p class="contact-desc">
-          I'm actively looking for internship opportunities where I can learn fast and ship real work. Whether it's Android, web, full-stack, or something I haven't tried yet — reach out.
-        </p>
-        <a href="mailto:bhattihuzaifa3@gmail.com" class="btn btn-primary">Send an email</a>
-      </div>
-      <div class="contact-right">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <div class="s-eyebrow">Contact</div>
+      <h2 class="s-title">Let's build something <em>worth shipping</em></h2>
+    </div>
+
+    <div class="contact-grid">
+      <div class="reveal-l">
+        <div class="contact-info-title">Open to internships — <em>Android, Web, or Full-Stack.</em></div>
+        <p class="contact-info-desc">I usually reply within 24 hours. If you've got something real to build, I'd love to hear about it.</p>
         <div class="contact-links">
-          <a href="mailto:bhattihuzaifa3@gmail.com" class="contact-link">
-            bhattihuzaifa3@gmail.com <span class="contact-link-arrow">↗</span>
+          <a href="mailto:bhattihuzaifa3@gmail.com" class="contact-link-row">
+            <div class="ic"><i data-lucide="mail"></i></div>
+            <div class="contact-link-meta"><div class="contact-link-label">Email</div><div class="contact-link-val">bhattihuzaifa3@gmail.com</div></div>
+            <i data-lucide="arrow-up-right" class="arrow"></i>
           </a>
-          <a href="https://linkedin.com/in/mhrbhatti" target="_blank" class="contact-link">
-            linkedin.com/in/mhrbhatti <span class="contact-link-arrow">↗</span>
+          <a href="tel:+923178495506" class="contact-link-row">
+            <div class="ic"><i data-lucide="phone"></i></div>
+            <div class="contact-link-meta"><div class="contact-link-label">Phone</div><div class="contact-link-val">+92 317 8495506</div></div>
+            <i data-lucide="arrow-up-right" class="arrow"></i>
           </a>
-          <a href="https://github.com/mhrbhatti" target="_blank" class="contact-link">
-            github.com/mhrbhatti <span class="contact-link-arrow">↗</span>
+          <a href="https://linkedin.com/in/mhrbhatti" target="_blank" class="contact-link-row">
+            <div class="ic"><i data-lucide="linkedin"></i></div>
+            <div class="contact-link-meta"><div class="contact-link-label">LinkedIn</div><div class="contact-link-val">linkedin.com/in/mhrbhatti</div></div>
+            <i data-lucide="arrow-up-right" class="arrow"></i>
           </a>
-          <a href="https://mhrbhatti.netlify.app" target="_blank" class="contact-link">
-            mhrbhatti.netlify.app <span class="contact-link-arrow">↗</span>
-          </a>
-           <a href="https://wa.me/923244995506?text=Hi%2C%20I%20got%20your%20number%20from%20my%20portfolio" target="_blank" class="contact-link">
-            Message me on WhatsApp <span class="contact-link-arrow">↗</span>
+          <a href="https://github.com/mhrbhatti" target="_blank" class="contact-link-row">
+            <div class="ic"><i data-lucide="github"></i></div>
+            <div class="contact-link-meta"><div class="contact-link-label">GitHub</div><div class="contact-link-val">github.com/mhrbhatti</div></div>
+            <i data-lucide="arrow-up-right" class="arrow"></i>
           </a>
         </div>
+      </div>
+
+      <div class="contact-form reveal">
+        <div class="form-group">
+          <label for="fname">Name</label>
+          <input class="form-input" id="fname" type="text" placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <label for="femail">Email</label>
+          <input class="form-input" id="femail" type="email" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label for="fsubject">Subject</label>
+          <input class="form-input" id="fsubject" type="text" placeholder="Internship opportunity...">
+        </div>
+        <div class="form-group">
+          <label for="fmsg">Message</label>
+          <textarea class="form-input" id="fmsg" placeholder="Tell me a bit about what you're building..."></textarea>
+        </div>
+        <button class="form-submit" onclick="handleSend()">Send message<i data-lucide="send"></i></button>
+        <div id="form-status">Message ready — opening your email client...</div>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  Designed &amp; built by M. Huzaifa Bhatti &nbsp;·&nbsp; Lahore, Pakistan
+  <div class="wrap footer-inner">
+    <div class="footer-logo"><span class="dot"></span>Huzaifa Bhatti</div>
+    <div class="footer-text">© 2026 M. Huzaifa Bhatti. Built from scratch in Lahore.</div>
+    <div class="footer-socials">
+      <a href="https://github.com/mhrbhatti" target="_blank" aria-label="GitHub"><i data-lucide="github"></i></a>
+      <a href="https://linkedin.com/in/mhrbhatti" target="_blank" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+      <a href="mailto:bhattihuzaifa3@gmail.com" aria-label="Email"><i data-lucide="mail"></i></a>
+    </div>
+  </div>
 </footer>
 
-<script>
-  // Hamburger
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-  function closeMobile() { mobileMenu.classList.remove('open'); }
+<button class="to-top" id="toTop" aria-label="Back to top"><i data-lucide="arrow-up"></i></button>
 
-  // Typing animation
-  const roles = [
-    'Android Developer.',
-    'Web Developer.',
-    'MERN Stack Learner.',
-    'CS Student @ UCP.',
-    'SEO Specialist.',
-  ];
-  let rIdx = 0, cIdx = 0, del = false;
-  const typedEl = document.getElementById('typed-text');
-  function type() {
-    const cur = roles[rIdx];
-    if (!del) {
-      typedEl.textContent = cur.slice(0, ++cIdx);
-      if (cIdx === cur.length) { del = true; setTimeout(type, 1800); return; }
-    } else {
-      typedEl.textContent = cur.slice(0, --cIdx);
-      if (cIdx === 0) { del = false; rIdx = (rIdx + 1) % roles.length; }
-    }
-    setTimeout(type, del ? 40 : 80);
-  }
-  setTimeout(type, 800);
-</script>
+<script src="script.js"></script>
 </body>
 </html>
