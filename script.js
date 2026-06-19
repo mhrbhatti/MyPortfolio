@@ -213,3 +213,28 @@ function handleSend(){
   const status = document.getElementById('form-status');
   status.style.display = 'block';
 }
+
+<script>
+emailjs.init("n15XG_0iDgrTYL3Xi");
+
+document
+  .getElementById("contact-form")
+  .addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    emailjs.sendForm(
+      "service_u48w7da",
+      "template_3zxr3r7",
+      this
+    )
+    .then(() => {
+      alert("Message sent successfully!");
+      this.reset();
+    })
+    .catch((error) => {
+      console.error(error);
+      alert("Failed to send message.");
+    });
+});
+</script>
