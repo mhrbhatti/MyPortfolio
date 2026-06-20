@@ -10,9 +10,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Fraunces:ital,wght@1,500;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
+
+<!-- LOADING SCREEN -->
+<div class="loader" id="loader">
+  <div class="loader-inner">
+    <div class="loader-mark">
+      <span class="loader-dot"></span>
+      <span class="loader-name">Huzaifa Bhatti</span>
+    </div>
+    <div class="loader-bar-track">
+      <div class="loader-bar-fill" id="loaderBarFill"></div>
+    </div>
+    <div class="loader-pct" id="loaderPct">0%</div>
+  </div>
+</div>
+
 
 <!-- PROGRESS RAIL -->
 <div class="rail" aria-hidden="true">
@@ -39,6 +53,12 @@
     <a href="#contact" class="nav-link" data-link="contact">Contact</a>
   </div>
   <div class="nav-right">
+    <div class="nav-socials">
+      <a href="https://github.com/mhrbhatti" target="_blank" aria-label="GitHub" class="nav-social-link"><i data-lucide="github"></i></a>
+      <a href="https://instagram.com/mhrbhatti" target="_blank" aria-label="Instagram" class="nav-social-link"><i data-lucide="instagram"></i></a>
+      <a href="https://linkedin.com/in/mhrbhatti" target="_blank" aria-label="LinkedIn" class="nav-social-link"><i data-lucide="linkedin"></i></a>
+      <a href="mailto:bhattihuzaifa3@gmail.com" aria-label="Email" class="nav-social-link"><i data-lucide="mail"></i></a>
+    </div>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
       <span class="knob"><i data-lucide="moon"></i></span>
     </button>
@@ -62,7 +82,7 @@
   <div class="wrap">
     <div class="hero-eyebrow"><span class="pulse-dot"></span>Available for internships</div>
     <h1 class="hero-h">
-      <div class="line"><span>Computer science student</span></div>
+      <div class="line"><span>Computer science <span class="role-type-wrap"><span class="role-type" id="roleType">student</span><span class="role-cursor"></span></span></span></div>
       <div class="line"><span>who actually <span class="accent-word">ships</span> things.</span></div>
     </h1>
     <p class="hero-sub">
@@ -408,7 +428,7 @@
       <div class="s-eyebrow">Contact</div>
       <h2 class="s-title">Let's build something <em>worth shipping</em></h2>
     </div>
- 
+
     <div class="contact-grid">
       <div class="reveal-l">
         <div class="contact-info-title">Open to internships — <em>Android, Web, or Full-Stack.</em></div>
@@ -436,27 +456,27 @@
           </a>
         </div>
       </div>
- 
-      <form class="contact-form reveal" id="contact-form">
+
+      <div class="contact-form reveal">
         <div class="form-group">
           <label for="fname">Name</label>
-          <input class="form-input" id="fname" name="from_name" type="text" placeholder="Your name" required>
+          <input class="form-input" id="fname" type="text" placeholder="Your name">
         </div>
         <div class="form-group">
           <label for="femail">Email</label>
-          <input class="form-input" id="femail" name="from_email" type="email" placeholder="your@email.com" required>
+          <input class="form-input" id="femail" type="email" placeholder="your@email.com">
         </div>
         <div class="form-group">
           <label for="fsubject">Subject</label>
-          <input class="form-input" id="fsubject" name="subject" type="text" placeholder="Internship opportunity..." required>
+          <input class="form-input" id="fsubject" type="text" placeholder="Internship opportunity...">
         </div>
         <div class="form-group">
           <label for="fmsg">Message</label>
-          <textarea class="form-input" id="fmsg" name="message" placeholder="Tell me a bit about what you're building..." required></textarea>
+          <textarea class="form-input" id="fmsg" placeholder="Tell me a bit about what you're building..."></textarea>
         </div>
-        <button class="form-submit" type="submit">Send message<i data-lucide="send"></i></button>
-        <div id="form-status"></div>
-      </form>
+        <button class="form-submit" onclick="handleSend()">Send message<i data-lucide="send"></i></button>
+        <div id="form-status">Message ready — opening your email client...</div>
+      </div>
     </div>
   </div>
 </section>
@@ -464,9 +484,10 @@
 <footer>
   <div class="wrap footer-inner">
     <div class="footer-logo"><span class="dot"></span>Huzaifa Bhatti</div>
-    <div class="footer-text">© 2026 M. Huzaifa Bhatti. Built from scratch in Lahore.</div>
+    <div class="footer-text">© 2026 mhrbhatti. Built from scratch in Lahore.</div>
     <div class="footer-socials">
       <a href="https://github.com/mhrbhatti" target="_blank" aria-label="GitHub"><i data-lucide="github"></i></a>
+     <a href="https://instagram.com/mhrbhatti" target="_blank" aria-label="Instagram" class="nav-social-link"><i data-lucide="instagram"></i></a>
       <a href="https://linkedin.com/in/mhrbhatti" target="_blank" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
       <a href="mailto:bhattihuzaifa3@gmail.com" aria-label="Email"><i data-lucide="mail"></i></a>
     </div>

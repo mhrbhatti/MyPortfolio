@@ -1,4 +1,94 @@
-// ════════ ICONS (Lucide, with retry + inline fallback) ════════
+// ════════ LOADING SCREEN ════════
+document.body.classList.add('is-loading');
+const loader = document.getElementById('loader');
+const loaderBarFill = document.getElementById('loaderBarFill');
+const loaderPct = document.getElementById('loaderPct');
+
+(function runLoader(){
+  let progress = 0;
+  let assetsReady = false;
+  const minDuration = 1200; // ms, so it doesn't flash even on fast connections
+  const startTime = Date.now();
+
+  // simulate/track progress smoothly toward 90% while real load happens
+  const tick = setInterval(() => {
+    const elapsed = Date.now() - startTime;
+    const target = assetsReady ? 100 : Math.min(90, (elapsed / minDuration) * 90);
+    progress += (target - progress) * 0.25;
+    if(progress > target - 0.5) progress = target;
+    const display = Math.round(progress);
+    loaderBarFill.style.width = display + '%';
+    loaderPct.textContent = display + '%';
+
+    if(assetsReady && progress >= 99.5){
+      clearInterval(tick);
+      loaderBarFill.style.width = '100%';
+      loaderPct.textContent = '100%';
+      setTimeout(() => {
+        loader.classList.add('hidden');
+        document.body.classList.remove('is-loading');
+        revealHeroLines();
+        startHeroRoleTyping();
+        setTimeout(() => loader.remove(), 700);
+      }, 250);
+    }
+  }, 40);
+
+  window.addEventListener('load', () => {
+    const elapsed = Date.now() - startTime;
+    const wait = Math.max(0, minDuration - elapsed);
+    setTimeout(() => { assetsReady = true; }, wait);
+  });
+  // failsafe: never hang forever
+  setTimeout(() => { assetsReady = true; }, 4000);
+})();
+
+// ════════ ROLE TYPING EFFECT (hero headline) ════════
+const heroRoles = [
+  'student',
+  'Android developer',
+  'web developer',
+  'MERN developer',
+  'SEO specialist',
+  'problem solver',
+];
+function startHeroRoleTyping(){
+  const el = document.getElementById('roleType');
+  if(!el || el.dataset.started) return;
+  el.dataset.started = '1';
+  let ri = 0, ci = heroRoles[0].length, deleting = true;
+
+  function step(){
+    const word = heroRoles[ri];
+    if(!deleting){
+      ci++;
+      if(ci > word.length){
+        ci = word.length;
+        el.textContent = word;
+        deleting = true;
+        setTimeout(step, 2000);
+        return;
+      }
+      el.textContent = word.slice(0, ci);
+      setTimeout(step, 75);
+    } else {
+      ci--;
+      if(ci < 0){
+        deleting = false;
+        ri = (ri + 1) % heroRoles.length;
+        ci = 0;
+        el.textContent = '';
+        setTimeout(step, 350);
+        return;
+      }
+      el.textContent = word.slice(0, ci);
+      setTimeout(step, 40);
+    }
+  }
+  setTimeout(step, 1400);
+}
+
+
 const FALLBACK_ICONS = {
   moon:'<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>',
   sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>',
@@ -129,17 +219,21 @@ window.addEventListener('scroll', () => {
 }, { passive:true });
 toTopBtn.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
 
-// ════════ HERO TEXT REVEAL (split lines) ════════
-document.querySelectorAll('.hero-h .line span').forEach((span, i) => {
-  span.style.opacity = '0';
-  span.style.transform = 'translateY(100%)';
-  span.style.transition = `opacity .8s cubic-bezier(.16,1,.3,1) ${0.15 + i*0.12}s, transform .8s cubic-bezier(.16,1,.3,1) ${0.15 + i*0.12}s`;
-  requestAnimationFrame(() => {
+// ════════ HERO TEXT REVEAL (split lines, starts after loader hides) ════════
+function revealHeroLines(){
+  document.querySelectorAll('.hero-h .line span').forEach((span, i) => {
+    span.style.transition = `opacity .8s cubic-bezier(.16,1,.3,1) ${i*0.12}s, transform .8s cubic-bezier(.16,1,.3,1) ${i*0.12}s`;
     requestAnimationFrame(() => {
-      span.style.opacity = '1';
-      span.style.transform = 'translateY(0)';
+      requestAnimationFrame(() => {
+        span.style.opacity = '1';
+        span.style.transform = 'translateY(0)';
+      });
     });
   });
+}
+document.querySelectorAll('.hero-h .line span').forEach(span => {
+  span.style.opacity = '0';
+  span.style.transform = 'translateY(100%)';
 });
 
 // ════════ SCROLL REVEAL ════════
@@ -213,26 +307,3 @@ function handleSend(){
   const status = document.getElementById('form-status');
   status.style.display = 'block';
 }
-
-emailjs.init("n15XG_0iDgrTYL3Xi");
-
-document
-  .getElementById("contact-form")
-  .addEventListener("submit", function(event) {
-
-    event.preventDefault();
-
-    emailjs.sendForm(
-      "service_u48w7da",
-      "template_l3p27pm",
-      this
-    )
-    .then(() => {
-      alert("Message sent successfully!");
-      this.reset();
-    })
-    .catch((error) => {
-      console.error(error);
-      alert("Failed to send message.");
-    });
-});
