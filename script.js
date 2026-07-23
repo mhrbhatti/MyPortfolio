@@ -311,7 +311,7 @@ function handleSend(){
 function openCvModal() {
   const modal = document.getElementById('cvModal');
   const frame = document.getElementById('cvFrame');
-  frame.src = 'assets/Huzaifa-Bhatti-CV.pdf'; // set src only on open, avoids preloading
+  frame.src = 'Huzaifa-Bhatti-CV.pdf'; // set src only on open, avoids preloading
   modal.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
