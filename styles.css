@@ -525,6 +525,84 @@ footer{border-top:1px solid var(--border);padding:2.5rem 0}
   font-family:var(--mono);font-size:.72rem;color:var(--text-faint);letter-spacing:.06em;
 }
 
+
+.cv-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+}
+.cv-modal.open { display: flex; }
+
+.cv-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(4px);
+}
+
+.cv-modal-sheet {
+  position: relative;
+  width: min(820px, 100%);
+  height: min(88vh, 1050px);
+  background: var(--bg-elevated, #14141a);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  animation: cvSheetIn .25s ease;
+}
+@keyframes cvSheetIn {
+  from { opacity: 0; transform: translateY(16px) scale(.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.cv-modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.cv-modal-title { font-weight: 600; font-size: 15px; }
+.cv-modal-actions { display: flex; align-items: center; gap: 10px; }
+
+.cv-modal-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: var(--accent, #6ee7b7);
+  color: #0a0a0a;
+  font-weight: 600;
+  font-size: 13px;
+  text-decoration: none;
+}
+.cv-modal-download i { width: 15px; height: 15px; }
+
+.cv-modal-close {
+  width: 32px; height: 32px;
+  display: grid; place-items: center;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.12);
+  cursor: pointer;
+  color: inherit;
+}
+.cv-modal-close:hover { background: rgba(255,255,255,0.08); }
+
+.cv-modal-body { flex: 1; background: #fff; }
+.cv-modal-body iframe { width: 100%; height: 100%; border: 0; }
+
+@media (max-width: 640px) {
+  .cv-modal-sheet { height: 92vh; }
+}
+
 /* prevent scroll/flash of content while loading */
 body.is-loading{overflow:hidden}
 body.is-loading nav,
