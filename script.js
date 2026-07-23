@@ -307,3 +307,19 @@ function handleSend(){
   const status = document.getElementById('form-status');
   status.style.display = 'block';
 }
+
+function openCvModal() {
+  const modal = document.getElementById('cvModal');
+  const frame = document.getElementById('cvFrame');
+  frame.src = 'assets/Huzaifa-Bhatti-CV.pdf'; // set src only on open, avoids preloading
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeCvModal() {
+  document.getElementById('cvModal').classList.remove('open');
+  document.getElementById('cvFrame').src = '';
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeCvModal();
+});
