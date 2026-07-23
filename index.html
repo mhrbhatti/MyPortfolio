@@ -90,10 +90,10 @@
       I'm <strong>M. Huzaifa Bhatti</strong>, a 6th-semester BSCS student at UCP, Lahore. I build Mobile apps, web interfaces, and full-stack systems — and I'm currently deep in the Full stack.
     </p>
    <div class="hero-actions">
-    <a href="#projects" class="btn btn-primary">View my work<i data-lucide="arrow-up-right" class="icon"></i></a>
-    <a href="#contact" class="btn btn-secondary">Get in touch<i data-lucide="mail" class="icon"></i></a>
-    <a href="Huzaifa-Bhatti-CV.pdf" download class="btn btn-secondary">Download CV<i data-lucide="download" class="icon"></i></a>
-  </div>
+  <a href="#projects" class="btn btn-primary">View my work<i data-lucide="arrow-up-right" class="icon"></i></a>
+  <a href="#contact" class="btn btn-secondary">Get in touch<i data-lucide="mail" class="icon"></i></a>
+  <button type="button" class="btn btn-secondary" onclick="openCvModal()">View CV<i data-lucide="file-text" class="icon"></i></button>
+</div>
     <div class="hero-stats">
       <div><div class="hstat-num">8</div><div class="hstat-label">Projects built</div></div>
       <div><div class="hstat-num">3</div><div class="hstat-label">Work experiences</div></div>
@@ -531,4 +531,24 @@
 
 <script src="script.js"></script>
 </body>
+  <!-- CV MODAL -->
+<div class="cv-modal" id="cvModal">
+  <div class="cv-modal-backdrop" onclick="closeCvModal()"></div>
+  <div class="cv-modal-sheet">
+    <div class="cv-modal-head">
+      <div class="cv-modal-title">M. Huzaifa Bhatti — CV</div>
+      <div class="cv-modal-actions">
+        <a href="assets/Huzaifa-Bhatti-CV.pdf" download class="cv-modal-download">
+          <i data-lucide="download"></i> Download
+        </a>
+        <button class="cv-modal-close" onclick="closeCvModal()" aria-label="Close">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+    </div>
+    <div class="cv-modal-body">
+      <iframe id="cvFrame" src="" title="Huzaifa Bhatti CV"></iframe>
+    </div>
+  </div>
+</div>
 </html>
