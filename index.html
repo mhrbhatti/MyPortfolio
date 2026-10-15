@@ -1,247 +1,446 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
-  <link rel="icon" type="svg+xml" href="/favicon.svg">
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M. Huzaifa Bhatti | Full Stack Developer & SEO Specialist</title>
+<meta name="description" content="M. Huzaifa Bhatti is a Computer Science student and Full Stack Developer from Lahore, Pakistan, specializing in web development, mobile apps, Flutter, Java, MERN stack, and SEO.">
+<meta name="keywords" content="M. Huzaifa Bhatti, Huzaifa Bhatti, Huzaifa Bhatti developer, Huzaifa Bhatti Lahore, Full Stack Developer Lahore, Web Developer Lahore, Flutter Developer Pakistan, Android Developer Pakistan, MERN Developer, SEO Specialist Lahore">
+<meta name="author" content="M. Huzaifa Bhatti">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://mhrbhatti.tech/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="theme-color" content="#eaf6e6">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mhrbhatti.tech/">
+<meta property="og:title" content="M. Huzaifa Bhatti | Full Stack Developer & SEO Specialist">
+<meta property="og:description" content="Portfolio of M. Huzaifa Bhatti — Computer Science student, Full Stack Developer, Mobile Developer, and SEO Specialist from Lahore, Pakistan.">
+<meta property="og:site_name" content="M. Huzaifa Bhatti">
+<meta property="og:locale" content="en_PK">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="M. Huzaifa Bhatti | Full Stack Developer & SEO Specialist">
+<meta name="twitter:description" content="Portfolio of M. Huzaifa Bhatti — Full Stack Developer, Mobile Developer, and SEO Specialist from Lahore, Pakistan.">
 
-  <!-- Mobile / responsive -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
 
-  <!-- Primary SEO -->
-  <title>M. Huzaifa Bhatti | Full Stack Developer & SEO Specialist</title>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Person","@id":"https://mhrbhatti.tech/#person","name":"M. Huzaifa Bhatti","url":"https://mhrbhatti.tech/","jobTitle":"Full Stack Developer","description":"Computer Science student, Full Stack Developer, Mobile Developer, and SEO Specialist from Lahore, Pakistan.","email":"mailto:bhattihuzaifa3@gmail.com","sameAs":["https://github.com/mhrbhatti","https://linkedin.com/in/mhrbhatti","https://instagram.com/mhrbhatti"],"knowsAbout":["Full Stack Development","Web Development","Mobile App Development","Flutter","Dart","Java","Android Development","JavaScript","React","Node.js","Express.js","MongoDB","Firebase","SEO","C++","Data Structures","Algorithms"]},
+{"@type":"WebSite","@id":"https://mhrbhatti.tech/#website","url":"https://mhrbhatti.tech/","name":"M. Huzaifa Bhatti","publisher":{"@id":"https://mhrbhatti.tech/#person"},"inLanguage":"en-PK"}]}
+</script>
 
-  <meta
-    name="description"
-    content="M. Huzaifa Bhatti is a Computer Science student and Full Stack Developer from Lahore, Pakistan, specializing in web development, mobile apps, Flutter, Java, MERN stack, and SEO."
-  >
+<style>
+:root{
+  --bg:#eef7ea; --bg2:#e2f1dc; --surface:#ffffffcc; --solid:#ffffff;
+  --ink:#0d120d; --muted:#5b6b5b; --line:#0d120d14;
+  --g1:#1f7a35; --g2:#2faa4a; --g3:#8fd69a; --deep:#0f3d1c;
+  --shadow:0 10px 30px -12px #0f3d1c40;
+  --r:26px;
+}
+[data-theme="dark"]{
+  --bg:#070b08; --bg2:#0c130d; --surface:#111a13cc; --solid:#111a13;
+  --ink:#f1f8ef; --muted:#9db39e; --line:#ffffff14;
+  --g1:#3ccf5f; --g2:#5be07c; --g3:#1f7a35; --deep:#a6f0b4;
+  --shadow:0 10px 30px -12px #000;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px;overflow-x:clip}
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:clip;transition:background .4s,color .4s}
+h1,h2,h3,.sora{font-family:Sora,sans-serif}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+section{padding:110px 0;position:relative}
+::selection{background:var(--g2);color:#fff}
 
-  <meta
-    name="keywords"
-    content="M. Huzaifa Bhatti, Huzaifa Bhatti, Huzaifa Bhatti developer, Huzaifa Bhatti Lahore, Full Stack Developer Lahore, Web Developer Lahore, Flutter Developer Pakistan, Android Developer Pakistan, MERN Developer, SEO Specialist Lahore"
-  >
+/* background decoration */
+.bg-blobs{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.bg-blobs i{position:absolute;border-radius:50%;filter:blur(90px);opacity:.55}
+.bg-blobs i:nth-child(1){width:520px;height:520px;background:var(--g3);top:-160px;left:-120px}
+.bg-blobs i:nth-child(2){width:420px;height:420px;background:var(--g2);opacity:.22;bottom:-140px;right:-100px}
+[data-theme="dark"] .bg-blobs i{opacity:.18}
+.dotgrid{position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:radial-gradient(var(--line) 1.2px,transparent 1.2px);background-size:26px 26px;mask-image:linear-gradient(#000,transparent 85%)}
 
-  <meta name="author" content="M. Huzaifa Bhatti">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="googlebot" content="index, follow">
+/* progress + cursor glow */
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--g1),var(--g2));z-index:200}
+#glow{position:fixed;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,#2faa4a2e,transparent 65%);pointer-events:none;z-index:-1;transform:translate(-50%,-50%);transition:opacity .3s}
+@media(hover:none){#glow{display:none}}
 
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://mhrbhatti.tech/">
+/* nav */
+nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);width:min(1100px,100% - 24px);z-index:100;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px 10px 20px;background:var(--surface);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:999px;box-shadow:var(--shadow)}
+.logo{font-family:Sora;font-weight:800;font-size:1.05rem;display:flex;align-items:center;gap:8px}
+.logo b{display:grid;place-items:center;width:30px;height:30px;border-radius:10px;background:linear-gradient(135deg,var(--g1),var(--g2));color:#fff;font-size:.8rem}
+.links{display:flex;gap:2px}
+.links a{padding:8px 14px;border-radius:999px;font-size:.88rem;font-weight:500;color:var(--muted);transition:.2s}
+.links a:hover,.links a.on{background:var(--g1);color:#fff}
+.nav-r{display:flex;align-items:center;gap:8px}
+.icon-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--solid);display:grid;place-items:center;cursor:pointer;color:var(--ink);transition:.2s}
+.icon-btn:hover{background:var(--g1);color:#fff;transform:rotate(15deg)}
+.icon-btn svg{width:18px;height:18px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:600;font-size:.95rem;border:1.5px solid transparent;cursor:pointer;font-family:Inter;transition:.25s}
+.btn svg{width:18px;height:18px}
+.btn-p{background:linear-gradient(135deg,var(--g1),var(--g2));color:#fff;box-shadow:0 12px 24px -10px var(--g1)}
+.btn-p:hover{transform:translateY(-3px);box-shadow:0 18px 28px -10px var(--g1)}
+.btn-s{background:var(--solid);color:var(--ink);border-color:var(--line)}
+.btn-s:hover{border-color:var(--g1);color:var(--g1);transform:translateY(-3px)}
+.nav-cta{padding:10px 20px}
+#menuBtn{display:none}
+.mob{position:fixed;inset:0;background:var(--bg);z-index:90;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:18px;opacity:0;pointer-events:none;transition:.3s}
+.mob.open{opacity:1;pointer-events:auto}
+.mob a{font-family:Sora;font-size:2rem;font-weight:700}
+.mob a:hover{color:var(--g1)}
 
-  <!-- Theme -->
-  <meta name="theme-color" content="#080808">
+/* hero */
+#home{min-height:100svh;display:flex;align-items:center;padding:130px 0 70px;overflow:hidden}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:9px;padding:7px 16px;border:1.5px solid var(--g1);border-radius:999px;font-family:'JetBrains Mono';font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--g1);background:var(--surface)}
+.pill i{width:9px;height:9px;border-radius:50%;background:var(--g2);box-shadow:0 0 0 0 var(--g2);animation:ping 1.8s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 10px #2faa4a00}100%{box-shadow:0 0 0 0 #2faa4a00}}
+h1.name{font-size:clamp(2.6rem,7.2vw,5.6rem);line-height:.98;font-weight:800;letter-spacing:-.035em;margin:22px 0 18px;text-transform:uppercase}
+h1.name span{display:block;color:var(--g1)}
+.role{display:flex;align-items:center;gap:14px;font-family:'JetBrains Mono';letter-spacing:.3em;font-size:.82rem;text-transform:uppercase;font-weight:500}
+.role::before{content:"";width:46px;height:2px;background:var(--g1)}
+.typed{color:var(--g1);letter-spacing:.2em}
+.caret{display:inline-block;width:2px;height:1em;background:var(--g1);margin-left:3px;vertical-align:-.12em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero p.lead{max-width:520px;margin:22px 0 30px;color:var(--muted);font-size:1.08rem}
+.hero p.lead strong{color:var(--ink)}
+.acts{display:flex;flex-wrap:wrap;gap:12px}
+.stats{display:flex;flex-wrap:wrap;gap:34px;margin-top:44px;padding-top:26px;border-top:1px dashed var(--line)}
+.stat b{display:block;font-family:Sora;font-size:2rem;font-weight:800;color:var(--g1);line-height:1}
+.stat span{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
 
-  <!-- Open Graph / Facebook / LinkedIn -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://mhrbhatti.tech/">
-  <meta property="og:title" content="M. Huzaifa Bhatti | Full Stack Developer & SEO Specialist">
-  <meta
-    property="og:description"
-    content="Portfolio of M. Huzaifa Bhatti — Computer Science student, Full Stack Developer, Mobile Developer, and SEO Specialist from Lahore, Pakistan."
-  >
-  <meta property="og:site_name" content="M. Huzaifa Bhatti">
-  <meta property="og:locale" content="en_PK">
+/* portrait stage */
+.stage{position:relative;aspect-ratio:1/1.05;max-width:520px;margin-inline:auto;width:100%}
+.stage .disc{position:absolute;inset:8% 6% 0;border-radius:50%;background:radial-gradient(circle at 30% 20%,var(--g3),var(--g2) 70%);opacity:.85}
+.stage .disc2{position:absolute;width:46%;aspect-ratio:1;border-radius:50%;left:-6%;bottom:2%;background:var(--g3);opacity:.5}
+.stage .ring{position:absolute;inset:2%;border-radius:50%;border:1.5px dashed var(--g1);opacity:.5;animation:spin 40s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.photo{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:100%;width:86%;object-fit:cover;object-position:50% 12%;z-index:2;border-radius:999px 999px 34px 34px;border:6px solid var(--solid);box-shadow:0 30px 50px -20px #0f3d1c88}
+.monogram{position:absolute;inset:14% 14% 6%;z-index:2;border-radius:50%;display:none;place-items:center;font-family:Sora;font-weight:800;font-size:clamp(5rem,16vw,9rem);color:#fff;letter-spacing:-.05em;background:linear-gradient(135deg,var(--deep),var(--g1));border:6px solid #fff6}
+.stage.nophoto .monogram{display:grid}
+.stage.nophoto .photo{display:none}
+.tile{position:absolute;z-index:3;width:62px;height:62px;border-radius:18px;background:#fff;display:grid;place-items:center;font-size:1.9rem;box-shadow:0 14px 26px -10px #0f3d1c66;animation:float 6s ease-in-out infinite}
+.tile:nth-of-type(even){animation-delay:-3s}
+@keyframes float{50%{transform:translateY(-12px) rotate(3deg)}}
+.tile.t1{top:6%;left:0}.tile.t2{top:2%;right:12%}.tile.t3{top:38%;right:-3%}.tile.t4{bottom:16%;right:2%}.tile.t5{top:34%;left:-5%}.tile.t6{bottom:6%;left:6%}
+.sq{position:absolute;z-index:3;display:grid;grid-template-columns:repeat(2,14px);gap:3px;top:20%;left:-4%}
+.sq i{width:14px;height:14px;background:var(--g1);display:block}
+.sq i:nth-child(2){background:var(--g3)}.sq i:nth-child(3){background:var(--g3)}.sq i:nth-child(4){opacity:0}
+.badge-fl{position:absolute;z-index:4;bottom:4%;right:-2%;background:var(--solid);border:1px solid var(--line);border-radius:18px;padding:12px 16px;box-shadow:var(--shadow);font-size:.8rem;display:flex;gap:10px;align-items:center}
+.badge-fl svg{width:22px;height:22px;color:var(--g1)}
+.badge-fl b{display:block;font-family:Sora;font-size:.92rem;line-height:1.2}
 
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="M. Huzaifa Bhatti | Full Stack Developer & SEO Specialist">
-  <meta
-    name="twitter:description"
-    content="Portfolio of M. Huzaifa Bhatti — Full Stack Developer, Mobile Developer, and SEO Specialist from Lahore, Pakistan."
-  >
+/* marquee */
+.marq{background:var(--deep);color:#fff;transform:rotate(-1.4deg);margin:-20px -20px 0;padding:16px 0;overflow:hidden;position:relative;z-index:5;border-block:3px solid var(--g2)}
+[data-theme="dark"] .marq{background:#0f3d1c;color:#eaffee}
+.marq-t{display:flex;gap:44px;width:max-content;animation:mq 32s linear infinite;font-family:Sora;font-weight:700;font-size:1.15rem;text-transform:uppercase;letter-spacing:.04em}
+.marq-t span{display:flex;align-items:center;gap:44px;white-space:nowrap}
+.marq-t span::after{content:"✦";color:var(--g2)}
+@keyframes mq{to{transform:translateX(-50%)}}
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+/* headings */
+.eyebrow{font-family:'JetBrains Mono';font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--g1);display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--g1)}
+h2.title{font-size:clamp(2rem,5vw,3.4rem);line-height:1.08;letter-spacing:-.03em;font-weight:800;max-width:780px}
+h2.title em{font-style:normal;color:var(--g1);position:relative;white-space:nowrap}
+h2.title em::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:.22em;background:var(--g3);opacity:.6;z-index:-1;border-radius:4px}
+.sub{color:var(--muted);max-width:560px;margin-top:14px}
+.head{margin-bottom:50px}
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Fraunces:ital,wght@1,500;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap"
-    rel="stylesheet"
-  >
+/* cards */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px;backdrop-filter:blur(10px);box-shadow:var(--shadow);transition:transform .3s,border-color .3s}
+.card:hover{border-color:var(--g2)}
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css">
+/* about bento */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+.b-story{grid-column:span 4;grid-row:span 2}
+.b-story p{color:var(--muted);margin-bottom:14px}
+.b-story p strong{color:var(--ink)}
+.b-story .big{font-family:Sora;font-size:1.5rem;line-height:1.3;color:var(--ink);font-weight:700;margin-bottom:18px}
+.b-story .big em{font-style:normal;color:var(--g1)}
+.b-mini{grid-column:span 2;display:flex;flex-direction:column;justify-content:space-between;gap:14px;min-height:150px}
+.b-mini .ic{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:var(--g1);color:#fff}
+.b-mini small{display:block;color:var(--muted);font-size:.74rem;text-transform:uppercase;letter-spacing:.1em}
+.b-mini b{font-family:Sora;font-size:1.05rem}
+.b-now{grid-column:span 6;display:grid;grid-template-columns:280px 1fr;gap:40px;align-items:center;overflow:visible;padding:0 40px 34px;background:linear-gradient(135deg,var(--surface),var(--bg2))}
+.idwrap{position:relative;display:flex;flex-direction:column;align-items:center;transform-origin:top center;animation:swing 5s ease-in-out infinite alternate}
+@keyframes swing{from{transform:rotate(-3.5deg)}to{transform:rotate(3.5deg)}}
+.strap{width:16px;height:70px;background:repeating-linear-gradient(135deg,var(--g1) 0 6px,var(--g2) 6px 12px)}
+.idcard{position:relative;width:230px;background:var(--solid);border:1px solid var(--line);border-radius:22px;padding:34px 16px 16px;box-shadow:0 26px 40px -18px #0f3d1c77;text-align:center}
+.id-hole{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:44px;height:8px;border-radius:99px;background:var(--bg2);border:1px solid var(--line)}
+.idcard img{width:100%;aspect-ratio:1/1.05;object-fit:cover;object-position:50% 12%;border-radius:14px;margin-bottom:12px}
+.idcard b{font-family:Sora;font-size:1.02rem;display:block;line-height:1.2}
+.idcard small{display:block;color:var(--g1);font-family:'JetBrains Mono';font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;margin:4px 0 12px}
+.id-meta{display:flex;justify-content:space-between;font-family:'JetBrains Mono';font-size:.62rem;color:var(--muted);padding-top:10px;border-top:1px dashed var(--line)}
+.barcode{height:26px;margin:10px 0;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 5px,transparent 5px 8px,var(--ink) 8px 11px,transparent 11px 13px);opacity:.8;border-radius:2px}
+.id-status{display:inline-flex;align-items:center;gap:7px;font-size:.7rem;font-weight:600;color:#fff;background:var(--g1);padding:6px 14px;border-radius:99px}
+.id-status i{width:7px;height:7px;border-radius:50%;background:#fff;animation:blink 1.4s steps(1) infinite}
 
-  <!-- Icons -->
-  <script
-    src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"
-    defer
-  ></script>
+.idwrap{perspective:900px}
+.idwrap.hov{animation-play-state:paused}
+.strap{transform-origin:top center;will-change:transform}
+.idcard{cursor:grab;user-select:none;-webkit-user-select:none;overflow:hidden;will-change:transform;transform-origin:top center;-webkit-tap-highlight-color:transparent}
+.idcard.grab{cursor:grabbing}
+.idcard img{transition:transform .5s cubic-bezier(.2,.7,.2,1);pointer-events:none}
+.idcard:hover img{transform:scale(1.05)}
+.idcard::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 35%,#ffffff88 50%,transparent 65%);transform:translateX(-120%);pointer-events:none}
+.idcard:hover::after{transform:translateX(120%);transition:transform .9s}
+.pullhint{position:absolute;bottom:-34px;left:50%;transform:translateX(-50%);font-family:'JetBrains Mono';font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--g1);white-space:nowrap;animation:nudge 1.6s ease-in-out infinite;transition:opacity .4s}
+.pullhint.gone{opacity:0}
+@keyframes nudge{50%{transform:translate(-50%,6px)}}
+.idwrap{margin-bottom:34px}
+.now{padding-top:34px}
+.now-row{display:flex;justify-content:space-between;align-items:baseline;gap:18px;padding:15px 0;border-bottom:1px dashed var(--line)}
+.now-row span{color:var(--muted);font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;font-family:'JetBrains Mono'}
+.now-row b{font-family:Sora;font-size:1.05rem;text-align:right}
+#clock{color:var(--g1);font-variant-numeric:tabular-nums;font-size:1.5rem}
 
-  <!-- Person + Website Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Person",
-        "@id": "https://mhrbhatti.tech/#person",
-        "name": "M. Huzaifa Bhatti",
-        "url": "https://mhrbhatti.tech/",
-        "jobTitle": "Full Stack Developer",
-        "description": "Computer Science student, Full Stack Developer, Mobile Developer, and SEO Specialist from Lahore, Pakistan.",
-        "email": "mailto:bhattihuzaifa3@gmail.com",
-        "sameAs": [
-          "https://github.com/mhrbhatti",
-          "https://linkedin.com/in/mhrbhatti",
-          "https://instagram.com/mhrbhatti"
-        ],
-        "knowsAbout": [
-          "Full Stack Development",
-          "Web Development",
-          "Mobile App Development",
-          "Flutter",
-          "Dart",
-          "Java",
-          "Android Development",
-          "JavaScript",
-          "React",
-          "Node.js",
-          "Express.js",
-          "MongoDB",
-          "Firebase",
-          "SEO",
-          "C++",
-          "Data Structures",
-          "Algorithms"
-        ]
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://mhrbhatti.tech/#website",
-        "url": "https://mhrbhatti.tech/",
-        "name": "M. Huzaifa Bhatti",
-        "description": "Personal portfolio of M. Huzaifa Bhatti, Full Stack Developer and Computer Science student.",
-        "publisher": {
-          "@id": "https://mhrbhatti.tech/#person"
-        },
-        "inLanguage": "en-PK"
-      }
-    ]
-  }
-  </script>
+/* skills */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.tab{padding:10px 20px;border-radius:999px;border:1px solid var(--line);background:var(--solid);cursor:pointer;font-weight:600;font-size:.9rem;color:var(--muted);font-family:Inter;transition:.2s}
+.tab.on,.tab:hover{background:var(--g1);color:#fff;border-color:var(--g1)}
+.panel{display:none;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:14px}
+.panel.on{display:grid;animation:pop .4s}
+@keyframes pop{from{opacity:0;transform:translateY(14px)}}
+.sk{background:var(--solid);border:1px solid var(--line);border-radius:22px;padding:22px 10px 16px;text-align:center;transition:.25s;position:relative}
+.sk:hover{transform:translateY(-6px) rotate(-1.5deg);border-color:var(--g2);box-shadow:var(--shadow)}
+.sk i{font-size:2.4rem;display:block;margin-bottom:10px}
+.sk svg{width:38px;height:38px;color:var(--g1);margin-bottom:8px}
+.sk span{font-size:.82rem;font-weight:600}
+.sk em{position:absolute;top:8px;right:8px;font-style:normal;font-family:'JetBrains Mono';font-size:.55rem;background:var(--g3);color:var(--deep);padding:2px 6px;border-radius:6px}
+[data-theme="dark"] .sk em{color:#fff}
+
+/* experience */
+.tl{position:relative;padding-left:34px}
+.tl::before{content:"";position:absolute;left:8px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--g2),transparent)}
+.ex{position:relative;margin-bottom:22px}
+.ex::before{content:"";position:absolute;left:-34px;top:30px;width:18px;height:18px;border-radius:50%;background:var(--bg);border:4px solid var(--g2)}
+.ex.now::before{background:var(--g2);box-shadow:0 0 0 6px #2faa4a33}
+.ex-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 20px;align-items:flex-start}
+.ex h3{font-size:1.25rem;font-weight:700}
+.ex .co{color:var(--g1);font-weight:600;display:flex;align-items:center;gap:6px;font-size:.95rem}
+.ex .co svg{width:15px;height:15px}
+.per{font-family:'JetBrains Mono';font-size:.76rem;background:var(--bg2);padding:6px 12px;border-radius:999px;color:var(--muted);white-space:nowrap}
+.ex ul{margin:16px 0 14px 18px;color:var(--muted);font-size:.95rem}
+.ex li{margin-bottom:6px}
+.ex li::marker{color:var(--g2)}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{font-size:.73rem;padding:4px 11px;border-radius:999px;border:1px solid var(--line);background:var(--bg2);color:var(--muted);font-weight:500}
+
+/* projects */
+.pg{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+.pj{grid-column:span 4;position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:300px}
+.pj.feat{grid-column:span 8;background:linear-gradient(135deg,var(--deep),var(--g1));color:#fff;border:none}
+.pj.feat .desc,.pj.feat .stack span{color:#e8fbec}
+.pj.feat .stack span{border-color:#ffffff40;background:#ffffff18}
+.pj.feat .no{color:#ffffff30}
+.pj.feat .go{background:#fff;color:var(--deep)}
+.pj::after{content:"";position:absolute;width:200px;height:200px;border-radius:50%;background:var(--g2);opacity:0;right:-70px;top:-70px;filter:blur(50px);transition:.4s}
+.pj:hover{transform:translateY(-6px)}
+.pj:hover::after{opacity:.35}
+.pj-h{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:auto}
+.no{font-family:Sora;font-size:3.2rem;font-weight:800;color:var(--line);line-height:1;-webkit-text-stroke:0}
+.kind{font-family:'JetBrains Mono';font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:5px 11px;border-radius:999px;background:var(--g3);color:var(--deep);font-weight:500}
+.pj.feat .kind{background:#fff;color:var(--deep)}
+.pj h3{font-size:1.4rem;margin:22px 0 8px;letter-spacing:-.02em}
+.desc{color:var(--muted);font-size:.92rem;margin-bottom:18px}
+.pj-f{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:auto;flex-wrap:wrap}
+.stack{display:flex;flex-wrap:wrap;gap:5px}
+.stack span{font-size:.7rem;padding:3px 9px;border-radius:7px;border:1px solid var(--line);color:var(--muted);font-family:'JetBrains Mono'}
+.go{width:44px;height:44px;border-radius:50%;background:var(--g1);color:#fff;display:grid;place-items:center;transition:.25s;flex-shrink:0}
+.go:hover{transform:rotate(45deg) scale(1.1)}
+.go svg{width:20px;height:20px}
+
+/* education */
+.edu{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
+.edu .ic{width:50px;height:50px;border-radius:16px;background:var(--g1);color:#fff;display:grid;place-items:center;margin-bottom:16px}
+.edu h3{font-size:1.15rem}
+.edu p{color:var(--muted);font-size:.93rem;margin:6px 0 12px}
+.edu .per{display:inline-block}
+.certs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cert{display:flex;gap:14px;align-items:center;padding:16px 18px;background:var(--solid);border:1px solid var(--line);border-radius:18px;font-size:.9rem;font-weight:600;transition:.25s}
+.cert:hover{transform:translateX(6px);border-color:var(--g2)}
+.cert svg{color:var(--g1);flex-shrink:0;width:22px;height:22px}
+.cert small{display:block;color:var(--muted);font-weight:400;font-size:.8rem}
+
+/* contact */
+.cbox{background:linear-gradient(135deg,var(--deep),var(--g1));border-radius:40px;padding:clamp(28px,5vw,60px);color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:40px;position:relative;overflow:hidden}
+.cbox::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:var(--g2);opacity:.3;filter:blur(80px);top:-150px;right:-100px}
+.cbox>*{position:relative}
+.cbox h2{font-size:clamp(2rem,4.5vw,3.1rem);line-height:1.08;letter-spacing:-.03em;font-weight:800}
+.cbox h2 em{font-style:normal;color:var(--g3)}
+.cbox p{color:#d7f3dc;margin:16px 0 26px}
+.clinks a{display:flex;align-items:center;gap:14px;padding:13px 16px;border-radius:18px;background:#ffffff14;margin-bottom:10px;transition:.25s;border:1px solid #ffffff1f}
+.clinks a:hover{background:#ffffff26;transform:translateX(6px)}
+.clinks .ic{width:40px;height:40px;border-radius:12px;background:#fff;color:var(--deep);display:grid;place-items:center;flex-shrink:0}
+.clinks small{display:block;font-size:.7rem;opacity:.75;text-transform:uppercase;letter-spacing:.1em}
+.clinks b{font-size:.92rem;font-weight:600;word-break:break-all}
+.form{background:var(--solid);color:var(--ink);border-radius:26px;padding:26px;display:flex;flex-direction:column;gap:14px}
+.form label{font-size:.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:5px}
+.form input,.form textarea{width:100%;padding:13px 16px;border-radius:14px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);font-family:Inter;font-size:.95rem;outline:none;transition:.2s}
+.form input:focus,.form textarea:focus{border-color:var(--g2);box-shadow:0 0 0 4px #2faa4a22}
+.form textarea{min-height:110px;resize:vertical}
+.form .btn{justify-content:center}
+#fs{font-size:.85rem;color:var(--g1);display:none;text-align:center;font-weight:600}
+
+footer{padding:34px 0 40px;border-top:1px solid var(--line);margin-top:60px}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:.88rem}
+.socs{display:flex;gap:8px}
+#top{position:fixed;right:18px;bottom:18px;z-index:80;opacity:0;pointer-events:none;transition:.3s;background:var(--g1);color:#fff;border:none}
+#top.show{opacity:1;pointer-events:auto}
+
+/* cv modal */
+.modal{position:fixed;inset:0;z-index:300;display:none;align-items:center;justify-content:center;padding:18px}
+.modal.open{display:flex}
+.modal .bk{position:absolute;inset:0;background:#000a;backdrop-filter:blur(6px)}
+.sheet{position:relative;width:min(900px,100%);height:min(88vh,100%);background:var(--solid);border-radius:24px;display:flex;flex-direction:column;overflow:hidden}
+.sheet-h{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--line);gap:10px}
+.sheet iframe{flex:1;border:0;width:100%}
+.sheet-h .btn{padding:8px 16px;font-size:.85rem}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(34px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.loader{position:fixed;inset:0;z-index:999;background:var(--bg);display:grid;place-items:center;transition:opacity .6s,visibility .6s}
+.loader.done{opacity:0;visibility:hidden}
+.loader b{font-family:Sora;font-size:clamp(2rem,8vw,4rem);font-weight:800;color:var(--g1);letter-spacing:-.04em;animation:pulse 1s infinite alternate}
+@keyframes pulse{to{opacity:.4;transform:scale(.97)}}
+
+/* responsive */
+@media(max-width:980px){
+  .links,.nav-cta.hide-m{display:none}
+  #menuBtn{display:grid}
+  .hero{grid-template-columns:1fr;text-align:left}
+  .stage{max-width:420px;order:-1;margin-bottom:10px}
+  #home{padding-top:110px}
+  .b-story{grid-column:span 6;grid-row:auto}
+  .b-mini{grid-column:span 3}
+  .b-now{grid-template-columns:1fr;padding:0 24px 28px;gap:10px}
+  .now{padding-top:6px}
+  .pj,.pj.feat{grid-column:span 6}
+  .cbox{grid-template-columns:1fr}
+}
+@media(max-width:620px){
+  section{padding:76px 0}
+  .tile{width:48px;height:48px;font-size:1.5rem;border-radius:14px}
+  .badge-fl{right:0;padding:9px 12px}
+  .b-mini{grid-column:span 6;min-height:0;flex-direction:row;align-items:center}
+  .pj,.pj.feat{grid-column:span 12}
+  .edu,.certs{grid-template-columns:1fr}
+  .stats{gap:22px}
+  .stat b{font-size:1.6rem}
+  nav{padding-left:14px}
+  .nav-r .nav-cta{display:none}
+  .now-row{flex-direction:column;align-items:flex-start;gap:4px}
+  .now-row b{text-align:left}
+  .tl{padding-left:26px}.ex::before{left:-26px}
+  .card{padding:22px}
+  .marq{margin-inline:-30px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
 </head>
 <body>
+<div class="loader" id="loader"><b>HB.</b></div>
+<div id="bar"></div><div id="glow"></div>
+<div class="bg-blobs"><i></i><i></i></div><div class="dotgrid"></div>
 
-<!-- LOADING SCREEN -->
-<div class="loader" id="loader">
-  <div class="loader-inner">
-    <div class="loader-mark">
-      <span class="loader-dot"></span>
-      <span class="loader-name">Huzaifa Bhatti</span>
-    </div>
-    <div class="loader-bar-track">
-      <div class="loader-bar-fill" id="loaderBarFill"></div>
-    </div>
-    <div class="loader-pct" id="loaderPct">0%</div>
+<nav>
+  <a href="#home" class="logo"><b>HB</b>Huzaifa</a>
+  <div class="links">
+    <a href="#home" data-l="home">Home</a><a href="#about" data-l="about">About</a><a href="#skills" data-l="skills">Skills</a><a href="#experience" data-l="experience">Experience</a><a href="#projects" data-l="projects">Projects</a><a href="#education" data-l="education">Education</a>
   </div>
-</div>
-
-
-<!-- PROGRESS RAIL -->
-<div class="rail" aria-hidden="true">
-  <div class="rail-track"></div>
-  <div class="rail-fill" id="railFill"></div>
-  <div class="rail-dot" data-section="home" style="top:8%"></div>
-  <div class="rail-dot" data-section="about" style="top:21%"></div>
-  <div class="rail-dot" data-section="skills" style="top:36%"></div>
-  <div class="rail-dot" data-section="experience" style="top:51%"></div>
-  <div class="rail-dot" data-section="projects" style="top:67%"></div>
-  <div class="rail-dot" data-section="education" style="top:82%"></div>
-  <div class="rail-dot" data-section="contact" style="top:95%"></div>
-</div>
-
-<!-- NAV -->
-<nav id="mainNav">
-  <a href="#home" class="nav-logo"><span class="dot"></span>Huzaifa Bhatti</a>
-  <div class="nav-center">
-    <a href="#home" class="nav-link" data-link="home">Home</a>
-    <a href="#about" class="nav-link" data-link="about">About</a>
-    <a href="#skills" class="nav-link" data-link="skills">Skills</a>
-    <a href="#experience" class="nav-link" data-link="experience">Experience</a>
-    <a href="#projects" class="nav-link" data-link="projects">Projects</a>
-    <a href="#contact" class="nav-link" data-link="contact">Contact</a>
-  </div>
-  <div class="nav-right">
-    <div class="nav-socials">
-      <a href="https://github.com/mhrbhatti" target="_blank" aria-label="GitHub" class="nav-social-link"><i data-lucide="github"></i></a>
-      <a href="https://instagram.com/mhrbhatti" target="_blank" aria-label="Instagram" class="nav-social-link"><i data-lucide="instagram"></i></a>
-      <a href="https://linkedin.com/in/mhrbhatti" target="_blank" aria-label="LinkedIn" class="nav-social-link"><i data-lucide="linkedin"></i></a>
-      <a href="mailto:bhattihuzaifa3@gmail.com" aria-label="Email" class="nav-social-link"><i data-lucide="mail"></i></a>
-    </div>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-      <span class="knob"><i data-lucide="moon"></i></span>
-    </button>
-    <a href="#contact" class="nav-cta">Let's talk</a>
-<a href="Huzaifa-Bhatti-CV.pdf" download class="nav-cta" style="margin-right:8px;">Resume</a>
-    <button class="mob-toggle" id="mobToggle" aria-label="Menu"><i data-lucide="menu"></i></button>
+  <div class="nav-r">
+    <button class="icon-btn" id="theme" aria-label="Toggle theme"><i data-lucide="moon"></i></button>
+    <a href="#contact" class="btn btn-p nav-cta">Let's talk</a>
+    <button class="icon-btn" id="menuBtn" aria-label="Menu"><i data-lucide="menu"></i></button>
   </div>
 </nav>
-<div class="mob-menu" id="mobMenu">
-  <a href="#home" data-link="home">Home</a>
-  <a href="#about" data-link="about">About</a>
-  <a href="#skills" data-link="skills">Skills</a>
-  <a href="#experience" data-link="experience">Experience</a>
-  <a href="#projects" data-link="projects">Projects</a>
-  <a href="#education" data-link="education">Education</a>
-  <a href="#contact" data-link="contact">Contact</a>
+<div class="mob" id="mob">
+  <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
 </div>
 
 <!-- HERO -->
 <section id="home">
-  <div class="hero-bg-grad"></div>
-  <div class="wrap">
-    <div class="hero-eyebrow"><span class="pulse-dot"></span>Available for internships</div>
-    <h1 class="hero-h">
-      <div class="line"><span>Computer science <br> <span class="role-type-wrap"><span class="role-type" id="roleType">student</span><span class="role-cursor"></span></span></span></div>
-      <div class="line"><span>who actually <span class="accent-word">ships</span> things.</span></div>
-    </h1>
-    <p class="hero-sub">
-      I'm <strong>M. Huzaifa Bhatti</strong>, a 6th-semester BSCS student at UCP, Lahore. I build Mobile apps, web interfaces, and full-stack systems — and I'm currently deep in the Full stack.
-    </p>
-   <div class="hero-actions">
-  <a href="#projects" class="btn btn-primary">View my work<i data-lucide="arrow-up-right" class="icon"></i></a>
-  <a href="#contact" class="btn btn-secondary">Get in touch<i data-lucide="mail" class="icon"></i></a>
-  <button type="button" class="btn btn-secondary" onclick="openCvModal()">View CV<i data-lucide="file-text" class="icon"></i></button>
-</div>
-    <div class="hero-stats">
-      <div><div class="hstat-num">9</div><div class="hstat-label">Projects built</div></div>
-      <div><div class="hstat-num">3</div><div class="hstat-label">Work experiences</div></div>
-      <div><div class="hstat-num">6th</div><div class="hstat-label">Semester, BSCS</div></div>
-      <div><div class="hstat-num">∞</div><div class="hstat-label">Things to learn</div></div>
+  <div class="wrap hero">
+    <div>
+      <span class="pill"><i></i>Open to work</span>
+      <h1 class="name">Muhammad <span>Huzaifa Bhatti</span></h1>
+      <div class="role">Full Stack <span class="typed" id="typed">Developer</span><span class="caret"></span></div>
+      <p class="lead">Building modern <strong>web &amp; mobile applications</strong> with clean code and great user experiences. BSCS student at UCP Lahore — shipping Flutter apps, MERN platforms and SEO-driven websites.</p>
+      <div class="acts">
+        <a href="#projects" class="btn btn-p">View my work <i data-lucide="arrow-up-right"></i></a>
+        <a href="#contact" class="btn btn-s">Get in touch <i data-lucide="mail"></i></a>
+        <button class="btn btn-s" onclick="openCv()">View CV <i data-lucide="file-text"></i></button>
+      </div>
+      <div class="stats">
+        <div class="stat"><b data-n="10">0</b><span>Projects built</span></div>
+        <div class="stat"><b data-n="4">0</b><span>Work experiences</span></div>
+        <div class="stat"><b>95+</b><span>PageSpeed score</span></div>
+        <div class="stat"><b>∞</b><span>Semester BSCS</span></div>
+      </div>
+    </div>
+
+    <div class="stage" id="stage">
+      <div class="disc"></div><div class="disc2"></div><div class="ring"></div>
+      <div class="sq"><i></i><i></i><i></i><i></i></div>
+      <img class="photo" id="photo" src="photo.png" alt="M. Huzaifa Bhatti, Full Stack Developer" onerror="document.getElementById('stage').classList.add('nophoto')">
+      <div class="monogram">HB</div>
+      <div class="tile t1"><i class="devicon-flutter-plain colored"></i></div>
+      <div class="tile t2"><i class="devicon-react-original colored"></i></div>
+      <div class="tile t3"><i class="devicon-nodejs-plain colored"></i></div>
+      <div class="tile t4"><i class="devicon-mongodb-plain colored"></i></div>
+      <div class="tile t5"><i class="devicon-firebase-plain colored"></i></div>
+      <div class="tile t6"><i class="devicon-tailwindcss-original colored"></i></div>
+      <div class="badge-fl"><i data-lucide="map-pin"></i><div><b>Lahore, PK</b>Hybrid · Remote</div></div>
     </div>
   </div>
-  <div class="scroll-cue">Scroll<div class="line-anim"></div></div>
 </section>
+
+<div class="marq" aria-hidden="true"><div class="marq-t">
+  <span>Flutter</span><span>React</span><span>Node.js</span><span>MongoDB</span><span>Express</span><span>Firebase</span><span>Java</span><span>Tailwind</span><span>SEO</span><span>REST APIs</span>
+  <span>Flutter</span><span>React</span><span>Node.js</span><span>MongoDB</span><span>Express</span><span>Firebase</span><span>Java</span><span>Tailwind</span><span>SEO</span><span>REST APIs</span>
+</div></div>
 
 <!-- ABOUT -->
 <section id="about">
   <div class="wrap">
-    <div class="s-head reveal">
-      <div class="s-eyebrow">About</div>
-      <h2 class="s-title">Building things that <em>actually run</em></h2>
-    </div>
-    <div class="about-grid">
-      <div class="about-text reveal">
-        <p><span class="drop-cap">I</span>'m a Computer Science student at the University of Central Punjab, currently in my 6th semester. Outside the classroom, I build <strong>mobile applications</strong>, design and write full agency websites, and write systems-level programs in C++ — not because I have to, but because I enjoy creating software that solves real problems.</p>
-        <p>I've shipped a <strong>production agency website</strong> from scratch — handling the design, copywriting, and full on-page SEO — along with several <strong>cross-platform mobile applications</strong> using Flutter and Firebase. I'm also expanding my expertise in the <strong>MERN stack</strong> through university coursework and real-world projects, while gaining hands-on experience as a <strong>Full Stack Developer Intern</strong> building scalable web and mobile solutions.</p>
-        <p>I'm looking for opportunities where I can contribute from day one, collaborate with experienced developers, and continue building software that makes a meaningful impact.</p>
+    <div class="head rv"><div class="eyebrow">About</div><h2 class="title">Building things that <em>actually run</em></h2></div>
+    <div class="bento">
+      <div class="card b-story rv">
+        <div class="big">I turn ideas into <em>shipped products</em> — from pregnancy-tracking apps to agency websites.</div>
+        <p>I'm a Computer Science student at the <strong>University of Central Punjab</strong>, currently in my ∞ semester. Outside the classroom I build <strong>cross-platform mobile apps</strong> with Flutter and Firebase, <strong>MERN stack</strong> platforms, and systems-level programs in C++.</p>
+        <p>At <strong>SpatioLense</strong> I contribute across frontend, backend and database work on a production pregnancy-tracking app, and at <strong>BytesStack</strong> I designed, wrote and SEO-optimised the whole agency website from scratch.</p>
+        <p>I'm looking for opportunities where I can contribute from day one, collaborate with experienced developers and build software that matters.</p>
       </div>
-      <div class="about-card-list reveal">
-        <div class="about-row">
-          <div class="ic"><i data-lucide="map-pin"></i></div>
-          <div class="about-row-text"><div class="about-row-label">Location</div><div class="about-row-val">Lahore, Pakistan</div></div>
+      <div class="card b-mini rv"><div class="ic"><i data-lucide="map-pin"></i></div><div><small>Location</small><b>Lahore, Pakistan</b></div></div>
+      <div class="card b-mini rv"><div class="ic"><i data-lucide="graduation-cap"></i></div><div><small>Education</small><b>BSCS, UCP</b></div></div>
+      <div class="card b-now rv">
+        <div class="idwrap">
+          <div class="strap"></div>
+          <div class="idcard">
+            <span class="id-hole"></span>
+            <img src="photo.png" alt="" onerror="this.style.display='none'">
+            <b>M. Huzaifa Bhatti</b>
+            <small>Full Stack Developer</small>
+            <div class="id-meta"><span>ID&nbsp;HB-2026</span><span>LHR · PK</span></div>
+            <div class="barcode"></div>
+            <div class="id-status"><i></i>Open to work</div>
+          </div>
+          <span class="pullhint" id="pullhint">pull me ↓</span>
         </div>
-        <div class="about-row">
-          <div class="ic"><i data-lucide="graduation-cap"></i></div>
-          <div class="about-row-text"><div class="about-row-label">Education</div><div class="about-row-val">BSCS, UCP — 6th Semester</div></div>
-        </div>
-        <div class="about-row">
-          <div class="ic"><i data-lucide="code-2"></i></div>
-          <div class="about-row-text"><div class="about-row-label">Focus areas</div><div class="about-row-val">Android · Web · MERN Stack</div></div>
-        </div>
-        <div class="about-row">
-          <div class="ic"><i data-lucide="zap"></i></div>
-          <div class="about-row-text"><div class="about-row-label">Status</div><div class="about-row-val accent">Open to internships</div></div>
+        <div class="now">
+          <div class="eyebrow">Right now</div>
+          <div class="now-row"><span>Local time · Lahore</span><b id="clock">--:--:--</b></div>
+          <div class="now-row"><span>Shipping</span><b>Nine — pregnancy tracking app</b></div>
+          <div class="now-row"><span>Studying</span><b>BSCS · ∞ semester, UCP</b></div>
+          <div class="now-row"><span>On my desk</span><b>Flutter · Node.js · MongoDB</b></div>
+          <div class="now-row"><span>Looking for</span><b>Internships &amp; junior roles</b></div>
         </div>
       </div>
     </div>
@@ -251,64 +450,52 @@
 <!-- SKILLS -->
 <section id="skills">
   <div class="wrap">
-    <div class="s-head reveal">
-      <div class="s-eyebrow">Skills</div>
-      <h2 class="s-title">A toolkit built by <em>doing</em>, not just studying</h2>
-      <p class="s-desc">Every skill below has shipped in a real project — there's nothing here I've only read about.</p>
+    <div class="head rv"><div class="eyebrow">Skills</div><h2 class="title">A toolkit built by <em>doing</em></h2><p class="sub">Every tool below has shipped in a real project.</p></div>
+    <div class="tabs rv">
+      <button class="tab on" data-t="mobile">Mobile</button><button class="tab" data-t="web">Web &amp; MERN</button><button class="tab" data-t="lang">Languages</button><button class="tab" data-t="tools">Tools</button><button class="tab" data-t="cs">Fundamentals</button>
     </div>
-
-    <div class="skill-tabs reveal">
-      <button class="skill-tab active" data-tab="android">Mobile</button>
-      <button class="skill-tab" data-tab="web">Web & MERN</button>
-      <button class="skill-tab" data-tab="languages">Languages</button>
-      <button class="skill-tab" data-tab="cs">CS Concepts</button>
-      <button class="skill-tab" data-tab="tools">Tools</button>
-    </div>
-
-    <div class="skill-panels reveal">
-      <div class="skill-panel active" id="panel-android">
-        <div class="skill-chip"><div class="ic"><i data-lucide="smartphone"></i></div><div class="skill-chip-name">Android Studio</div></div>
-        <div class="skill-chip"><div class="ic"><i data-lucide="coffee"></i></div><div class="skill-chip-name">Java</div></div>
-        <div class="skill-chip"><div class="ic"><i data-lucide="smartphone"></i></div><div class="skill-chip-name">Flutter</div></div>
-        <div class="skill-chip"><div class="ic"><i data-lucide="code-2"></i></div><div class="skill-chip-name">Dart</div></div>
-        <div class="skill-chip"><div class="ic"><i data-lucide="database"></i></div><div class="skill-chip-name">SQLite</div></div>
-        <div class="skill-chip"><div class="ic"><i data-lucide="flame"></i></div><div class="skill-chip-name">Firebase Realtime DB</div></div>
-        <div class="skill-chip"><div class="ic"><i data-lucide="cloud"></i></div><div class="skill-chip-name">Firebase Storage</div></div>
-        <div class="skill-chip"><div class="ic"><i data-lucide="layout-grid"></i></div><div class="skill-chip-name">Material Design</div></div>
+    <div class="rv">
+      <div class="panel on" id="p-mobile">
+        <div class="sk"><i class="devicon-flutter-plain colored"></i><span>Flutter</span></div>
+        <div class="sk"><i class="devicon-dart-plain colored"></i><span>Dart</span></div>
+        <div class="sk"><i class="devicon-android-plain colored"></i><span>Android Studio</span></div>
+        <div class="sk"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+        <div class="sk"><i class="devicon-firebase-plain colored"></i><span>Firebase</span></div>
+        <div class="sk"><i class="devicon-sqlite-plain colored"></i><span>SQLite</span></div>
       </div>
-      <div class="skill-panel" id="panel-web">
-        <div class="skill-chip"><div class="ic"><i data-lucide="file-code"></i></div><div class="skill-chip-name">HTML5</div></div>
-        <div class="skill-chip"><div class="ic"><i data-lucide="palette"></i></div><div class="skill-chip-name">CSS3</div></div>
-        <div class="skill-chip"><div class="ic"><i data-lucide="braces"></i></div><div class="skill-chip-name">JavaScript</div></div>
-        <div class="skill-chip"><div class="ic"><i data-lucide="search"></i></div><div class="skill-chip-name">On-Page SEO</div></div>
-        <div class="skill-chip learning"><div class="ic"><i data-lucide="leaf"></i></div><div class="skill-chip-name">MongoDB</div><span class="skill-chip-learning-tag">LEARNING</span></div>
-        <div class="skill-chip learning"><div class="ic"><i data-lucide="server"></i></div><div class="skill-chip-name">Express.js</div><span class="skill-chip-learning-tag">LEARNING</span></div>
-        <div class="skill-chip learning"><div class="ic"><i data-lucide="atom"></i></div><div class="skill-chip-name">React</div><span class="skill-chip-learning-tag">LEARNING</span></div>
-        <div class="skill-chip learning"><div class="ic"><i data-lucide="hexagon"></i></div><div class="skill-chip-name">Node.js</div><span class="skill-chip-learning-tag">LEARNING</span></div>
+      <div class="panel" id="p-web">
+        <div class="sk"><i class="devicon-react-original colored"></i><span>React</span></div>
+        <div class="sk"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
+        <div class="sk"><i class="devicon-express-original"></i><span>Express.js</span></div>
+        <div class="sk"><i class="devicon-mongodb-plain colored"></i><span>MongoDB</span></div>
+        <div class="sk"><i class="devicon-redux-original colored"></i><span>Redux</span></div>
+        <div class="sk"><i class="devicon-tailwindcss-original colored"></i><span>Tailwind</span></div>
+        <div class="sk"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
+        <div class="sk"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
       </div>
-      <div class="skill-panel" id="panel-languages">
-        <div class="skill-chip"><div class="ic"><i data-lucide="terminal"></i></div><div class="skill-chip-name">C</div></div>
-        <div class="skill-chip"><div class="ic"><i data-lucide="terminal-square"></i></div><div class="skill-chip-name">C++</div></div>
-        <div class="skill-chip"><div class="ic"><i data-lucide="coffee"></i></div><div class="skill-chip-name">Java</div></div>
-        <div class="skill-chip"><div class="ic"><i data-lucide="braces"></i></div><div class="skill-chip-name">JavaScript</div></div>
-        <div class="skill-chip"><div class="ic"><i data-lucide="database"></i></div><div class="skill-chip-name">SQL</div></div>
-        <div class="skill-chip"><div class="ic"><i data-lucide="code"></i></div><div class="skill-chip-name">XML</div></div>
+      <div class="panel" id="p-lang">
+        <div class="sk"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+        <div class="sk"><i class="devicon-dart-plain colored"></i><span>Dart</span></div>
+        <div class="sk"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+        <div class="sk"><i class="devicon-cplusplus-plain colored"></i><span>C++</span></div>
+        <div class="sk"><i class="devicon-c-plain colored"></i><span>C</span></div>
+        <div class="sk"><i data-lucide="database"></i><span>SQL</span></div>
       </div>
-      <div class="skill-panel" id="panel-cs">
-        <div class="skill-chip"><div class="ic"><i data-lucide="box"></i></div><div class="skill-chip-name">OOP</div></div>
-        <div class="skill-chip"><div class="ic"><i data-lucide="git-branch"></i></div><div class="skill-chip-name">Data Structures</div></div>
-        <div class="skill-chip"><div class="ic"><i data-lucide="binary"></i></div><div class="skill-chip-name">Algorithms</div></div>
-        <div class="skill-chip"><div class="ic"><i data-lucide="folder-open"></i></div><div class="skill-chip-name">File Handling</div></div>
-        <div class="skill-chip"><div class="ic"><i data-lucide="database-zap"></i></div><div class="skill-chip-name">DB Management</div></div>
-        <div class="skill-chip"><div class="ic"><i data-lucide="layout-panel-left"></i></div><div class="skill-chip-name">UI/UX Design</div></div>
+      <div class="panel" id="p-tools">
+        <div class="sk"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+        <div class="sk"><i class="devicon-github-original"></i><span>GitHub</span></div>
+        <div class="sk"><i class="devicon-vscode-plain colored"></i><span>VS Code</span></div>
+        <div class="sk"><i class="devicon-figma-plain colored"></i><span>Figma</span></div>
+        <div class="sk"><i class="devicon-postman-plain colored"></i><span>Postman</span></div>
+        <div class="sk"><i data-lucide="search"></i><span>On-Page SEO</span></div>
       </div>
-      <div class="skill-panel" id="panel-tools">
-        <div class="skill-chip"><div class="ic"><i data-lucide="git-commit-horizontal"></i></div><div class="skill-chip-name">Git</div></div>
-        <div class="skill-chip"><div class="ic"><i data-lucide="github"></i></div><div class="skill-chip-name">GitHub</div></div>
-        <div class="skill-chip"><div class="ic"><i data-lucide="figma"></i></div><div class="skill-chip-name">Figma</div></div>
-        <div class="skill-chip"><div class="ic"><i data-lucide="code-2"></i></div><div class="skill-chip-name">VS Code</div></div>
-        <div class="skill-chip"><div class="ic"><i data-lucide="key-round"></i></div><div class="skill-chip-name">Keyword Research</div></div>
-        <div class="skill-chip"><div class="ic"><i data-lucide="pen-tool"></i></div><div class="skill-chip-name">Copywriting</div></div>
+      <div class="panel" id="p-cs">
+        <div class="sk"><i data-lucide="box"></i><span>OOP</span></div>
+        <div class="sk"><i data-lucide="git-branch"></i><span>Data Structures</span></div>
+        <div class="sk"><i data-lucide="binary"></i><span>Algorithms</span></div>
+        <div class="sk"><i data-lucide="users"></i><span>Agile / Scrum</span></div>
+        <div class="sk"><i data-lucide="pen-tool"></i><span>Copywriting</span></div>
+        <div class="sk"><i data-lucide="layout-panel-left"></i><span>UI / UX</span></div>
       </div>
     </div>
   </div>
@@ -317,106 +504,41 @@
 <!-- EXPERIENCE -->
 <section id="experience">
   <div class="wrap">
-    <div class="s-head reveal">
-      <div class="s-eyebrow">Experience</div>
-      <h2 class="s-title">Where I've put the work <em>to use</em></h2>
-    </div>
+    <div class="head rv"><div class="eyebrow">Experience</div><h2 class="title">Where I've put the work <em>to use</em></h2></div>
+    <div class="tl">
+      <div class="ex now rv"><div class="card">
+        <div class="ex-top"><div><h3>Full Stack Developer <span style="color:var(--muted);font-weight:500">(Intern → Part-time)</span></h3><div class="co"><i data-lucide="building-2"></i>SpatioLense · Hybrid</div></div><span class="per">Jul 2026 — Present</span></div>
+        <ul>
+          <li>Engineered modular mobile and web features with Flutter and React, improving responsiveness across 10+ target screen sizes.</li>
+          <li>Designed and deployed 12+ REST API endpoints with Node.js and Express serving healthcare and tracking data.</li>
+          <li>Modeled MongoDB schemas and optimised queries to cut data-retrieval latency for core user workflows.</li>
+          <li>Built core UI modules and secure patient-data tracking workflows for a production pregnancy-tracking app.</li>
+          <li>Worked in an Agile team using Git for branching, code reviews and issue tracking.</li>
+        </ul>
+        <div class="tags"><span>Flutter</span><span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>Firebase</span><span>Git</span></div>
+      </div></div>
 
-<div class="exp-item reveal-l">
-  <div class="exp-period">2026 — Present</div>
-  <div class="exp-card">
-    <div class="exp-card-head">
-      <div>
-        <div class="exp-role">Full Stack Developer Intern → Part-Time Developer</div>
-        <div class="exp-company"><i data-lucide="link-2"></i>SpatioLense</div>
-      </div>
-    </div>
+      <div class="ex now rv"><div class="card">
+        <div class="ex-top"><div><h3>Web Developer &amp; SEO Specialist</h3><div class="co"><i data-lucide="building-2"></i>BytesStack Software Solutions · Lahore</div></div><span class="per">2025 — Present</span></div>
+        <ul>
+          <li>Built the agency's web platform from scratch in HTML5, CSS3 and JavaScript, reaching a 95+ Google PageSpeed score.</li>
+          <li>Wrote conversion copy and structured on-page SEO (meta tags, H1–H3 hierarchy, alt text), driving a 30% increase in organic discovery.</li>
+          <li>Optimised navigation and keyword targeting across high-intent service pages to streamline lead generation.</li>
+        </ul>
+        <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>SEO</span><span>Figma</span><span>Copywriting</span></div>
+      </div></div>
 
-    <ul class="exp-desc">
-      <li>Started as a Full Stack Developer Intern and transitioned into a part-time development role with increased technical and team responsibilities.</li>
-      <li>Contributing across frontend, backend, database integration, API development, testing, and overall application development.</li>
-      <li>Coordinating development tasks, collaborating with team members, and supporting smooth implementation and delivery of project features.</li>
-      <li>Taking greater ownership of development tasks, technical coordination, project progress, and deliverables in the part-time role.</li>
-      <li>Participating in code reviews, debugging, testing, and continuous improvement of application quality and user experience.</li>
-    </ul>
+      <div class="ex rv"><div class="card">
+        <div class="ex-top"><div><h3>Content Writing Intern</h3><div class="co"><i data-lucide="building-2"></i>Haachi Technologies · Hybrid</div></div><span class="per">Jun — Aug 2024</span></div>
+        <ul><li>Researched and published SEO-optimised technical articles, growing organic search impressions across key content clusters.</li></ul>
+        <div class="tags"><span>Blog Writing</span><span>Keyword Research</span><span>On-Page SEO</span></div>
+      </div></div>
 
-    <div class="exp-tags">
-      <span class="exp-tag">Flutter</span>
-      <span class="exp-tag">Node.js</span>
-      <span class="exp-tag">Express.js</span>
-      <span class="exp-tag">MongoDB</span>
-      <span class="exp-tag">Firebase</span>
-      <span class="exp-tag">REST APIs</span>
-      <span class="exp-tag">Git</span>
-      <span class="exp-tag">GitHub</span>
-    </div>
-  </div>
-</div>    
-    <div class="exp-timeline">
-      <div class="exp-item reveal-l">
-        <div class="exp-period">2025 — Present</div>
-        <div class="exp-card">
-          <div class="exp-card-head">
-            <div>
-              <div class="exp-role">Web Developer & SEO Specialist</div>
-              <div class="exp-company"><i data-lucide="link-2"></i>BytesStack Software Solutions · bytesstack.net</div>
-            </div>
-          </div>
-          <ul class="exp-desc">
-            <li>Designed and developed the complete agency website from scratch — layout, UI/UX, and front-end implementation.</li>
-            <li>Wrote all website copy: homepage, service pages, and about section with a conversion-focused brand tone.</li>
-            <li>Executed full on-page SEO: keyword research, meta titles, heading hierarchy, image alt tags, and internal linking.</li>
-            <li>Optimized site structure for discoverability, targeting high-intent keywords relevant to agency services.</li>
-          </ul>
-          <div class="exp-tags">
-            <span class="exp-tag">HTML</span><span class="exp-tag">CSS</span><span class="exp-tag">JavaScript</span>
-            <span class="exp-tag">SEO</span><span class="exp-tag">Figma</span><span class="exp-tag">Copywriting</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="exp-item reveal-l">
-        <div class="exp-period">Jun — Aug 2024</div>
-        <div class="exp-card">
-          <div class="exp-card-head">
-            <div>
-              <div class="exp-role">Content Writing Intern</div>
-              <div class="exp-company"><i data-lucide="link-2"></i>Haachi Technologies</div>
-            </div>
-          </div>
-          <ul class="exp-desc">
-            <li>Researched and wrote SEO-optimized blog posts and articles following editorial guidelines and brand tone.</li>
-            <li>Conducted keyword research to identify high-intent search terms and incorporated them naturally into content.</li>
-            <li>Optimized articles for on-page SEO: heading structure, keyword density, and meta description writing.</li>
-            <li>Collaborated with the team to meet deadlines and deliver publication-ready pieces.</li>
-          </ul>
-          <div class="exp-tags">
-            <span class="exp-tag">Blog Writing</span><span class="exp-tag">Keyword Research</span>
-            <span class="exp-tag">On-Page SEO</span><span class="exp-tag">Editorial</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="exp-item reveal-l">
-        <div class="exp-period">2024</div>
-        <div class="exp-card">
-          <div class="exp-card-head">
-            <div>
-              <div class="exp-role">IT Technician</div>
-              <div class="exp-company"><i data-lucide="link-2"></i>Jers Consultancy (Pvt) Ltd</div>
-            </div>
-          </div>
-          <ul class="exp-desc">
-            <li>Installed, configured, and troubleshot hardware and software systems including desktops, printers, and LAN networks.</li>
-            <li>Performed system updates, data backups, diagnostics, and OS reinstallations to maintain operational uptime.</li>
-            <li>Resolved technical issues efficiently, minimizing downtime for office staff and management.</li>
-          </ul>
-          <div class="exp-tags">
-            <span class="exp-tag">Hardware</span><span class="exp-tag">Networking</span>
-            <span class="exp-tag">OS Install</span><span class="exp-tag">Diagnostics</span>
-          </div>
-        </div>
-      </div>
+      <div class="ex rv"><div class="card">
+        <div class="ex-top"><div><h3>IT Technician</h3><div class="co"><i data-lucide="building-2"></i>Jers Consultancy (Pvt) Ltd · Lahore</div></div><span class="per">2024</span></div>
+        <ul><li>Managed office network, hardware diagnostics and automated backups, maintaining 99% operational uptime.</li></ul>
+        <div class="tags"><span>Networking</span><span>Hardware</span><span>Diagnostics</span></div>
+      </div></div>
     </div>
   </div>
 </section>
@@ -424,468 +546,258 @@
 <!-- PROJECTS -->
 <section id="projects">
   <div class="wrap">
-    <div class="s-head reveal">
-      <div class="s-eyebrow">Projects</div>
-      <h2 class="s-title">Nine builds, <em>start to finish</em></h2>
-      <p class="s-desc">From Android apps to a production agency website to my first MERN stack builds.</p>
-    </div>
-        <div class="proj-grid">
-
-  <!-- TestCraft -->
-  <div class="proj-card reveal">
-    <div class="proj-top">
-      <div class="proj-icon-wrap">
-        <i data-lucide="clipboard-check"></i>
-      </div>
-      <div class="proj-badges">
-        <span class="proj-badge mern">MERN</span>
-      </div>
-    </div>
-
-    <div class="proj-name">TestCraft</div>
-
-    <div class="proj-desc">
-      Quiz and test creation platform. Educators craft question banks,
-      schedule tests, and track student results. Built with MERN as part
-      of UCP coursework.
-    </div>
-
-    <div class="proj-foot">
-      <div class="proj-stack">
-        <span>MongoDB</span>
-        <span>Express</span>
-        <span>React</span>
-        <span>Node.js</span>
-      </div>
-
-      <a
-        href="https://testcraft-frontend.vercel.app"
-        target="_blank"
-        class="proj-link"
-      >
-        Visit
-        <i data-lucide="arrow-up-right"></i>
-      </a>
-    </div>
-  </div>
-
-
-  <!-- BytesStack Website -->
-  <div class="proj-card reveal">
-    <div class="proj-top">
-      <div class="proj-icon-wrap">
-        <i data-lucide="globe"></i>
-      </div>
-      <div class="proj-badges">
-        <span class="proj-badge live">Live</span>
-      </div>
-    </div>
-
-    <div class="proj-name">BytesStack Website</div>
-
-    <div class="proj-desc">
-      Full agency website designed and built from scratch — UI/UX, all copy,
-      homepage, service pages — with complete on-page SEO targeting
-      high-intent keywords.
-    </div>
-
-    <div class="proj-foot">
-      <div class="proj-stack">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JS</span>
-        <span>SEO</span>
-      </div>
-
-      <a
-        href="https://bytesstack.net"
-        target="_blank"
-        class="proj-link"
-      >
-        Visit
-        <i data-lucide="arrow-up-right"></i>
-      </a>
+    <div class="head rv"><div class="eyebrow">Projects</div><h2 class="title">Ten builds, <em>start to finish</em></h2><p class="sub">From a production health app to MERN platforms, Android apps and C++ systems.</p></div>
+    <div class="pg">
+      <article class="card pj feat rv">
+        <div class="pj-h"><span class="no">01</span><span class="kind">Production App</span></div>
+        <h3>Nine — Pregnancy Tracking Platform</h3>
+        <p class="desc">Production pregnancy-tracking app with real-time health metric modules and dynamic timeline UIs, backed by Node.js REST APIs and MongoDB for secure, time-sensitive records.</p>
+        <div class="pj-f"><div class="stack"><span>Flutter</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>Firebase</span></div></div>
+      </article>
+      <article class="card pj rv">
+        <div class="pj-h"><span class="no">02</span><span class="kind">MERN</span></div>
+        <h3>TestCraft</h3>
+        <p class="desc">Quiz and assessment platform: question banks, automated scoring and student result tracking.</p>
+        <div class="pj-f"><div class="stack"><span>React</span><span>Node</span><span>MongoDB</span></div><a class="go" href="https://testcraft-frontend.vercel.app" target="_blank" rel="noopener" aria-label="Visit TestCraft"><i data-lucide="arrow-up-right"></i></a></div>
+      </article>
+      <article class="card pj rv">
+        <div class="pj-h"><span class="no">03</span><span class="kind">MERN</span></div>
+        <h3>CodexCS</h3>
+        <p class="desc">CS MCQ prep platform with chapter quizzes, XP, performance tracking and answer review.</p>
+        <div class="pj-f"><div class="stack"><span>React</span><span>Node</span><span>MongoDB</span></div><a class="go" href="https://testcraft-students.vercel.app" target="_blank" rel="noopener" aria-label="Visit CodexCS"><i data-lucide="arrow-up-right"></i></a></div>
+      </article>
+      <article class="card pj rv">
+        <div class="pj-h"><span class="no">04</span><span class="kind">MERN</span></div>
+        <h3>Budgetly</h3>
+        <p class="desc">Finance tracker with expense categories, PDF export and dark/light theming.</p>
+        <div class="pj-f"><div class="stack"><span>React</span><span>Tailwind</span><span>MongoDB</span></div><a class="go" href="https://budgetly-bs.netlify.app" target="_blank" rel="noopener" aria-label="Visit Budgetly"><i data-lucide="arrow-up-right"></i></a></div>
+      </article>
+      <article class="card pj rv">
+        <div class="pj-h"><span class="no">05</span><span class="kind">Live</span></div>
+        <h3>BytesStack Website</h3>
+        <p class="desc">Agency site built from scratch — UI/UX, copy and full on-page SEO. 95+ PageSpeed.</p>
+        <div class="pj-f"><div class="stack"><span>HTML</span><span>CSS</span><span>JS</span><span>SEO</span></div><a class="go" href="https://bytesstack.net" target="_blank" rel="noopener" aria-label="Visit BytesStack"><i data-lucide="arrow-up-right"></i></a></div>
+      </article>
+      <article class="card pj rv">
+        <div class="pj-h"><span class="no">06</span><span class="kind">Android</span></div>
+        <h3>InstaClone</h3>
+        <p class="desc">Instagram-style app: auth, photo upload with compression, real-time feed, follow system.</p>
+        <div class="pj-f"><div class="stack"><span>Java</span><span>Firebase</span></div><a class="go" href="https://github.com/mhrbhatti" target="_blank" rel="noopener" aria-label="InstaClone code"><i data-lucide="github"></i></a></div>
+      </article>
+      <article class="card pj rv">
+        <div class="pj-h"><span class="no">07</span><span class="kind">Android</span></div>
+        <h3>PakWheels Clone</h3>
+        <p class="desc">Vehicle listing marketplace with browse, search/filter and authentication.</p>
+        <div class="pj-f"><div class="stack"><span>Java</span><span>SQLite</span></div><a class="go" href="https://github.com/mhrbhatti" target="_blank" rel="noopener" aria-label="PakWheels Clone code"><i data-lucide="github"></i></a></div>
+      </article>
+      <article class="card pj rv">
+        <div class="pj-h"><span class="no">08</span><span class="kind">C++</span></div>
+        <h3>Hospital Management</h3>
+        <p class="desc">Console system: patient registration, appointments, invoices and CSV rate lists using OOP.</p>
+        <div class="pj-f"><div class="stack"><span>C++</span><span>OOP</span><span>Files</span></div><a class="go" href="https://github.com/mhrbhatti" target="_blank" rel="noopener" aria-label="Hospital Management code"><i data-lucide="github"></i></a></div>
+      </article>
+      <article class="card pj rv">
+        <div class="pj-h"><span class="no">09</span><span class="kind">C++</span></div>
+        <h3>Car Rental System</h3>
+        <p class="desc">Menu-driven rental manager built on arrays and stacks with persistent file records.</p>
+        <div class="pj-f"><div class="stack"><span>C++</span><span>DSA</span><span>File I/O</span></div><a class="go" href="https://github.com/mhrbhatti" target="_blank" rel="noopener" aria-label="Car Rental code"><i data-lucide="github"></i></a></div>
+      </article>
+      <article class="card pj rv">
+        <div class="pj-h"><span class="no">10</span><span class="kind">Live</span></div>
+        <h3>This Portfolio</h3>
+        <p class="desc">Hand-coded in vanilla HTML, CSS and JS with SEO structured data.</p>
+        <div class="pj-f"><div class="stack"><span>HTML</span><span>CSS</span><span>JS</span></div><a class="go" href="https://mhrbhatti.tech/" target="_blank" rel="noopener" aria-label="Visit portfolio"><i data-lucide="arrow-up-right"></i></a></div>
+      </article>
     </div>
   </div>
-
-<div class="proj-card reveal">
-  <div class="proj-top">
-    <div class="proj-icon-wrap"><i data-lucide="brain"></i></div>
-    <div class="proj-badges"><span class="proj-badge mern">MERN</span></div>
-  </div>
-  <div class="proj-name">CodexCS</div>
-  <div class="proj-desc">Computer Science MCQ preparation platform. Students can practice chapter-based quizzes, track their performance, earn XP, and review correct, incorrect, and skipped answers. Built with MERN for focused exam preparation.</div>
-  <div class="proj-foot">
-    <div class="proj-stack"><span>MongoDB</span><span>Express</span><span>React</span><span>Node.js</span></div>
-     <a
-        href="https://testcraft-students.vercel.app"
-        target="_blank"
-        class="proj-link"
-      >
-        Visit
-        <i data-lucide="arrow-up-right"></i>
-      </a>
-  </div>
-</div>
-  <!-- InstaClone -->
-  <div class="proj-card reveal">
-    <div class="proj-top">
-      <div class="proj-icon-wrap">
-        <i data-lucide="instagram"></i>
-      </div>
-      <div class="proj-badges">
-        <span class="proj-badge">Public</span>
-      </div>
-    </div>
-
-    <div class="proj-name">InstaClone</div>
-
-    <div class="proj-desc">
-      Feature-complete Instagram clone with user authentication, photo upload,
-      real-time feed, and follow/unfollow system. Firebase backend with
-      Material Design UI.
-    </div>
-
-    <div class="proj-foot">
-      <div class="proj-stack">
-        <span>Java</span>
-        <span>Android</span>
-        <span>Firebase</span>
-      </div>
-
-      <a
-        href="https://github.com/mhrbhatti"
-        target="_blank"
-        class="proj-link"
-      >
-        Code
-        <i data-lucide="arrow-up-right"></i>
-      </a>
-    </div>
-  </div>
-
-
-  <!-- Budgetly -->
-  <div class="proj-card reveal">
-    <div class="proj-top">
-      <div class="proj-icon-wrap">
-        <i data-lucide="wallet"></i>
-      </div>
-      <div class="proj-badges">
-        <span class="proj-badge mern">MERN</span>
-      </div>
-    </div>
-
-    <div class="proj-name">Budgetly</div>
-
-    <div class="proj-desc">
-      Personal finance and budget tracker built with the MERN stack.
-      Tracks income, expenses, and categories with a clean dashboard.
-      Built in UCP coursework.
-    </div>
-
-    <div class="proj-foot">
-      <div class="proj-stack">
-        <span>MongoDB</span>
-        <span>Express</span>
-        <span>React</span>
-        <span>Node.js</span>
-      </div>
-
-      <a
-        href="https://budgetly-bs.netlify.app"
-        target="_blank"
-        class="proj-link"
-      >
-        Visit
-        <i data-lucide="arrow-up-right"></i>
-      </a>
-    </div>
-  </div>
-
-
-  <!-- PakWheels Clone -->
-  <div class="proj-card reveal">
-    <div class="proj-top">
-      <div class="proj-icon-wrap">
-        <i data-lucide="car"></i>
-      </div>
-      <div class="proj-badges">
-        <span class="proj-badge">Public</span>
-      </div>
-    </div>
-
-    <div class="proj-name">PakWheels Clone</div>
-
-    <div class="proj-desc">
-      Android vehicle listing marketplace with browse, search/filter,
-      and user authentication. SQLite for local persistence with a
-      clean Material Design UI.
-    </div>
-
-    <div class="proj-foot">
-      <div class="proj-stack">
-        <span>Java</span>
-        <span>Android</span>
-        <span>SQLite</span>
-      </div>
-
-      <a
-        href="https://github.com/mhrbhatti"
-        target="_blank"
-        class="proj-link"
-      >
-        Code
-        <i data-lucide="arrow-up-right"></i>
-      </a>
-    </div>
-  </div>
-
-
-  <!-- Hospital Management System -->
-  <div class="proj-card reveal">
-    <div class="proj-top">
-      <div class="proj-icon-wrap">
-        <i data-lucide="hospital"></i>
-      </div>
-      <div class="proj-badges">
-        <span class="proj-badge">Public</span>
-      </div>
-    </div>
-
-    <div class="proj-name">Hospital Management System</div>
-
-    <div class="proj-desc">
-      Console-based system with patient registration, appointment scheduling,
-      invoice generation, and CSV-driven rate lists. Built with OOP principles
-      in C++.
-    </div>
-
-    <div class="proj-foot">
-      <div class="proj-stack">
-        <span>C++</span>
-        <span>OOP</span>
-        <span>File Handling</span>
-      </div>
-
-      <a
-        href="https://github.com/mhrbhatti"
-        target="_blank"
-        class="proj-link"
-      >
-        Code
-        <i data-lucide="arrow-up-right"></i>
-      </a>
-    </div>
-  </div>
-
-
-  <!-- Car Rental System -->
-  <div class="proj-card reveal">
-    <div class="proj-top">
-      <div class="proj-icon-wrap">
-        <i data-lucide="key-round"></i>
-      </div>
-      <div class="proj-badges">
-        <span class="proj-badge">Public</span>
-      </div>
-    </div>
-
-    <div class="proj-name">Car Rental System</div>
-
-    <div class="proj-desc">
-      Menu-driven rental management using arrays and stacks for inventory,
-      booking, and returns with persistent file-based records across sessions.
-    </div>
-
-    <div class="proj-foot">
-      <div class="proj-stack">
-        <span>C++</span>
-        <span>DSA</span>
-        <span>File I/O</span>
-      </div>
-
-      <a
-        href="https://github.com/mhrbhatti"
-        target="_blank"
-        class="proj-link"
-      >
-        Code
-        <i data-lucide="arrow-up-right"></i>
-      </a>
-    </div>
-  </div>
-
-
-  <!-- Personal Portfolio -->
-  <div class="proj-card reveal">
-    <div class="proj-top">
-      <div class="proj-icon-wrap">
-        <i data-lucide="user-circle"></i>
-      </div>
-      <div class="proj-badges">
-        <span class="proj-badge live">Live</span>
-      </div>
-    </div>
-
-    <div class="proj-name">Personal Portfolio</div>
-
-    <div class="proj-desc">
-      Terminal-inspired personal portfolio with custom animations,
-      interactive navigation, and a fully responsive layout — vanilla
-      HTML, CSS, and JS.
-    </div>
-
-    <div class="proj-foot">
-      <div class="proj-stack">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JS</span>
-        <span>SEO</span>
-      </div>
-
-      <a
-  href="https://mhrbhatti.tech/"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="proj-link"
->
-        Visit
-        <i data-lucide="arrow-up-right"></i>
-      </a>
-    </div>
-  </div>
-
-</div>
-    </section>
+</section>
 
 <!-- EDUCATION -->
 <section id="education">
   <div class="wrap">
-    <div class="s-head reveal">
-      <div class="s-eyebrow">Education</div>
-      <h2 class="s-title">The <em>foundation</em> behind the work</h2>
+    <div class="head rv"><div class="eyebrow">Education</div><h2 class="title">The <em>foundation</em> behind the work</h2></div>
+    <div class="edu">
+      <div class="card rv"><div class="ic"><i data-lucide="graduation-cap"></i></div><h3>University of Central Punjab (UCP)</h3><p>BS Computer Science, with MERN coursework in progress.</p><span class="per">2023 — Present · Lahore</span></div>
+      <div class="card rv"><div class="ic"><i data-lucide="book-open"></i></div><h3>Government College University (GCU)</h3><p>Intermediate in Computer Science (ICS).</p><span class="per">2021 — 2023 · Lahore</span></div>
     </div>
-
-    <div class="edu-grid">
-      <div class="edu-card reveal">
-        <div class="edu-icon"><i data-lucide="graduation-cap"></i></div>
-        <div class="edu-inst">University of Central Punjab (UCP)</div>
-        <div class="edu-degree">Bachelor of Science in Computer Science (BSCS) — 6th Semester. Currently enrolled, with MERN stack coursework in progress.</div>
-        <div class="edu-period">2023 — Present · Lahore</div>
-      </div>
-      <div class="edu-card reveal">
-        <div class="edu-icon"><i data-lucide="book-open"></i></div>
-        <div class="edu-inst">Government College University (GCU)</div>
-        <div class="edu-degree">Intermediate — ICS (Physics, Mathematics, Computer Science).</div>
-        <div class="edu-period">2021 — 2023 · Lahore</div>
-      </div>
-    </div>
-
-    <div class="cert-list reveal">
-      <div class="cert-row"><div class="ic"><i data-lucide="award"></i></div><div class="cert-text">Professional Mobile App Development <span>— University of Central Punjab (UCP), Lahore</span></div></div>
-      <div class="cert-row"><div class="ic"><i data-lucide="award"></i></div><div class="cert-text">Web Designing <span>— FSDS, Government College University (GCU), Lahore</span></div></div>
-      <div class="cert-row"><div class="ic"><i data-lucide="award"></i></div><div class="cert-text">Amazon Virtual Assistant (VA) <span>— FSDS, Government College University (GCU), Lahore</span></div></div>
-      <div class="cert-row"><div class="ic"><i data-lucide="award"></i></div><div class="cert-text">MicroPython Workshop <span>— IET On Campus, UET Lahore</span></div></div>
+    <div class="certs rv">
+      <div class="cert"><i data-lucide="award"></i><div>12-Week Android App Development with Flutter<small>UCP · Grade A+ · Aug 2025</small></div></div>
+      <div class="cert"><i data-lucide="award"></i><div>Web Designing<small>FSDS, GCU Lahore</small></div></div>
+      <div class="cert"><i data-lucide="award"></i><div>Amazon Virtual Assistant<small>FSDS, GCU Lahore</small></div></div>
+      <div class="cert"><i data-lucide="award"></i><div>MicroPython Workshop<small>IET On Campus, UET Lahore</small></div></div>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
+<section id="contact" style="padding-top:40px">
   <div class="wrap">
-    <div class="s-head reveal">
-      <div class="s-eyebrow">Contact</div>
-      <h2 class="s-title">Let's build something <em>worth shipping</em></h2>
-    </div>
-
-    <div class="contact-grid">
-      <div class="reveal-l">
-        <div class="contact-info-title">Open to internships — <em>Android, Web, or Full-Stack.</em></div>
-        <p class="contact-info-desc">I usually reply within 24 hours. If you've got something real to build, I'd love to hear about it.</p>
-        <div class="contact-links">
-          <a href="mailto:bhattihuzaifa3@gmail.com" class="contact-link-row">
-            <div class="ic"><i data-lucide="mail"></i></div>
-            <div class="contact-link-meta"><div class="contact-link-label">Email</div><div class="contact-link-val">bhattihuzaifa3@gmail.com</div></div>
-            <i data-lucide="arrow-up-right" class="arrow"></i>
-          </a>
-          <a href="tel:+923178495506" class="contact-link-row">
-            <div class="ic"><i data-lucide="phone"></i></div>
-            <div class="contact-link-meta"><div class="contact-link-label">Phone</div><div class="contact-link-val">+92 317 8495506</div></div>
-            <i data-lucide="arrow-up-right" class="arrow"></i>
-          </a>
-          <a href="https://linkedin.com/in/mhrbhatti" target="_blank" class="contact-link-row">
-            <div class="ic"><i data-lucide="linkedin"></i></div>
-            <div class="contact-link-meta"><div class="contact-link-label">LinkedIn</div><div class="contact-link-val">linkedin.com/in/mhrbhatti</div></div>
-            <i data-lucide="arrow-up-right" class="arrow"></i>
-          </a>
-          <a href="https://github.com/mhrbhatti" target="_blank" class="contact-link-row">
-            <div class="ic"><i data-lucide="github"></i></div>
-            <div class="contact-link-meta"><div class="contact-link-label">GitHub</div><div class="contact-link-val">github.com/mhrbhatti</div></div>
-            <i data-lucide="arrow-up-right" class="arrow"></i>
-          </a>
+    <div class="cbox rv">
+      <div>
+        <div class="eyebrow" style="color:var(--g3)"><span style="display:none"></span>Contact</div>
+        <h2>Let's build something <em>worth shipping.</em></h2>
+        <p>Open to internships and junior roles — Flutter, Web or Full-Stack. I usually reply within 24 hours.</p>
+        <div class="clinks">
+          <a href="mailto:bhattihuzaifa3@gmail.com"><span class="ic"><i data-lucide="mail"></i></span><span><small>Email</small><b>bhattihuzaifa3@gmail.com</b></span></a>
+          <a href="tel:+923178495506"><span class="ic"><i data-lucide="phone"></i></span><span><small>Phone</small><b>+92 317 8495506</b></span></a>
+          <a href="https://linkedin.com/in/mhrbhatti" target="_blank" rel="noopener"><span class="ic"><i data-lucide="linkedin"></i></span><span><small>LinkedIn</small><b>linkedin.com/in/mhrbhatti</b></span></a>
+          <a href="https://github.com/mhrbhatti" target="_blank" rel="noopener"><span class="ic"><i data-lucide="github"></i></span><span><small>GitHub</small><b>github.com/mhrbhatti</b></span></a>
         </div>
       </div>
-
-      <div class="contact-form reveal">
-        <div class="form-group">
-          <label for="fname">Name</label>
-          <input class="form-input" id="fname" type="text" placeholder="Your name">
-        </div>
-        <div class="form-group">
-          <label for="femail">Email</label>
-          <input class="form-input" id="femail" type="email" placeholder="your@email.com">
-        </div>
-        <div class="form-group">
-          <label for="fsubject">Subject</label>
-          <input class="form-input" id="fsubject" type="text" placeholder="Internship opportunity...">
-        </div>
-        <div class="form-group">
-          <label for="fmsg">Message</label>
-          <textarea class="form-input" id="fmsg" placeholder="Tell me a bit about what you're building..."></textarea>
-        </div>
-        <button class="form-submit" onclick="handleSend()">Send message<i data-lucide="send"></i></button>
-        <div id="form-status">Message ready — opening your email client...</div>
+      <div class="form">
+        <div><label for="fn">Name</label><input id="fn" placeholder="Your name"></div>
+        <div><label for="fe">Email</label><input id="fe" type="email" placeholder="your@email.com"></div>
+        <div><label for="fsu">Subject</label><input id="fsu" placeholder="Internship opportunity..."></div>
+        <div><label for="fm">Message</label><textarea id="fm" placeholder="Tell me a bit about what you're building..."></textarea></div>
+        <button class="btn btn-p" onclick="send()">Send message <i data-lucide="send"></i></button>
+        <div id="fs">Message ready — opening your email client...</div>
       </div>
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="wrap footer-inner">
-    <div class="footer-logo"><span class="dot"></span>Huzaifa Bhatti</div>
-    <div class="footer-text">© 2026 mhrbhatti. Built from scratch in Lahore.</div>
-    <div class="footer-socials">
-      <a href="https://github.com/mhrbhatti" target="_blank" aria-label="GitHub"><i data-lucide="github"></i></a>
-     <a href="https://instagram.com/mhrbhatti" target="_blank" aria-label="Instagram" class="nav-social-link"><i data-lucide="instagram"></i></a>
-      <a href="https://linkedin.com/in/mhrbhatti" target="_blank" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
-      <a href="mailto:bhattihuzaifa3@gmail.com" aria-label="Email"><i data-lucide="mail"></i></a>
-    </div>
+<footer><div class="wrap foot">
+  <div class="logo"><b>HB</b>Huzaifa Bhatti</div>
+  <div>© 2026 mhrbhatti. Built from scratch in Lahore.</div>
+  <div class="socs">
+    <a class="icon-btn" href="https://github.com/mhrbhatti" target="_blank" rel="noopener" aria-label="GitHub"><i data-lucide="github"></i></a>
+    <a class="icon-btn" href="https://instagram.com/mhrbhatti" target="_blank" rel="noopener" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+    <a class="icon-btn" href="https://linkedin.com/in/mhrbhatti" target="_blank" rel="noopener" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+    <a class="icon-btn" href="mailto:bhattihuzaifa3@gmail.com" aria-label="Email"><i data-lucide="mail"></i></a>
   </div>
-</footer>
+</div></footer>
 
-<button class="to-top" id="toTop" aria-label="Back to top"><i data-lucide="arrow-up"></i></button>
+<button class="icon-btn" id="top" aria-label="Back to top"><i data-lucide="arrow-up"></i></button>
 
-<script src="script.js"></script>
+<div class="modal" id="cv"><div class="bk" onclick="closeCv()"></div>
+  <div class="sheet"><div class="sheet-h"><b class="sora">M. Huzaifa Bhatti — CV</b>
+    <div style="display:flex;gap:8px;align-items:center"><a class="btn btn-p" href="Huzaifa-Bhatti-CV.pdf" download><i data-lucide="download"></i>Download</a><button class="icon-btn" onclick="closeCv()" aria-label="Close"><i data-lucide="x"></i></button></div></div>
+    <iframe id="cvf" title="Huzaifa Bhatti CV"></iframe></div></div>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+function icons(){window.lucide&&lucide.createIcons()}
+window.addEventListener('load',()=>{icons();setTimeout(()=>$('#loader').classList.add('done'),500)});
+document.addEventListener('DOMContentLoaded',()=>{const t=setInterval(()=>{if(window.lucide){icons();clearInterval(t)}},150);setTimeout(()=>clearInterval(t),5000)});
+
+/* theme */
+const root=document.documentElement;
+try{const s=localStorage.getItem('th');if(s)root.dataset.theme=s}catch(e){}
+$('#theme').onclick=()=>{const d=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=d;try{localStorage.setItem('th',d)}catch(e){}$('#theme').innerHTML='<i data-lucide="'+(d==='dark'?'sun':'moon')+'"></i>';icons()};
+
+/* mobile menu */
+const mob=$('#mob');
+$('#menuBtn').onclick=()=>{mob.classList.toggle('open');document.body.style.overflow=mob.classList.contains('open')?'hidden':''};
+$$('#mob a').forEach(a=>a.onclick=()=>{mob.classList.remove('open');document.body.style.overflow=''});
+
+/* scroll */
+const links=$$('.links a'),secs=$$('section[id]');
+addEventListener('scroll',()=>{
+  const h=document.documentElement,p=h.scrollTop/(h.scrollHeight-h.clientHeight);
+  $('#bar').style.width=(p*100)+'%';
+  $('#top').classList.toggle('show',h.scrollTop>600);
+  let cur='home';secs.forEach(s=>{if(s.getBoundingClientRect().top<200)cur=s.id});
+  links.forEach(l=>l.classList.toggle('on',l.dataset.l===cur));
+},{passive:true});
+$('#top').onclick=()=>scrollTo({top:0,behavior:'smooth'});
+
+/* glow */
+addEventListener('pointermove',e=>{const g=$('#glow');g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'});
+
+/* reveal + counters */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+$$('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%3)*90+'ms';io.observe(el)});
+const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,n=+el.dataset.n;let v=0;const t=setInterval(()=>{v++;el.textContent=v;if(v>=n)clearInterval(t)},90);co.unobserve(el)}),{threshold:.6});
+$$('[data-n]').forEach(el=>co.observe(el));
+
+/* typed role */
+const words=['Developer','Flutter Dev','MERN Builder','SEO Specialist'];let wi=0,ci=0,del=false;
+(function type(){const w=words[wi],el=$('#typed');
+  el.textContent=w.slice(0,ci);
+  if(!del&&ci===w.length){del=true;return setTimeout(type,1500)}
+  if(del&&ci===0){del=false;wi=(wi+1)%words.length}
+  ci+=del?-1:1;setTimeout(type,del?50:95)})();
+
+/* skill tabs */
+$$('.tab').forEach(b=>b.onclick=()=>{$$('.tab').forEach(x=>x.classList.remove('on'));$$('.panel').forEach(x=>x.classList.remove('on'));b.classList.add('on');$('#p-'+b.dataset.t).classList.add('on');icons()});
+
+/* 3D tilt on portrait (desktop only) */
+const st=$('#stage');
+if(matchMedia('(hover:hover)').matches){
+  st.addEventListener('pointermove',e=>{const r=st.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;st.style.transform=`perspective(900px) rotateY(${x*8}deg) rotateX(${-y*8}deg)`});
+  st.addEventListener('pointerleave',()=>st.style.transform='');
+  st.style.transition='transform .2s';
+}
+
+/* CV modal */
+function openCv(){$('#cv').classList.add('open');if(!$('#cvf').src||$('#cvf').src===location.href)$('#cvf').src='Huzaifa-Bhatti-CV.pdf'}
+function closeCv(){$('#cv').classList.remove('open')}
+addEventListener('keydown',e=>{if(e.key==='Escape')closeCv()});
+
+/* ID badge: hover tilt, drag-to-stretch, tap boing (spring physics) */
+(function(){
+  const card=document.querySelector('.idcard'),strap=document.querySelector('.strap'),wrap=document.querySelector('.idwrap'),hint=document.getElementById('pullhint');
+  if(!card)return;
+  const keys=['x','y','rx','ry'],st={x:0,y:0,rx:0,ry:0},v={x:0,y:0,rx:0,ry:0},tg={x:0,y:0,rx:0,ry:0};
+  let drag=false,run=false,sx=0,sy=0,moved=0;
+  const K=150,C=7.5;
+  const touch=!matchMedia('(hover:hover)').matches;
+  if(touch&&hint)hint.textContent='tap me';
+  function render(){
+    const sY=1+Math.max(st.y,0)*0.0017,sX=1-Math.min(Math.max(st.y,0),200)*0.0004;
+    card.style.transform='translate('+st.x+'px,'+st.y+'px) rotateX('+st.rx+'deg) rotateY('+st.ry+'deg) scale('+sX+','+sY+')';
+    strap.style.transform='scaleY('+Math.max(.55,1+st.y/70)+')';
+  }
+  function step(){
+    const dt=1/60;let moving=false;
+    keys.forEach(k=>{const a=(tg[k]-st[k])*K-v[k]*C;v[k]+=a*dt;st[k]+=v[k]*dt;if(Math.abs(v[k])>.05||Math.abs(tg[k]-st[k])>.05)moving=true});
+    render();
+    if(moving||drag)requestAnimationFrame(step);else{run=false;st.x=st.y=st.rx=st.ry=0;render()}
+  }
+  function go(){if(!run){run=true;requestAnimationFrame(step)}}
+  function boing(){v.y+=520;v.rx-=140;v.x+=(Math.random()-.5)*300;go()}
+  function done(){if(hint)hint.classList.add('gone')}
+  card.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse')wrap.classList.add('hov')});
+  card.addEventListener('pointerleave',e=>{if(!drag){wrap.classList.remove('hov');tg.rx=tg.ry=0;go()}});
+  card.addEventListener('pointerdown',e=>{
+    drag=true;moved=0;sx=e.clientX;sy=e.clientY;card.classList.add('grab');done();
+    if(e.pointerType==='mouse'){try{card.setPointerCapture(e.pointerId)}catch(_){}}
+    go();
+  });
+  card.addEventListener('pointermove',e=>{
+    if(e.pointerType!=='mouse')return;
+    if(drag){
+      const dx=e.clientX-sx,dy=e.clientY-sy;moved=Math.max(moved,Math.hypot(dx,dy));
+      tg.y=dy>0?240*(1-Math.exp(-dy/240)):dy*.25;
+      tg.x=Math.max(-70,Math.min(70,dx*.5));
+      tg.ry=tg.x*.18;tg.rx=-Math.max(tg.y,0)*.04;
+      go();
+    }else{
+      const r=card.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;
+      tg.ry=px*16;tg.rx=-py*16;go();
+    }
+  });
+  function release(e){
+    if(!drag)return;drag=false;card.classList.remove('grab');
+    if(moved<6)boing();
+    tg.x=tg.y=tg.rx=tg.ry=0;done();go();
+    if(e&&e.pointerType!=='mouse'){wrap.classList.remove('hov')}
+  }
+  card.addEventListener('pointerup',release);
+  card.addEventListener('pointercancel',release);
+})();
+
+/* live Lahore clock */
+const fmt=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Karachi',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});
+(function tick(){const c=document.getElementById('clock');if(c)c.textContent=fmt.format(new Date())+' PKT';setTimeout(tick,1000)})();
+
+/* contact -> mailto */
+function send(){
+  const n=$('#fn').value.trim(),m=$('#fe').value.trim(),s=$('#fsu').value.trim()||'Portfolio enquiry',b=$('#fm').value.trim();
+  if(!n||!m||!b){alert('Please fill in your name, email and message.');return}
+  $('#fs').style.display='block';
+  location.href='mailto:bhattihuzaifa3@gmail.com?subject='+encodeURIComponent(s)+'&body='+encodeURIComponent(b+'\n\n— '+n+' ('+m+')');
+}
+</script>
 </body>
-  <!-- CV MODAL -->
-<div class="cv-modal" id="cvModal">
-  <div class="cv-modal-backdrop" onclick="closeCvModal()"></div>
-  <div class="cv-modal-sheet">
-    <div class="cv-modal-head">
-      <div class="cv-modal-title">M. Huzaifa Bhatti — CV</div>
-      <div class="cv-modal-actions">
-        <a href="Huzaifa-Bhatti-CV.pdf" download class="cv-modal-download">
-          <i data-lucide="download"></i> Download
-        </a>
-        <button class="cv-modal-close" onclick="closeCvModal()" aria-label="Close">
-          <i data-lucide="x"></i>
-        </button>
-      </div>
-    </div>
-    <div class="cv-modal-body">
-      <iframe id="cvFrame" src="" title="Huzaifa Bhatti CV"></iframe>
-    </div>
-  </div>
-</div>
 </html>
