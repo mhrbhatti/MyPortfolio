@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>M. Huzaifa Bhatti | Full Stack & Mobile Application Developer</title>
+<title>M. Huzaifa Bhatti | Full Stack Developer & SEO Specialist</title>
 <meta name="description" content="M. Huzaifa Bhatti is a Computer Science student and Full Stack Developer from Lahore, Pakistan, specializing in web development, mobile apps, Flutter, Java, MERN stack, and SEO.">
 <meta name="keywords" content="M. Huzaifa Bhatti, Huzaifa Bhatti, Huzaifa Bhatti developer, Huzaifa Bhatti Lahore, Full Stack Developer Lahore, Web Developer Lahore, Flutter Developer Pakistan, Android Developer Pakistan, MERN Developer, SEO Specialist Lahore">
 <meta name="author" content="M. Huzaifa Bhatti">
@@ -33,6 +33,7 @@
 {"@type":"WebSite","@id":"https://mhrbhatti.tech/#website","url":"https://mhrbhatti.tech/","name":"M. Huzaifa Bhatti","publisher":{"@id":"https://mhrbhatti.tech/#person"},"inLanguage":"en-PK"}]}
 </script>
 
+<script>try{var t=localStorage.getItem("th");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <style>
 :root{
   --bg:#eef7ea; --bg2:#e2f1dc; --surface:#ffffffcc; --solid:#ffffff;
@@ -306,10 +307,35 @@ footer{padding:34px 0 40px;border-top:1px solid var(--line);margin-top:60px}
 /* reveal */
 .rv{opacity:0;transform:translateY(34px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
 .rv.in{opacity:1;transform:none}
-.loader{position:fixed;inset:0;z-index:999;background:var(--bg);display:grid;place-items:center;transition:opacity .6s,visibility .6s}
-.loader.done{opacity:0;visibility:hidden}
-.loader b{font-family:Sora;font-size:clamp(2rem,8vw,4rem);font-weight:800;color:var(--g1);letter-spacing:-.04em;animation:pulse 1s infinite alternate}
-@keyframes pulse{to{opacity:.4;transform:scale(.97)}}
+.loader{position:fixed;inset:0;z-index:999;overflow:hidden}
+html.ld{overflow:hidden}
+.ld-grid{position:absolute;inset:0;display:grid}
+.ld-grid i{background:var(--bg);box-shadow:0 0 0 1px var(--bg);transform-origin:center;transition:transform .6s cubic-bezier(.75,0,.25,1)}
+.ld-grid i.a{background:var(--bg2)}
+.ld-grid i.b{background:#b9e2c0}
+[data-theme="dark"] .ld-grid i.b{background:#14391f}
+.ld-grid i.off{transform:scale(0)}
+.ld-c,.ld-foot,.ld-bar{transition:opacity .35s,transform .45s}
+.loader.go .ld-c,.loader.go .ld-foot{opacity:0;transform:translateY(-24px)}
+.loader.go .ld-bar{opacity:0}
+.ld-c{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 20px}
+.ld-sq{display:grid;grid-template-columns:repeat(2,20px);gap:4px}
+.ld-sq i{width:20px;height:20px;background:var(--g1);transform:scale(0);animation:sqpop .45s cubic-bezier(.3,1.6,.5,1) forwards}
+.ld-sq i:nth-child(2){background:var(--g3);animation-delay:.2s}
+.ld-sq i:nth-child(3){background:var(--g3);animation-delay:.4s}
+@keyframes sqpop{to{transform:scale(1)}}
+.ld-name{font-family:Sora,sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(2.6rem,11vw,5.6rem);line-height:.95;letter-spacing:-.035em;text-align:center;margin:22px 0 18px}
+.ld-name span{display:block;overflow:hidden;padding:.05em .02em}
+.ld-name em{display:block;font-style:normal;transform:translateY(108%);animation:rise .85s cubic-bezier(.2,.8,.2,1) .7s forwards}
+.ld-name span:nth-child(2) em{color:var(--g1);animation-delay:.85s}
+@keyframes rise{to{transform:none}}
+.ld-geo{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);opacity:0;animation:fadein .6s 1.4s forwards;text-align:center}
+@keyframes fadein{to{opacity:1}}
+.ld-foot{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:flex-end;padding:0 28px 26px}
+.ld-foot span{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.ld-foot b{font-family:Sora,sans-serif;font-weight:800;font-size:clamp(3.4rem,12vw,8rem);line-height:.8;color:var(--g1);font-variant-numeric:tabular-nums;letter-spacing:-.04em}
+.ld-bar{position:absolute;left:0;right:0;bottom:0;height:5px}
+.ld-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--g1),var(--g2));transform:scaleX(0);transform-origin:left}
 
 /* responsive */
 @media(max-width:980px){
@@ -346,7 +372,16 @@ footer{padding:34px 0 40px;border-top:1px solid var(--line);margin-top:60px}
 </style>
 </head>
 <body>
-<div class="loader" id="loader"><b>HB.</b></div>
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="ld-grid"></div>
+  <div class="ld-c">
+    <div class="ld-sq"><i></i><i></i><i></i></div>
+    <h2 class="ld-name"><span><em>Huzaifa</em></span><span><em>Bhatti</em></span></h2>
+    <div class="ld-geo">31.5204° N · 74.3587° E — Lahore</div>
+  </div>
+  <div class="ld-foot"><span>Portfolio · 2026</span><b id="ldnum">00</b></div>
+  <div class="ld-bar"><i id="ldbar"></i></div>
+</div>
 <div id="bar"></div><div id="glow"></div>
 <div class="bg-blobs"><i></i><i></i></div><div class="dotgrid"></div>
 
@@ -413,9 +448,9 @@ footer{padding:34px 0 40px;border-top:1px solid var(--line);margin-top:60px}
     <div class="head rv"><div class="eyebrow">About</div><h2 class="title">Building things that <em>actually run</em></h2></div>
     <div class="bento">
       <div class="card b-story rv">
-        <div class="big">I turn ideas into <em>shipped products</em> — from pregnancy-tracking apps to agency websites.</div>
+        <div class="big">I turn ideas into <em>shipped products</em> — from production mobile apps to agency websites.</div>
         <p>I'm a Computer Science student at the <strong>University of Central Punjab</strong>, currently pursuing my BSCS. Outside the classroom I build <strong>cross-platform mobile apps</strong> with Flutter and Firebase, <strong>MERN stack</strong> platforms, and systems-level programs in C++.</p>
-        <p>At <strong>SpatioLense</strong> I contribute across frontend, backend and database work on a production pregnancy-tracking app, and at <strong>BytesStack</strong> I designed, wrote and SEO-optimised the whole agency website from scratch.</p>
+        <p>At <strong>SpatioLense</strong> I contribute across frontend, backend and database work on a production mobile app, and at <strong>BytesStack</strong> I designed, wrote and SEO-optimised the whole agency website from scratch.</p>
         <p>I'm looking for opportunities where I can contribute from day one, collaborate with experienced developers and build software that matters.</p>
       </div>
       <div class="card b-mini rv"><div class="ic"><i data-lucide="map-pin"></i></div><div><small>Location</small><b>Lahore, Pakistan</b></div></div>
@@ -677,7 +712,42 @@ footer{padding:34px 0 40px;border-top:1px solid var(--line);margin-top:60px}
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 function icons(){window.lucide&&lucide.createIcons()}
-window.addEventListener('load',()=>{icons();setTimeout(()=>$('#loader').classList.add('done'),500)});
+window.addEventListener('load',()=>{icons()});
+
+/* splash: pixel-mosaic reveal */
+(function(){
+  const L=$('#loader');if(!L)return;
+  const root=document.documentElement,g=L.querySelector('.ld-grid'),num=$('#ldnum'),bar=$('#ldbar');
+  const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(reduce){L.remove();return}
+  root.classList.add('ld');
+  const S=innerWidth<620?72:100,cols=Math.ceil(innerWidth/S),rows=Math.ceil(innerHeight/S);
+  g.style.gridTemplateColumns='repeat('+cols+',1fr)';g.style.gridTemplateRows='repeat('+rows+',1fr)';
+  const cells=[];let maxd=1;
+  for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){
+    const i=document.createElement('i'),x=Math.random();
+    if(x<.08)i.className='b';else if(x<.2)i.className='a';
+    i._d=Math.hypot(c-(cols-1)/2,(r-(rows-1)/2));maxd=Math.max(maxd,i._d);
+    g.appendChild(i);cells.push(i);
+  }
+  let loaded=document.readyState==='complete',exited=false;
+  addEventListener('load',()=>loaded=true);
+  function exit(){
+    if(exited)return;exited=true;L.classList.add('go');
+    cells.forEach(i=>i.style.transitionDelay=Math.round(i._d/maxd*650+Math.random()*80)+'ms');
+    requestAnimationFrame(()=>requestAnimationFrame(()=>cells.forEach(i=>i.classList.add('off'))));
+    setTimeout(()=>{L.remove();root.classList.remove('ld')},1500);
+  }
+  const DUR=2100,t0=performance.now();
+  (function tick(t){
+    const p=Math.min((t-t0)/DUR,1),e=1-Math.pow(1-p,2.2);
+    num.textContent=String(Math.round(e*100)).padStart(2,'0');
+    bar.style.transform='scaleX('+e+')';
+    if(p<1)requestAnimationFrame(tick);
+    else{const w=setInterval(()=>{if(loaded){clearInterval(w);setTimeout(exit,300)}},60)}
+  })(t0);
+  setTimeout(exit,5500);
+})();
 document.addEventListener('DOMContentLoaded',()=>{const t=setInterval(()=>{if(window.lucide){icons();clearInterval(t)}},150);setTimeout(()=>clearInterval(t),5000)});
 
 /* theme */
